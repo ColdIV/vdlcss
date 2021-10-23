@@ -7,8 +7,8 @@ This is supposed to compile to a small base CSS file which can be used for small
 
 ## PyScss
 ### Windows
-- Create venv `python -m venv .`
-- Activate venv `Scripts\activate.bat`
+- Create venv `python -m venv .env`
+- Activate venv `.env\Scripts\activate`
 - Install requirements `pip install -r requirements.txt`
 
 # Build CSS
