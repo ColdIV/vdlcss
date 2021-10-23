@@ -1,0 +1,1 @@
+python -m scss < src/main.scss -o vdlcss-min.css -I src/
