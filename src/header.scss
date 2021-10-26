@@ -1,0 +1,52 @@
+header {
+    background-color: $primary;
+    color: $white;
+
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    @include md {
+        flex-flow: row;
+        justify-content: initial;
+        align-items: center;
+    }
+
+    nav {
+        ul, ol {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-flow: column;
+
+            @include md {
+                flex-flow: row;
+            }
+
+            li {
+                font-weight: bold;;
+                color: $white;
+
+                a {
+                    color: $white;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: darken($white, 15%);
+                    }
+                }
+
+                margin-bottom: 1rem;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                
+                @include md {
+                    margin-bottom: 0;
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,1 @@
-python -m scss < src/main.scss -o dist/vdlcss-min.css -I src/
+python -m scss < src/styles.scss -o dist/vdlcss-min.css -I src/
