@@ -6,3 +6,22 @@ a:hover,
 a:after {
     color: darken($primary, 15%);
 }
+
+header {
+    background-color: $primary;
+    color: $white;
+
+    nav {
+        li {
+            color: $white;
+
+            a {
+                color: $white;
+
+                &:hover {
+                    color: darken($white, 15%);
+                }
+            }
+        }
+    }
+}
