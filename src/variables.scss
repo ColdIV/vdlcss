@@ -6,5 +6,21 @@ $gray: #575757;
 $black: #242424;
 $white: #f1f1f1;
 
-$primary: $blue;
-$secondary: $gray;
+$outer-space: #1F363D;
+$teal-blue: #40798C;
+$green-sheen: #70A9A1;
+$cambridge-blue: #9EC1A3;
+$tea-green: #CFE0C3;
+
+$primary: $green-sheen;
+$secondary: $teal-blue;
+
+$link-color: $tea-green;
+$footer-color: $white;
+
+
+// Breakpoints
+$sm-width: 0px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;

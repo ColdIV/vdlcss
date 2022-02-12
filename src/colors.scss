@@ -1,27 +1,49 @@
-a {
+body {
+    background-color: $outer-space;
+    color: $white;
+}
+
+h1 {
     color: $primary;
 }
 
-a:hover,
-a:after {
-    color: darken($primary, 15%);
+h2, h3, h4, h5, h6 {
+    color: $white;
+}
+
+a,
+header nav a {
+    color: lighten($link-color, 10%);
+    background-color: transparent;
+
+    transition: color .25s, background-color .25s;
+    
+    &:visited {
+        color: darken($link-color, 5%);
+    }
+
+    &:hover {
+        color: $secondary;
+        background-color: $link-color;
+
+        transition: color .25s, background-color .25s;
+    }
 }
 
 header {
     background-color: $primary;
     color: $white;
 
-    nav {
-        li {
-            color: $white;
-
-            a {
-                color: $white;
-
-                &:hover {
-                    color: darken($white, 15%);
-                }
-            }
+    a {
+        color: $link-color;
+        &:hover,
+        &:visited {
+            background-color: transparent;
         }
     }
+}
+
+footer {
+    border-top: 2px solid $primary;
+    color: $footer-color;
 }
