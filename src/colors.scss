@@ -1,6 +1,6 @@
 body {
-    background-color: $outer-space;
-    color: $white;
+    background-color: $body-bg;
+    color: $body-text;
 }
 
 h1 {
@@ -8,42 +8,44 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-    color: $white;
+    color: $body-text;
 }
 
-a,
-header nav a {
-    color: lighten($link-color, 10%);
+a:not([role="button"]) {
+    color: lighten($link-text, 10%);
     background-color: transparent;
 
     transition: color .25s, background-color .25s;
     
     &:visited {
-        color: darken($link-color, 5%);
+        color: darken($link-text, 5%);
     }
 
     &:hover {
         color: $secondary;
-        background-color: $link-color;
+        background-color: $link-text;
 
         transition: color .25s, background-color .25s;
     }
 }
 
-header {
-    background-color: $primary;
-    color: $white;
 
-    a {
-        color: $link-color;
-        &:hover,
-        &:visited {
-            background-color: transparent;
-        }
+// Section
+section {
+    color: $section-text;
+    background-color: $section-bg;
+
+    -webkit-box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $section-headline;
     }
-}
 
-footer {
-    border-top: 2px solid $primary;
-    color: $footer-color;
+    // Alternate Section Background
+    & + section:nth-of-type(odd) {
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 }

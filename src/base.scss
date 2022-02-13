@@ -1,79 +1,110 @@
 html, body { padding: 0; margin: 0; min-height: 100vh; }
-body {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+html * { box-sizing: border-box; }
+
+// Styles if used without structure
+body.no-structure {
+    padding: 1rem;
+    & > main { padding-bottom: 1rem; }
+    input, select, textarea {
+        max-width: 500px;
+    }
+    input[type="submit"], button, a[role="button"] {
+        max-width: 250px;
+    }
+
+    fieldset {
+        input, button, input[type="submit"], select, textarea {
+            max-width: 100%;
+        }
+    }
 }
 
-
-main {
-    max-width: $xl-width;
+// General styles
+input:not([type="checkbox"], [type="radio"]),
+select,
+textarea,
+button,
+a[role="button"] {
+    display: block;
     width: 100%;
-    flex-grow: 1;
-    margin: 0 auto;
     padding: 1rem;
-    height: 100%;
-}
+    margin-bottom: 1rem;
+    border: $border-size solid $border-color;
+    border-radius: 5px;
+    background-color: transparent;
+    color: $border-color;
+    outline: none;
 
-header,
-footer {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-
-    & > div {
-        max-width: $xl-width;
-        width: 100%;
+    &:active,
+    &:focus {
+        border: $border-size solid $outline-color;
+        color: $outline-color;
     }
 }
 
-header {
-    & > div {
-        display: flex;
-        flex-flow: column;
-        justify-content: flex-start;
-        
-        @include md {
-            flex-flow: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+input[type="submit"],
+button,
+a[role="button"] {
+    color: $body-text;
+    cursor: pointer;
+    border: none;
 
-        a {
-            text-decoration: none;
-        }
-        
-        nav {
-            width: 100%;
-
-            @include md {
-                margin: 0 2rem;
-            }
-
-            ul, ol {
-                list-style: none;
-                padding: 0;
-                display: flex;
-                flex-flow: column;
-    
-                @include md {
-                    flex-flow: row;
-                }
-    
-                li {
-                    margin-bottom: 1rem;
-                    &:last-of-type {
-                        margin-bottom: 0;
-                    }
-                    
-                    @include md {
-                        margin-bottom: 0;
-                        margin-left: 1rem;
-                    }
-                }
-            }
-        }
+    &:active,
+    &:hover,
+    &:focus {
+        color: $body-text;
+        border: none;
     }
+}
+
+input[type="submit"] {
+    background-color: $outline-color;
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: darken($outline-color, 15%);
+        transition: background-color .25s;
+    }
+
+    &:active {
+        background-color: lighten($outline-color, 15%);
+        transition: background-color .25s;
+    }
+}
+
+button,
+a[role="button"] {
+    text-decoration: none;
+    text-align: center;
+    background-color: $border-color;
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: darken($border-color, 15%);
+        transition: background-color .25s;
+    }
+
+    &:active {
+        background-color: lighten($border-color, 15%);
+        transition: background-color .25s;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    border: $border-size solid $border-color;
+
+    legend {
+        color: $border-color;
+        padding: 0 .5rem;
+        font-weight: bold;
+    }
+}
+
+section {
+    padding: 0.5rem 1rem 1rem;
 }

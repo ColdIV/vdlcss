@@ -15,8 +15,22 @@ $tea-green: #CFE0C3;
 $primary: $green-sheen;
 $secondary: $teal-blue;
 
-$link-color: $tea-green;
-$footer-color: $white;
+// Body / Default
+$body-bg: $outer-space;
+$body-text: $white;
+// Link
+$link-text: $tea-green;
+// Footer
+$footer-text: $body-text;
+// Section
+$section-text: $body-text;
+$section-headline: $cambridge-blue;
+$section-bg: darken($body-bg, 5%);
+// Border default
+$border-color: $primary;
+$border-size: 2px;
+// Outline
+$outline-color: $teal-blue;
 
 
 // Breakpoints
