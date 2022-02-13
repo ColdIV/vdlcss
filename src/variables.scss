@@ -8,6 +8,7 @@ $white: #f1f1f1;
 
 $outer-space: #1F363D;
 $teal-blue: #40798C;
+$malibu: #6bdaff;
 $green-sheen: #70A9A1;
 $cambridge-blue: #9EC1A3;
 $tea-green: #CFE0C3;
@@ -30,7 +31,9 @@ $section-bg: darken($body-bg, 5%);
 $border-color: $primary;
 $border-size: 2px;
 // Outline
-$outline-color: $teal-blue;
+$outline-color: $malibu;
+// Placeholder
+$placeholder-color: lighten($body-bg, 15%);
 
 
 // Breakpoints

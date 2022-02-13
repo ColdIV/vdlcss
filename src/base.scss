@@ -20,6 +20,21 @@ body.no-structure {
 }
 
 // General styles
+
+// Placeholders
+::-webkit-input-placeholder { color: $placeholder-color; }
+:-moz-placeholder {
+    color: $placeholder-color;
+    opacity: 1;
+}
+::-moz-placeholder {
+    color: $placeholder-color;
+    opacity: 1;
+}
+:-ms-input-placeholder { color: $placeholder-color; }
+::-ms-input-placeholder { color: $placeholder-color; }
+::placeholder { color: $placeholder-color; }
+
 input:not([type="checkbox"], [type="radio"]),
 select,
 textarea,
@@ -31,14 +46,14 @@ a[role="button"] {
     margin-bottom: 1rem;
     border: $border-size solid $border-color;
     border-radius: 5px;
-    background-color: transparent;
-    color: $border-color;
+    background-color: $border-color;
+    color: $body-bg;
     outline: none;
 
     &:active,
     &:focus {
-        border: $border-size solid $outline-color;
-        color: $outline-color;
+        border: $border-size solid lighten($outline-color, 15%);
+        box-shadow: 0 0 0 $border-size $outline-color;
     }
 }
 
@@ -48,26 +63,29 @@ a[role="button"] {
     color: $body-text;
     cursor: pointer;
     border: none;
+    box-shadow: none;
 
     &:active,
     &:hover,
     &:focus {
         color: $body-text;
         border: none;
+        box-shadow: none;
     }
 }
 
 input[type="submit"] {
-    background-color: $outline-color;
+    background-color: $teal-blue;
     transition: background-color .25s;
 
     &:hover {
-        background-color: darken($outline-color, 15%);
+        background-color: darken($teal-blue, 15%);
         transition: background-color .25s;
     }
 
+    &:focus,
     &:active {
-        background-color: lighten($outline-color, 15%);
+        background-color: lighten($teal-blue, 15%);
         transition: background-color .25s;
     }
 }
@@ -84,6 +102,7 @@ a[role="button"] {
         transition: background-color .25s;
     }
 
+    &:focus,
     &:active {
         background-color: lighten($border-color, 15%);
         transition: background-color .25s;
