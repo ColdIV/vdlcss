@@ -49,3 +49,21 @@ section {
         box-shadow: none;
     }
 }
+
+code,
+pre {
+    background-color: $code-bg;
+    color: $code-text;
+}
+
+code {
+    padding: .5rem;
+}
+
+pre {
+    padding: 1rem;
+    code {
+        padding: 0;
+        display: block;
+    }
+}

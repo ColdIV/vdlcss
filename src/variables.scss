@@ -34,6 +34,16 @@ $border-size: 2px;
 $outline-color: $malibu;
 // Placeholder
 $placeholder-color: lighten($body-bg, 15%);
+// Code
+$code-text: $body-text;
+$code-bg: darken($body-bg, 10%);
+// Table
+$table-bg: lighten($body-bg, 5%);
+// Quote
+$quote-border-size: $border-size * 2;
+$quote-border-color: lighten($outer-space, 5%);
+$quote-caption-text: lighten($outer-space, 15%);
+$quote-font-size: 18px;
 
 
 // Breakpoints
