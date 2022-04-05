@@ -47,7 +47,34 @@ $quote-font-size: 18px;
 
 
 // Breakpoints
-$sm-width: 0px;
-$md-width: 768px;
-$lg-width: 992px;
-$xl-width: 1200px;
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+@mixin withBreakpoints ($className, $i: 0) {
+    @each $label, $breakpoint in $breakpoints {
+        $tmpClass: $className;
+        @if $label != xs { $tmpClass: '#{$label}\:#{$className}'; }
+    
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpClass} {
+                @content;
+            }
+        }
+    }
+}
+
+// Container max-widths
+$container-max-widths: (
+    xs: 100%,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);

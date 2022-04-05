@@ -1,0 +1,63 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    @each $label, $breakpoint in $breakpoints {
+        @media (min-width: #{$breakpoint}) {
+            max-width: map-get($container-max-widths, $label);
+        }
+    }
+}
+
+// Grid
+@include withBreakpoints ('grid') {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+@include withBreakpoints ('cell') {
+    grid-column: auto;
+}
+
+@for $i from 1 through 12 {
+    @include withBreakpoints ('cell-#{$i}', $i) {
+        grid-column: span $i;
+    }
+}
+
+// Flex
+@include withBreakpoints ('row') {
+    display: flex;
+    flex-flow: row;
+
+    .left { justify-content: flex-start; }
+
+    .right { justify-content: flex-end; }
+
+    .top { align-items: flex-start; }
+
+    .bottom { align-items: flex-end; }
+
+    .center-horizontal { justify-content: center; }
+
+    .center-vertical { align-items: center; }
+}
+
+@include withBreakpoints ('column') {
+    display: flex;
+    flex-flow: column;
+
+    .left { align-items: flex-start; }
+
+    .right { align-items: flex-end; }
+
+    .top { justify-content: flex-start; }
+
+    .bottom { justify-content: flex-end; }
+
+    .center-horizontal { align-items: center; }
+
+    .center-vertical { justify-content: center; }
+}

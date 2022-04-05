@@ -1,24 +1,6 @@
 html, body { padding: 0; margin: 0; min-height: 100vh; }
 html * { box-sizing: border-box; }
 
-// Styles if used without structure
-body.no-structure {
-    padding: 1rem;
-    & > main { padding-bottom: 1rem; }
-    input, select, textarea {
-        max-width: 500px;
-    }
-    input[type="submit"], button, a[role="button"] {
-        max-width: 250px;
-    }
-
-    fieldset {
-        input, button, input[type="submit"], select, textarea {
-            max-width: 100%;
-        }
-    }
-}
-
 // General styles
 body {
     background-color: $body-bg;
@@ -35,9 +17,7 @@ h2, h3, h4, h5, h6 {
 
 a:not([role="button"]) {
     color: lighten($link-text, 10%);
-    background-color: transparent;
-
-    transition: color .25s, background-color .25s;
+    transition: color .25s;
     
     &:visited {
         color: darken($link-text, 5%);
@@ -45,9 +25,7 @@ a:not([role="button"]) {
 
     &:hover {
         color: $secondary;
-        background-color: $link-text;
-
-        transition: color .25s, background-color .25s;
+        transition: color .25s;
     }
 }
 
@@ -69,7 +47,8 @@ input:not([type="checkbox"], [type="radio"]),
 select,
 textarea,
 button,
-a[role="button"] {
+a[role="button"]
+.btn {
     display: block;
     width: 100%;
     padding: 1rem;
@@ -89,7 +68,8 @@ a[role="button"] {
 
 input[type="submit"],
 button,
-a[role="button"] {
+a[role="button"],
+.btn {
     color: $body-text;
     cursor: pointer;
     border: none;
@@ -121,7 +101,8 @@ input[type="submit"] {
 }
 
 button,
-a[role="button"] {
+a[role="button"],
+.btn {
     text-decoration: none;
     text-align: center;
     background-color: $border-color;
@@ -159,27 +140,6 @@ label + select,
 label + textarea {
     margin-top: 0.5rem;
 }
-
-section {
-    padding: 0.5rem 1rem 1rem;
-    color: $section-text;
-    background-color: $section-bg;
-
-    -webkit-box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0);
-
-    h1, h2, h3, h4, h5, h6 {
-        color: $section-headline;
-    }
-
-    // Alternate Section Background
-    & + section:nth-of-type(odd) {
-        background-color: transparent;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-}
-
 
 code,
 pre {
