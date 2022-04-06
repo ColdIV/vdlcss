@@ -1,161 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Example</title>
 
-        <!-- vdlcss -->
-        <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
-        <!-- ------ -->
-    </head>
-    <body>
-        <nav>
-            <div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+
+    <!-- vdlcss -->
+    <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
+    <!-- ------ -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Header</h1>
+        <p>This is a header directly within the body.</p>
+        <div>
+            <a href="#" class="button">Link-Button</a>
+            <button>Normal Button</button>
+        </div>
+
+        <h1>Headline 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis culpa quasi nam, ut ea iste et quas
+            magni eos aliquam?</p>
+        <a href="#">Lorem ipsum.</a>
+
+        <h1>Headlines</h1>
+        <h2>Headline 2</h2>
+        <h3>Headline 3</h3>
+        <h4>Headline 4</h4>
+        <h5>Headline 5</h5>
+        <h6>Headline 6</h6>
+
+
+        <h2>Headline 2</h2>
+
+        <h2>Form</h2>
+        <form>
+            <fieldset>
+                <legend>Legend Example</legend>
+
                 <div>
-                    <a href="/">
-                        <img 
-                        src="data:image/png;base64,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"
-                        alt="Logo"
-                        width="113px"
-                        height="25px"
-                        >
-                    </a>
+                    <label>Text Input Label</label>
+                    <input type="text" />
                 </div>
-            
-                <ul>
-                    <li>
-                        <a href="#link1">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#link2">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#link3">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#link4">Link 4</a>
-                    </li>
-                </ul>
-                
+
                 <div>
-                    <a href="#login">Login</a>
+                    <label>Password</label>
+                    <input type="password" />
                 </div>
-            </div>
-        </nav>
-        
-        <header>
-            <h1>Header</h1>
-            <p>This is a header directly within the body.</p>
-            <div>
-                <a href="#" role="button">Link-Button</a>
-                <button>Normal Button</button>
-            </div>
-        </header>
 
-        <main>
-            <h1>Headline 1</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis culpa quasi nam, ut ea iste et quas magni eos aliquam?</p>
-            <a href="#">Lorem ipsum.</a>
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" />
+                </div>
 
-            <h1>Headlines</h1>
-            <h2>Headline 2</h2>
-            <h3>Headline 3</h3>
-            <h4>Headline 4</h4>
-            <h5>Headline 5</h5>
-            <h6>Headline 6</h6>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" />
+                </div>
 
-            <section>
-                <h2>Section headline</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate voluptas ut itaque reprehenderit ratione possimus? A fugiat fuga distinctio possimus tempora neque, quis facilis, nisi quaerat laborum at eveniet culpa.</p>
-            </section>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" />
+                </div>
 
-            <h2>Headline 2</h2>
+                <div>
+                    <label for="gender">Dropdown</label>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
 
-            <section>
-                <h2>Form</h2>
-                <form>
-                    <fieldset>
-                        <legend>Legend Example</legend>
-                
-                        <div>
-                            <label>Text Input Label</label>
-                            <input type="text"/>
-                        </div>
-                
-                        <div>
-                            <label>Password</label>
-                            <input type="password"/>
-                        </div>
-                
-                        <div>
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name"/>
-                        </div>
-                
-                        <div>
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name"/>
-                        </div>
-                
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="email" id="email"/>
-                        </div>
-                
-                        <div>
-                            <label for="gender">Dropdown</label>
-                            <select>
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
-                        </div>
-                
-                        <div>
-                            <label>Radio Buttons</label>
-                            <ul>
-                                <li><label><input type="radio"/> Label 1</label></li>
-                                <li><label><input type="radio"/> Label 2</label></li>
-                                <li><label><input type="radio"/> Label 3</label></li>
-                            </ul>
-                        </div>
-                
-                        <div>
-                            <label for="url">URL Input</label>
-                            <input type="url" placeholder="http://github.com/ColdIV"/>
-                        </div>
-                
-                        <div>
-                            <label>Text area</label>
-                            <textarea></textarea>
-                        </div>
-                
-                        <div>
-                            <label><input type="checkbox"/> This is a checkbox.</label>
-                        </div>
-                
-                        <div>
-                            <input type="submit" value="Submit"/>
-                        </div>
-                
-                    </fieldset>
-                </form>
-            </section>
+                <div>
+                    <label>Radio Buttons</label>
+                    <ul>
+                        <li><label><input type="radio" /> Label 1</label></li>
+                        <li><label><input type="radio" /> Label 2</label></li>
+                        <li><label><input type="radio" /> Label 3</label></li>
+                    </ul>
+                </div>
 
-            <section>
-                <h2>Form without fieldset</h2>
-                <form>
-                    <input type="text" placeholder="Some input">
-                    <input type="text" placeholder="Another input">
-                    <input type="submit">
-                </form>
-            </section>
+                <div>
+                    <label for="url">URL Input</label>
+                    <input type="url" placeholder="http://github.com/ColdIV" />
+                </div>
 
-            <section>
-                <h2>Codeblock using pre > code</h2>
-                <pre><code>$ ls -gto
+                <div>
+                    <label>Text area</label>
+                    <textarea></textarea>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" /> This is a checkbox.</label>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" />
+                </div>
+
+            </fieldset>
+        </form>
+
+        <h2>Form without fieldset</h2>
+        <form>
+            <input type="text" placeholder="Some input">
+            <input type="text" placeholder="Another input">
+            <input type="submit">
+        </form>
+
+        <h2>Codeblock using pre > code</h2>
+        <pre><code>$ ls -gto
 total 28
 -rwxrwxrwx 1 10753 Feb 13 04:09 example.html
 -rwxrwxrwx 1 15641 Feb 12 20:11 example-html-tags.html
@@ -166,100 +124,79 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
 -rwxrwxrwx 1   384 Oct 23 16:34 README.md
 -rwxrwxrwx 1    28 Oct 23 15:30 requirements.txt</code></pre>
 
-                <h2>Inline code using code</h2>
-                This is an example of inline code <code>[ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo *Click*</code> which you should not run. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe, ducimus omnis <code>something</code> nobis est ex magni reiciendis, consequuntur eaque iure in mollitia doloremque. Nihil odit in perferendis rem magnam?
-            </section>
+        <h2>Inline code using code</h2>
+        This is an example of inline code <code>[ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo *Click*</code> which you
+        should not run. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe, ducimus omnis
+        <code>something</code> nobis est ex magni reiciendis, consequuntur eaque iure in mollitia doloremque. Nihil odit
+        in perferendis rem magnam?
 
-            <section>
-                <h2>Table</h2>
-                <figure>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                          <th>Heading</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>1</th>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                        </tr>
-                        <tr>
-                          <th>2</th>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                        </tr>
-                        <tr>
-                          <th>3</th>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                        </tr>
-                        <tr>
-                          <th>4</th>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                          <td>Cell</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </figure>
-            </section>
+        <h2>Table</h2>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+        <h2>A quote...</h2>
+        <figure>
+            <blockquote>
+                <p>"Just because it's shown as a quote doesn't mean I actually said that. lol"</p>
+                <figcaption>Albert Einstein, <cite title="Not really though...">Ideas and Opinions</cite></figcaption>
+            </blockquote>
+        </figure>
+    </div>
+</body>
 
-            <section>
-                <h2>A quote...</h2>
-                <figure>
-                    <blockquote>
-                        <p>"Just because it's shown as a quote doesn't mean I actually said that. lol"</p>
-                        <figcaption>Albert Einstein, <cite title="Not really though...">Ideas and Opinions</cite></figcaption>
-                    </blockquote>
-                </figure>
-            </section>
-        </main>
-        <footer>
-            <div>
-                Example 2022
-            </div>
-        </footer>
-
-
-        <!-- For testing -->
-        <div 
-            id="toggle-structure" 
-            style="position: fixed; right: 40px; bottom: 40px; border-radius: 50%; border: 2px solid black; background-color: white; width: 50px; height: 50px; cursor: pointer;"
-        >
-        </div>
-        <script>
-            document.querySelector('#toggle-structure').addEventListener('click', () => {
-                document.body.classList.toggle('no-structure')
-            })
-        </script>
-        <!-- ~ -->
-    </body>
 </html>

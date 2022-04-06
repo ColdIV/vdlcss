@@ -11,24 +11,24 @@
 }
 
 // Grid
-@include withBreakpoints ('grid') {
+@include addBreakpointPrefixes ('grid') {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
 }
 
-@include withBreakpoints ('cell') {
+@include addBreakpointPrefixes ('cell') {
     grid-column: auto;
 }
 
 @for $i from 1 through 12 {
-    @include withBreakpoints ('cell-#{$i}', $i) {
+    @include addBreakpointPrefixes ('cell-#{$i}', $i) {
         grid-column: span $i;
     }
 }
 
 // Flex
-@include withBreakpoints ('row') {
+@include addBreakpointPrefixes ('row') {
     display: flex;
     flex-flow: row;
 
@@ -45,7 +45,7 @@
     .center-vertical { align-items: center; }
 }
 
-@include withBreakpoints ('column') {
+@include addBreakpointPrefixes ('column') {
     display: flex;
     flex-flow: column;
 

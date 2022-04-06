@@ -2,49 +2,18 @@
 $red: #c54047;
 $green: #79c037;
 $blue: #3e7dc0;
+$yellow: #c0b73e;
 $gray: #575757;
 $black: #242424;
 $white: #f1f1f1;
 
-$outer-space: #1F363D;
-$teal-blue: #40798C;
-$malibu: #6bdaff;
-$green-sheen: #70A9A1;
-$cambridge-blue: #9EC1A3;
-$tea-green: #CFE0C3;
+$danger: $red;
+$warning: $yellow;
+$info: $blue;
+$success: $green;
 
-$primary: $green-sheen;
-$secondary: $teal-blue;
-
-// Body / Default
-$body-bg: $outer-space;
-$body-text: $white;
-// Link
-$link-text: $tea-green;
-// Footer
-$footer-text: $body-text;
-// Section
-$section-text: $body-text;
-$section-headline: $cambridge-blue;
-$section-bg: darken($body-bg, 5%);
-// Border default
-$border-color: $primary;
-$border-size: 2px;
-// Outline
-$outline-color: $malibu;
-// Placeholder
-$placeholder-color: lighten($body-bg, 15%);
-// Code
-$code-text: $body-text;
-$code-bg: darken($body-bg, 10%);
-// Table
-$table-bg: lighten($body-bg, 5%);
-// Quote
-$quote-border-size: $border-size * 2;
-$quote-border-color: lighten($outer-space, 5%);
-$quote-caption-text: lighten($outer-space, 15%);
-$quote-font-size: 18px;
-
+$primary: $blue;
+$secondary: $gray;
 
 // Breakpoints
 $breakpoints: (
@@ -56,7 +25,7 @@ $breakpoints: (
     xxl: 1400px
 );
 
-@mixin withBreakpoints ($className, $i: 0) {
+@mixin addBreakpointPrefixes ($className, $i: 0) {
     @each $label, $breakpoint in $breakpoints {
         $tmpClass: $className;
         @if $label != xs { $tmpClass: '#{$label}\:#{$className}'; }
