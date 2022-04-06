@@ -47,3 +47,11 @@ $container-max-widths: (
     xl: 1140px,
     xxl: 1320px
 );
+
+// States
+$states: (
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+    success: $success
+);

@@ -1,0 +1,36 @@
+[class*=" alert-"],
+[class^="alert-"] {
+    padding: .5rem;
+    width: 100%;
+    border-radius: 3px;
+    margin: .25rem 0;
+}
+
+@each $state, $color in $states {
+    .alert-#{$state},
+    a.#{$state},
+    .#{$state} {
+        background-color: $color;
+        color: $white;
+
+        &.button,
+        &input[type="submit"],
+        button& {
+            &:hover {
+                color: $white;
+                border: none;
+                box-shadow: none;
+                background-color: darken($color, 15%);
+                transition: background-color .25s;
+            }
+        
+            &:focus,
+            &:active {
+                color: $white;
+                border: none;
+                box-shadow: none;
+                background-color: lighten($color, 15%);
+            }
+        }
+    }
+}

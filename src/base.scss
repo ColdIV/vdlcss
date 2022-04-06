@@ -1,6 +1,11 @@
 html, body { padding: 0; margin: 0; min-height: 100vh; }
 html * { box-sizing: border-box; }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
 h1 {
     color: $primary;
 }
@@ -43,7 +48,9 @@ select,
 textarea,
 button,
 a.button {
-    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    
     display: block;
     width: 100%;
     padding: .5rem 1rem;
@@ -146,7 +153,6 @@ table {
 
     th, td {
         padding: 0.5rem 1rem;
-        font-size: 1rem;
         font-weight: normal;
         border-bottom: 2px solid $primary;
         text-align: left;
@@ -180,5 +186,4 @@ blockquote {
     margin: 0;
     border-left: 4px solid lighten($primary, 5%);
     padding: 1.25rem 1rem 1.25rem 1.5rem;
-    font-size: 18px;
 }
