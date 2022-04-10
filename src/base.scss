@@ -129,13 +129,15 @@ pre {
 }
 
 code {
-    padding: .05rem .5rem;
-    -webkit-box-shadow: inset -1px 3px 8px 5px darken($black, 10%), 2px 5px 16px 0px darken($black, 10%), 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px darken($black, 10%), 2px 5px 16px 0px darken($black, 10%), 5px 5px 15px 5px rgba(0,0,0,0);
+    padding: 0 .25rem;
+    border-radius: 4px;
+    -webkit-box-shadow: inset -1px 1px 1px 1px $black, 2px 2px 8px 0 $black;
+    box-shadow: inset -1px 1px 1px 1px $black, 2px 2px 8px 0 $black;
     overflow: auto;
 }
 
 pre {
+    border-radius: 4px;
     padding: 1rem;
     code {
         padding: 0;

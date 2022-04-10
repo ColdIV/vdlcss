@@ -43,6 +43,11 @@
     .center-horizontal { justify-content: center; }
 
     .center-vertical { align-items: center; }
+
+    .center {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @include addBreakpointPrefixes ('column') {
@@ -60,4 +65,64 @@
     .center-horizontal { align-items: center; }
 
     .center-vertical { justify-content: center; }
+    
+    .center {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-sticky {
+    position: sticky;
+}
+
+@for $i from 0 through 5 {
+    .top-#{$i} { top: #{$i}rem; }
+    .right-#{$i} { right: #{$i}rem; }
+    .bottom-#{$i} { bottom: #{$i}rem; }
+    .left-#{$i} { left: #{$i}rem; }
+}
+
+.stretch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.scroll-x {
+    overflow-x: scroll;
+}
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }

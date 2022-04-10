@@ -7,6 +7,16 @@ $gray: #575757;
 $black: #242424;
 $white: #f1f1f1;
 
+$colors: (
+    red: $red,
+    green: $green,
+    blue: $blue,
+    yellow: $yellow,
+    gray: $gray,
+    black: $black,
+    white: $white
+);
+
 $danger: $red;
 $warning: $yellow;
 $info: $blue;

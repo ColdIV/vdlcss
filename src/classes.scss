@@ -1,3 +1,4 @@
+// Alerts
 [class*=" alert-"],
 [class^="alert-"] {
     padding: .5rem;
@@ -33,4 +34,166 @@
             }
         }
     }
+}
+
+// Text
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.font-sans {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-serif {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.font-mono {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-small {
+    font-size: 80%;
+}
+
+.text-big {
+    font-size: 120%;
+}
+
+.text-red {
+    color: $red;
+}
+
+.text-green {
+    color: $green;
+}
+
+.text-blue {
+    color: $blue;
+}
+
+.text-yellow {
+    color: $yellow;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-white {
+    color: $white;
+}
+
+
+// Background
+.bg-red { background-color: $red; }
+
+.bg-green { background-color: $green; }
+
+.bg-blue { background-color: $blue; }
+
+.bg-yellow { background-color: $yellow; }
+
+.bg-gray { background-color: $gray; }
+
+.bg-black { background-color: $black; }
+
+.bg-white { background-color: $white; }
+
+
+// Border
+.border { border: 1px solid $black; }
+
+.border-top { border-top: 1px solid $black; }
+
+.border-right { border-right: 1px solid $black; }
+
+.border-bottom { border-bottom: 1px solid $black; }
+
+.border-left { border-left: 1px solid $black; }
+
+.border-red { border-color: $red; }
+
+.border-green { border-color: $green; }
+
+.border-blue { border-color: $blue; }
+
+.border-yellow { border-color: $yellow; }
+
+.border-gray { border-color: $gray; }
+
+.border-black { border-color: $black; }
+
+.border-white { border-color: $white; }
+
+.rounded { border-radius: 4px; }
+
+.round { border-radius: 50%; }
+
+.unrounded { border-radius: 0; }
+
+// Lists
+ul, ol {
+    &.unstyled {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// Shadow
+.shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+
+// Filter
+.blur { filter: blur(); }
+
+// Hover
+$classes: text, border, background;
+@each $class in $classes {
+    @each $label, $color in $colors {
+        .hover\:#{$class}-#{$label}:hover,
+        .#{$class}-#{$label} {
+            @if $class == text {
+                color: $color;
+                transition: color .25s;
+            } @else {
+                #{$class}-color: $color;
+                transition: #{$class}-color .25s;
+            }
+        }
+    }
+}
+
+// Cursor
+.cursor-pointer {
+    cursor: pointer;
 }
