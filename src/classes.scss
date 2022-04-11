@@ -92,25 +92,3 @@ ul, ol {
 
 // Filter
 .blur { filter: blur(); }
-
-// Hover
-$classes: text, border, background;
-@each $class in $classes {
-    @each $label, $color in $colors {
-        .hover\:#{$class}-#{$label}:hover,
-        .#{$class}-#{$label} {
-            @if $class == text {
-                color: $color;
-                transition: color .25s;
-            } @else {
-                #{$class}-color: $color;
-                transition: #{$class}-color .25s;
-            }
-        }
-    }
-}
-
-// Cursor
-.cursor-pointer {
-    cursor: pointer;
-}
