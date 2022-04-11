@@ -41,10 +41,10 @@ $breakpoints: (
     xxl: 1400px
 );
 
-@mixin addBreakpointPrefixes ($className, $i: 0) {
+@mixin addBreakpointPrefixes ($className) {
     @each $label, $breakpoint in $breakpoints {
         $tmpClass: $className;
-        @if $label != xs { $tmpClass: '#{$label}\:#{$className}'; }
+        @if $label != xs { $tmpClass: '#{$label}\\:#{$className}'; }
     
         @media (min-width: #{$breakpoint}) {
             .#{$tmpClass} {

@@ -21,9 +21,16 @@
     grid-column: auto;
 }
 
-@for $i from 1 through 12 {
-    @include addBreakpointPrefixes ('cell-#{$i}', $i) {
-        grid-column: span $i;
+@each $label, $breakpoint in $breakpoints {
+    @for $i from 1 through 12 {
+        $tmpClass: cell-#{$i};
+        @if $label != xs { $tmpClass: '#{$label}\\:cell-#{$i}'; }
+
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpClass} {
+                grid-column: span $i;
+            }
+        }
     }
 }
 
@@ -125,4 +132,45 @@
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+// Padding / Margin
+$classes: (
+    p: padding,
+    m: margin,
+    pt: padding-top,
+    pr: padding-right,
+    pb: padding-bottom,
+    pl: padding-left,
+    mt: margin-top,
+    mr: margin-right,
+    mb: margin-bottom,
+    ml: margin-left,
+    px: padding,
+    py: padding,
+    mx: margin,
+    my: margin
+);
+
+@each $class, $rule in $classes {
+    @each $label, $breakpoint in $breakpoints {
+        @for $i from 0 through 5 {
+            $tmpClass: '#{$class}-#{$i}';
+            @if $label != xs { $tmpClass: '#{$label}\\:#{$class}-#{$i}'; }
+
+            @media (min-width: #{$breakpoint}) {
+                .#{$tmpClass} {
+                    @if $class == px or $class == mx {
+                        #{$rule}-left: #{$i}rem;
+                        #{$rule}-right: #{$i}rem;
+                    } @else if $class == py or $class == my {
+                        #{$rule}-top: #{$i}rem;
+                        #{$rule}-bottom: #{$i}rem;
+                    } @else {
+                        #{$rule}: #{$i}rem;
+                    }
+                }
+            }
+        }
+    }
 }
