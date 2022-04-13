@@ -39,19 +39,19 @@
     display: flex;
     flex-flow: row;
 
-    .left { justify-content: flex-start; }
+    &.left { justify-content: flex-start; }
 
-    .right { justify-content: flex-end; }
+    &.right { justify-content: flex-end; }
 
-    .top { align-items: flex-start; }
+    &.top { align-items: flex-start; }
 
-    .bottom { align-items: flex-end; }
+    &.bottom { align-items: flex-end; }
 
-    .center-horizontal { justify-content: center; }
+    &.center-horizontal { justify-content: center; }
 
-    .center-vertical { align-items: center; }
+    &.center-vertical { align-items: center; }
 
-    .center {
+    &.center {
         align-items: center;
         justify-content: center;
     }
@@ -61,19 +61,19 @@
     display: flex;
     flex-flow: column;
 
-    .left { align-items: flex-start; }
+    &.left { align-items: flex-start; }
 
-    .right { align-items: flex-end; }
+    &.right { align-items: flex-end; }
 
-    .top { justify-content: flex-start; }
+    &.top { justify-content: flex-start; }
 
-    .bottom { justify-content: flex-end; }
+    &.bottom { justify-content: flex-end; }
 
-    .center-horizontal { align-items: center; }
+    &.center-horizontal { align-items: center; }
 
-    .center-vertical { justify-content: center; }
+    &.center-vertical { justify-content: center; }
     
-    .center {
+    &.center {
         align-items: center;
         justify-content: center;
     }
@@ -128,6 +128,10 @@
 
 .scroll-y {
     overflow-y: scroll;
+}
+
+.scroll-snap {
+    scroll-snap-type: x mandatory;
 }
 
 .overflow-hidden {

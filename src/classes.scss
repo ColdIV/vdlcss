@@ -51,6 +51,12 @@
 
 .uppercase { text-transform: uppercase; }
 
+@each $label, $color in $colors {
+    .#{$label} {
+        color: $color;
+    }
+}
+
 .font-sans { font-family: $font-sans; }
 
 .font-serif { font-family: $font-serif; }
@@ -78,6 +84,19 @@
 
 .unrounded { border-radius: 0; }
 
+@each $label, $color in $colors {
+    .border-#{$label} {
+        border-color: $color;
+    }
+}
+
+// Background
+@each $label, $color in $colors {
+    .bg-#{$label} {
+        background-color: $color;
+    }
+}
+
 // Lists
 ul, ol {
     &.unstyled {
@@ -88,7 +107,7 @@ ul, ol {
 }
 
 // Shadow
-.shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+.shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
 
 // Filter
 .blur { filter: blur(); }
