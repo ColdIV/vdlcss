@@ -43,7 +43,7 @@ a {
 ::placeholder { color: darken($black, 5%); }
 
 // Input
-input:not([type="checkbox"], [type="radio"]),
+input:not([type="checkbox"], [type="radio"], [type="range"]),
 select,
 textarea,
 button,
@@ -55,15 +55,21 @@ a.button {
     width: 100%;
     padding: .5rem 1rem;
     margin-bottom: 1rem;
-    border: 2px solid $primary;
-    border-radius: 5px;
+    border: 1px solid $gray-light;
+    background-color: $gray-light;
+    border-radius: 3px;
     outline: none;
 
     &:active,
     &:focus {
-        border: 2px solid lighten($primary, 15%);
+        border: 1px solid lighten($primary, 15%);
         box-shadow: 0 0 0 2px $primary;
     }
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
 }
 
 // Buttons
@@ -120,7 +126,6 @@ label + textarea {
     margin-top: 0.5rem;
 }
 
-code,
 pre {
     background-color: darken($black, 10%);
     color: $white;
@@ -129,34 +134,40 @@ pre {
 }
 
 code {
-    padding: 0 .25rem;
-    border-radius: 4px;
-    -webkit-box-shadow: inset -1px 1px 1px 1px $black, 2px 2px 8px 0 $black;
-    box-shadow: inset -1px 1px 1px 1px $black, 2px 2px 8px 0 $black;
-    overflow: auto;
+    font-size: inherit;
+    color: $black;
 }
 
 pre {
-    border-radius: 4px;
+    margin: 0;
+    border-radius: 3px;
     padding: 1rem;
     code {
+        border-radius: 3px;
+        overflow: auto;
         padding: 0;
         display: block;
         -webkit-box-shadow: none;
         box-shadow: none;
+        color: $white;
     }
-    -webkit-box-shadow: inset -1px 3px 8px 5px darken($black, 10%), 2px 5px 16px 0px darken($black, 10%), 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px darken($black, 10%), 2px 5px 16px 0px darken($black, 10%), 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 table {
     width: 100%;
     border-spacing: 0;
 
+    thead {
+        tr {
+            th {
+                border-bottom: 2px solid $primary;
+            }
+        }
+    }
+
     th, td {
         padding: 0.5rem 1rem;
         font-weight: normal;
-        border-bottom: 2px solid $primary;
         text-align: left;
         text-align: start;
     }
@@ -180,12 +191,15 @@ blockquote {
         padding: 0;
     }
     figcaption {
+        font-size: smaller;
         margin-top: .75rem;
-        text-align: right;
-        margin-right: 2rem;
         color: lighten($black, 15%);
     }
+
     margin: 0;
-    border-left: 4px solid lighten($primary, 5%);
-    padding: 1.25rem 1rem 1.25rem 1.5rem;
+    border-left: 4px solid $primary;
+    padding: .75rem;
+    background-color: $gray-light;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }

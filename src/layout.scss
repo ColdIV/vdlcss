@@ -134,8 +134,14 @@
     overflow-y: scroll;
 }
 
-.scroll-snap {
+.scroll-x-snap {
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
+}
+
+.scroll-y-snap {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .overflow-hidden {

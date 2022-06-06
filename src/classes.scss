@@ -5,34 +5,13 @@
     width: 100%;
     border-radius: 3px;
     margin: .25rem 0;
+    text-shadow: 1px 1px 6px $black;
 }
 
 @each $state, $color in $states {
-    .alert-#{$state},
-    a.#{$state},
-    .#{$state} {
+    .alert-#{$state} {
         background-color: $color;
         color: $white;
-
-        &.button,
-        &input[type="submit"],
-        button& {
-            &:hover {
-                color: $white;
-                border: none;
-                box-shadow: none;
-                background-color: darken($color, 15%);
-                transition: background-color .25s;
-            }
-        
-            &:focus,
-            &:active {
-                color: $white;
-                border: none;
-                box-shadow: none;
-                background-color: lighten($color, 15%);
-            }
-        }
     }
 }
 
@@ -42,12 +21,6 @@
 .text-right { text-align: right; }
 
 .text-center { text-align: center; }
-
-.bold { font-weight: bold; }
-
-.underline { text-decoration: underline; }
-
-.italic { font-style: italic; }
 
 .uppercase { text-transform: uppercase; }
 
@@ -62,10 +35,6 @@
 .font-serif { font-family: $font-serif; }
 
 .font-mono { font-family: $font-mono; }
-
-.text-small { font-size: 80%; }
-
-.text-big { font-size: 120%; }
 
 // Border
 .border { border: 1px solid $black; }
@@ -108,6 +77,3 @@ ul, ol {
 
 // Shadow
 .shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
-
-// Filter
-.blur { filter: blur(); }
