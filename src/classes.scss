@@ -26,7 +26,7 @@
 
 @each $label, $color in $colors {
     .#{$label} {
-        color: $color;
+        color: $color !important;
     }
 }
 
@@ -62,7 +62,7 @@
 // Background
 @each $label, $color in $colors {
     .bg-#{$label} {
-        background-color: $color;
+        background-color: $color !important;
     }
 }
 
