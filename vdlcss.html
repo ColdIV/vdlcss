@@ -13,21 +13,73 @@
 <body>
     <div class="container pt-4">
         <div class="text-center">
-            <h1 class="mb-0"><a href="https://github.com/ColdIV/vdlcss" target="_blank">vdlcss</a></h1>
+            <h1 class="mb-0 blue">vdlcss</h1>
             <p>A minimal css framework.</p>
-            <a href="https://github.com/ColdIV/vdlcss/releases" target="_blank" class="button">Download</a>
+            <a href="https://github.com/ColdIV/vdlcss" target="_blank" class="button bg-gray">Source</a>
             <a href="demo.html" target="_blank" class="button">Demo</a>
         </div>
 
-        <div class="grid">
-            <div class="cell-12"><h2 class="mb-0">Getting started</h2></div>
-            <div class="cell-12 md:cell-6 shadow p-1">
-                To add <code>vdlcss</code> to your site, <a href="https://github.com/ColdIV/vdlcss/releases" target="_blank">download</a> it and include it in your <code>&lt;head&gt;</code>.<br>
-                Don't forget to add the meta tag to allow responsive styling.
-            </div>
-            <div class="cell-12 md:cell-6">
-                <pre class="h-100"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        <div class="grid column center">
+            <div class="cell-12 md:cell-11">
+                <div class="grid">
+                    <div class="cell-12 md:cell-6 shadow p-1">
+                        <h2 class="mt-0">Getting started</h2>
+                        <p>
+                            To add <code>vdlcss</code> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
+                            Don't forget to add the meta tag to allow responsive styling.
+                        </p>
+                        <a href="https://github.com/ColdIV/vdlcss/releases" target="_blank" class="button mb-0">Download</a>
+                    </div>
+                    <div class="cell-12 md:cell-6">
+                        <pre class="h-100"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link rel="stylesheet" type="text/css" href="vdlcss-min.css"&gt;</code></pre>
+                    </div>
+
+                    <div class="cell-12">
+                        <h2 class="mb-0">Features</h2>
+                    </div>
+
+                    <div class="cell-12 md:cell-6 xxl:cell-3 shadow p-1">
+                        <h3 class="mt-0">Classless Base</h3>
+                        <p>
+                            While there are many helpful classes, the <strong>base is classless</strong>!
+                        </p>
+                        <p>
+                            No need to add a "button" class to a <code>&lt;button&gt;</code>, it's clear what it is!
+                        </p>
+                    </div>
+                    <div class="cell-12 md:cell-6 xxl:cell-3 shadow p-1">
+                        <h3 class="mt-0">Grid</h3>
+                        <p>
+                            Similar to Bootstrap, there is a <strong>12-cell grid system</strong>.
+                        </p>
+                        <p>
+                            However, the grid system is based on css grids and the 12-cells are always relative to the current container.
+                        </p>
+                    </div>
+                    <div class="cell-12 md:cell-6 xxl:cell-3 shadow p-1">
+                        <h3 class="mt-0">Rows and Columns</h3>
+                        <p>
+                            <code>row</code> and <code>column</code> are flex-based and let you <strong>position your divs with ease</strong>!
+                        </p>
+                        <p>
+                            The class names describe what they do within the context. Which is why a single div within a <code>row bottom right</code> looks the same as a single div within a <code>column bottom right</code>.
+                        </p>
+                    </div>
+                    <div class="cell-12 md:cell-6 xxl:cell-3 shadow p-1">
+                        <h3 class="mt-0">Breakpoints</h3>
+                        <p>
+                            To use classes for a specific screen size, you can chose between <strong>6 different breakpoints</strong>, ranging from <code>xs</code> to <code>xxl</code>.
+                        </p>
+                        <p>
+                            Breakpoint specific classes can be applied by using the breakpoint as a prefix, for example: <code>md:pr-1</code> will add a padding on the right side for the breakpoints <code>md</code> and above.
+                        </p>
+                    </div>
+
+                    <div class="cell-12 row center mt-1">
+                        <a href="demo.html" target="_blank" class="button">Learn more</a>
+                    </div>
+                </div>
             </div>
         </div>
 
