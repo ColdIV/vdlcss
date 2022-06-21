@@ -6,15 +6,9 @@
     --green: #79c037;
     --blue: #3e7dc0;
     --yellow: #c0b73e;
-    --gray-light: #efefef;
     --gray: #575757;
     --black: #242424;
     --white: #f1f1f1;
-
-    --danger: #{'var(--red)'};
-    --warning: #{'var(--yellow)'};
-    --info: #{'var(--blue)'};
-    --success: #{'var(--green)'};
 
     --primary: #{'var(--blue)'};
     --primary-dark: #2b5786;
@@ -27,7 +21,6 @@ $red: #{'var(--red)'};
 $green: #{'var(--green)'};
 $blue: #{'var(--blue)'};
 $yellow: #{'var(--yellow)'};
-$gray-light: #{'var(--gray-light)'};
 $gray: #{'var(--gray)'};
 $black: #{'var(--black)'};
 $white: #{'var(--white)'};
@@ -41,11 +34,6 @@ $colors: (
     black: $black,
     white: $white
 );
-
-$danger: #{'var(--danger)'};
-$warning: #{'var(--warning)'};
-$info: #{'var(--info)'};
-$success: #{'var(--success)'};
 
 $primary: #{'var(--primary)'};
 $primary-dark: #{'var(--primary-dark)'};
@@ -83,14 +71,6 @@ $container-max-widths: (
     lg: 960px,
     xl: 1140px,
     xxl: 1320px
-);
-
-// States
-$states: (
-    info: $info,
-    warning: $warning,
-    danger: $danger,
-    success: $success
 );
 
 // Fonts

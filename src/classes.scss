@@ -1,20 +1,3 @@
-// Alerts
-[class*=" alert-"],
-[class^="alert-"] {
-    padding: .5rem;
-    width: 100%;
-    border-radius: 3px;
-    margin: .25rem 0;
-    text-shadow: 1px 1px 6px $black;
-}
-
-@each $state, $color in $states {
-    .alert-#{$state} {
-        background-color: $color;
-        color: $white;
-    }
-}
-
 // Text
 .text-left { text-align: left; }
 
@@ -48,8 +31,6 @@
 .border-left { border-left: 1px solid $black; }
 
 .rounded { border-radius: 4px; }
-
-.round { border-radius: 50%; }
 
 .unrounded { border-radius: 0; }
 
