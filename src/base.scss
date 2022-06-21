@@ -47,8 +47,8 @@ a.button {
     width: 100%;
     padding: .5rem 1rem;
     margin-bottom: 1rem;
-    border: 1px solid $gray-light;
-    background-color: $gray-light;
+    border: 1px solid $white;
+    background-color: $white;
     border-radius: 3px;
     outline: none;
 }
@@ -64,6 +64,7 @@ textarea {
 input[type="range"] {
     display: block;
     width: 100%;
+    border: 1px solid;
 }
 
 // Buttons
@@ -192,7 +193,12 @@ blockquote {
     margin: 0;
     border-left: 4px solid $primary;
     padding: .75rem;
-    background-color: $gray-light;
+    background-color: $white;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
 }
