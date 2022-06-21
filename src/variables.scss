@@ -1,53 +1,79 @@
+:root {
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    --red: #c54047;
+    --green: #79c037;
+    --blue: #3e7dc0;
+    --yellow: #c0b73e;
+    --gray: #575757;
+    --black: #242424;
+    --white: #f1f1f1;
+
+    --primary: #{'var(--blue)'};
+    --primary-dark: #2b5786;
+    --primary-light: #77a4d3;
+    --secondary: #{'var(--gray)'};
+}
+
 // Colors
-$red: #c54047;
-$green: #79c037;
-$blue: #3e7dc0;
-$gray: #575757;
-$black: #242424;
-$white: #f1f1f1;
+$red: #{'var(--red)'};
+$green: #{'var(--green)'};
+$blue: #{'var(--blue)'};
+$yellow: #{'var(--yellow)'};
+$gray: #{'var(--gray)'};
+$black: #{'var(--black)'};
+$white: #{'var(--white)'};
 
-$outer-space: #1F363D;
-$teal-blue: #40798C;
-$malibu: #6bdaff;
-$green-sheen: #70A9A1;
-$cambridge-blue: #9EC1A3;
-$tea-green: #CFE0C3;
+$colors: (
+    red: $red,
+    green: $green,
+    blue: $blue,
+    yellow: $yellow,
+    gray: $gray,
+    black: $black,
+    white: $white
+);
 
-$primary: $green-sheen;
-$secondary: $teal-blue;
-
-// Body / Default
-$body-bg: $outer-space;
-$body-text: $white;
-// Link
-$link-text: $tea-green;
-// Footer
-$footer-text: $body-text;
-// Section
-$section-text: $body-text;
-$section-headline: $cambridge-blue;
-$section-bg: darken($body-bg, 5%);
-// Border default
-$border-color: $primary;
-$border-size: 2px;
-// Outline
-$outline-color: $malibu;
-// Placeholder
-$placeholder-color: lighten($body-bg, 15%);
-// Code
-$code-text: $body-text;
-$code-bg: darken($body-bg, 10%);
-// Table
-$table-bg: lighten($body-bg, 5%);
-// Quote
-$quote-border-size: $border-size * 2;
-$quote-border-color: lighten($outer-space, 5%);
-$quote-caption-text: lighten($outer-space, 15%);
-$quote-font-size: 18px;
-
+$primary: #{'var(--primary)'};
+$primary-dark: #{'var(--primary-dark)'};
+$primary-light: #{'var(--primary-light)'};
+$secondary: #{'var(--secondary)'};
 
 // Breakpoints
-$sm-width: 0px;
-$md-width: 768px;
-$lg-width: 992px;
-$xl-width: 1200px;
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+@mixin addBreakpointPrefixes ($className) {
+    @each $label, $breakpoint in $breakpoints {
+        $tmpClass: $className;
+        @if $label != xs { $tmpClass: '#{$label}\\:#{$className}'; }
+    
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpClass} {
+                @content;
+            }
+        }
+    }
+}
+
+// Container max-widths
+$container-max-widths: (
+    xs: 100%,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+// Fonts
+$font-sans: #{'var(--font-sans)'};
+$font-serif: #{'var(--font-serif)'};
+$font-mono: #{'var(--font-mono)'};

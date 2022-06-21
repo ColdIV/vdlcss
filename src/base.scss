@@ -1,140 +1,100 @@
 html, body { padding: 0; margin: 0; min-height: 100vh; }
 html * { box-sizing: border-box; }
 
-// Styles if used without structure
-body.no-structure {
-    padding: 1rem;
-    & > main { padding-bottom: 1rem; }
-    input, select, textarea {
-        max-width: 500px;
-    }
-    input[type="submit"], button, a[role="button"] {
-        max-width: 250px;
-    }
-
-    fieldset {
-        input, button, input[type="submit"], select, textarea {
-            max-width: 100%;
-        }
-    }
-}
-
-// General styles
 body {
-    background-color: $body-bg;
-    color: $body-text;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
+    color: $black;
+}
+
+a {
     color: $primary;
-}
-
-h2, h3, h4, h5, h6 {
-    color: $body-text;
-}
-
-a:not([role="button"]) {
-    color: lighten($link-text, 10%);
-    background-color: transparent;
-
-    transition: color .25s, background-color .25s;
-    
-    &:visited {
-        color: darken($link-text, 5%);
-    }
+    transition: color .25s;
 
     &:hover {
-        color: $secondary;
-        background-color: $link-text;
-
-        transition: color .25s, background-color .25s;
+        color: $primary-light;
+        transition: color .25s;
     }
 }
 
 // Placeholders
-::-webkit-input-placeholder { color: $placeholder-color; }
+::-webkit-input-placeholder { color: $black; }
 :-moz-placeholder {
-    color: $placeholder-color;
+    color: $black;
     opacity: 1;
 }
 ::-moz-placeholder {
-    color: $placeholder-color;
+    color: $black;
     opacity: 1;
 }
-:-ms-input-placeholder { color: $placeholder-color; }
-::-ms-input-placeholder { color: $placeholder-color; }
-::placeholder { color: $placeholder-color; }
+:-ms-input-placeholder { color: $black; }
+::-ms-input-placeholder { color: $black; }
+::placeholder { color: $black; }
 
-input:not([type="checkbox"], [type="radio"]),
+// Input
+input:not([type="checkbox"], [type="radio"], [type="range"]),
 select,
 textarea,
 button,
-a[role="button"] {
+a.button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    
     display: block;
     width: 100%;
-    padding: 1rem;
+    padding: .5rem 1rem;
     margin-bottom: 1rem;
-    border: $border-size solid $border-color;
-    border-radius: 5px;
-    background-color: $border-color;
-    color: $body-bg;
+    border: 1px solid $white;
+    background-color: $white;
+    border-radius: 3px;
     outline: none;
+}
 
-    &:active,
+input:not([type="submit"]),
+select,
+textarea {
     &:focus {
-        border: $border-size solid lighten($outline-color, 15%);
-        box-shadow: 0 0 0 $border-size $outline-color;
+        border: 1px solid;
     }
 }
 
-input[type="submit"],
+input[type="range"] {
+    display: block;
+    width: 100%;
+    border: 1px solid;
+}
+
+// Buttons
 button,
-a[role="button"] {
-    color: $body-text;
+input[type="submit"],
+a.button {
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
     border: none;
     box-shadow: none;
+    color: $white;
+    background-color: $primary;
+    transition: background-color .25s;
 
-    &:active,
-    &:hover,
-    &:focus {
-        color: $body-text;
+    &:hover {
+        color: $white;
         border: none;
         box-shadow: none;
-    }
-}
-
-input[type="submit"] {
-    background-color: $teal-blue;
-    transition: background-color .25s;
-
-    &:hover {
-        background-color: darken($teal-blue, 15%);
+        background-color: $primary-dark;
         transition: background-color .25s;
     }
 
-    &:focus,
     &:active {
-        background-color: lighten($teal-blue, 15%);
-        transition: background-color .25s;
-    }
-}
-
-button,
-a[role="button"] {
-    text-decoration: none;
-    text-align: center;
-    background-color: $border-color;
-    transition: background-color .25s;
-
-    &:hover {
-        background-color: darken($border-color, 15%);
-        transition: background-color .25s;
-    }
-
-    &:focus,
-    &:active {
-        background-color: lighten($border-color, 15%);
+        color: $white;
+        border: none;
+        box-shadow: none;
+        background-color: $primary-light;
         transition: background-color .25s;
     }
 }
@@ -145,10 +105,10 @@ input[type="radio"] {
 }
 
 fieldset {
-    border: $border-size solid $border-color;
+    border: 2px solid $primary;
 
     legend {
-        color: $border-color;
+        color: $primary;
         padding: 0 .5rem;
         font-weight: bold;
     }
@@ -160,69 +120,55 @@ label + textarea {
     margin-top: 0.5rem;
 }
 
-section {
-    padding: 0.5rem 1rem 1rem;
-    color: $section-text;
-    background-color: $section-bg;
-
-    -webkit-box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px $section-bg, 2px 5px 16px 0px $section-bg, 5px 5px 15px 5px rgba(0,0,0,0);
-
-    h1, h2, h3, h4, h5, h6 {
-        color: $section-headline;
-    }
-
-    // Alternate Section Background
-    & + section:nth-of-type(odd) {
-        background-color: transparent;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-}
-
-
-code,
 pre {
-    background-color: $code-bg;
-    color: $code-text;
+    background-color: $black;
+    color: $white;
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
 }
 
 code {
-    padding: .05rem .5rem;
-    -webkit-box-shadow: inset -1px 3px 8px 5px $code-bg, 2px 5px 16px 0px $code-bg, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px $code-bg, 2px 5px 16px 0px $code-bg, 5px 5px 15px 5px rgba(0,0,0,0);
-    overflow: auto;
+    font-size: inherit;
+    color: $gray;
 }
 
 pre {
+    margin: 0;
+    border-radius: 3px;
     padding: 1rem;
     code {
+        border-radius: 3px;
+        overflow: auto;
         padding: 0;
         display: block;
         -webkit-box-shadow: none;
         box-shadow: none;
+        color: $white;
     }
-    -webkit-box-shadow: inset -1px 3px 8px 5px $code-bg, 2px 5px 16px 0px $code-bg, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px $code-bg, 2px 5px 16px 0px $code-bg, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 table {
     width: 100%;
     border-spacing: 0;
 
+    thead {
+        tr {
+            th {
+                border-bottom: 2px solid $primary;
+            }
+        }
+    }
+
     th, td {
         padding: 0.5rem 1rem;
-        font-size: 1rem;
         font-weight: normal;
-        border-bottom: $border-size solid $border-color;
         text-align: left;
         text-align: start;
     }
 
     tr:nth-of-type(even) {
-        background-color: $table-bg;
+        background-color: $primary;
+        color: $white;
     }
 }
 
@@ -239,13 +185,20 @@ blockquote {
         padding: 0;
     }
     figcaption {
+        font-size: smaller;
         margin-top: .75rem;
-        text-align: right;
-        margin-right: 2rem;
-        color: $quote-caption-text;
+        color: $gray;
     }
+
     margin: 0;
-    border-left: $quote-border-size solid $quote-border-color;
-    padding: 1.25rem 1rem 1.25rem 1.5rem;
-    font-size: $quote-font-size;
+    border-left: 4px solid $primary;
+    padding: .75rem;
+    background-color: $white;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
 }

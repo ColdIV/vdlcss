@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vdlcss - Demo</title>
+
+    <!-- vdlcss -->
+    <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
+    <!-- ------ -->
+</head>
+
+<body>
+    <div class="container pt-4">
+        <h1 class="mb-0 blue">vdlcss</h1>
+        <p>Demo website</p>
+        <a href="https://github.com/ColdIV/vdlcss" target="_blank" class="button">Source</a>
+        <a href="https://github.com/ColdIV/vdlcss/releases" target="_blank" class="button">Download</a>
+    </div>
+    <div class="container">
+        <h2>Contents</h2>
+        <ul>        
+            <li>
+                <a href="#1.0-classless-examples">1.0 Classless Examples</a>
+                <ul>
+                    <li><a href="#1.1-headlines">1.1 Headlines</a></li>
+                    <li><a href="#1.2-links">1.2 Links</a></li>
+                    <li><a href="#1.3-form">1.3 Form</a></li>
+                    <li><a href="#1.4-form-without-fieldset">1.4 Form without Fieldset</a></li>
+                    <li><a href="#1.5-codeblock-using-pre-code">1.5 Codeblock using pre > code</a></li>
+                    <li><a href="#1.6-inline-code-using-code">1.6 Inline Code using code</a></li>
+                    <li><a href="#1.7-table">1.7 Table</a></li>
+                    <li><a href="#1.8-a-quote">1.8 A quote</a></li>
+                    <li><a href="#1.9-image">1.9 Image</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#2.0-examples-with-class">2.0 Examples with class</a>
+                <ul>
+                    <li><a href="#2.1-colors">2.1 Colors</a></li>
+                    <li><a href="#2.2-text">2.2 Text</a></li>
+                    <li><a href="#2.3-border">2.3 Border</a></li>
+                    <li><a href="#2.4-unstyled-lists">2.4 Unstyled lists</a></li>
+                    <li><a href="#2.5-shadow">2.5 Shadow</a></li>
+                    <li><a href="#2.6-container">2.6 Container</a></li>
+                    <li><a href="#2.7-grid">2.7 Grid</a></li>
+                    <li><a href="#2.8-rows-and-columns">2.8 Rows and Columns</a></li>
+                    <li><a href="#2.9-positioning">2.9 Positioning</a></li>
+                    <li><a href="#2.10-display">2.10 Display</a></li>
+                    <li><a href="#2.11-scroll">2.11 Scroll</a></li>
+                    <li><a href="#2.12-padding-and-margin">2.12 Padding and Margin</a></li>
+                    <li><a href="#2.13-width-and-height">2.13 Width and Height</a></li>
+                    <li><a href="#2.14-viewport-prefixes">2.14 Viewport-Prefixes</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="mt-3 mb-2" id="1.0-classless-examples">1.0 Classless Examples</h2>
+
+        <h3 class="my-2" id="1.1-headlines">1.1 Headlines</h3>
+        <h1>Headline 1</h1>
+        <h2>Headline 2</h2>
+        <h3>Headline 3</h3>
+        <h4>Headline 4</h4>
+        <h5>Headline 5</h5>
+        <h6>Headline 6</h6>
+
+        <h3 class="my-2" id="1.2-links">1.2 Links</h3>
+        <a href="https://github.com/ColdIV" target="_blank" title="ColdIV on GitHub">Example Link</a>
+
+        <h3 class="my-2" id="1.3-form">1.3 Form</h3>
+        <form>
+            <fieldset>
+                <legend>Legend Example</legend>
+
+                <div>
+                    <label>Text Input Label</label>
+                    <input>
+                </div>
+                
+                <div>
+                    <label>Dropdown</label>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Radio Buttons</label>
+                    <ul class="unstyled mt-1">
+                        <li><label><input type="radio" name="example-radio"> Radio 1</label></li>
+                        <li><label><input type="radio" name="example-radio"> Radio 2</label></li>
+                        <li><label><input type="radio" name="example-radio"> Radio 3</label></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <label>Text area</label>
+                    <textarea></textarea>
+                </div>
+
+                <div>
+                    <label><input type="checkbox"> This is a checkbox.</label>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+
+            </fieldset>
+        </form>
+
+        <h3 class="my-2" id="1.4-form-without-fieldset">1.4 Form without fieldset</h3>
+        <form>
+            <input type="text" placeholder="Some input">
+            <input type="text" placeholder="Another input">
+            <input type="range">
+            <input type="submit" value="Submit">
+        </form>
+
+        <h3 class="my-2" id="1.5-codeblock-using-pre-code">1.5 Codeblock using pre > code</h3>
+        <pre><code>$ ls -gto
+total 32
+-rwxrwxrwx 1 22834 Jun 22 01:36 demo.html
+drwxrwxrwx 1  4096 Jun 22 01:34 img
+-rwxrwxrwx 1  1992 Jun 21 22:13 vdlcss.html
+-rwxrwxrwx 1  1082 Jun  7 00:28 LICENSE
+drwxrwxrwx 1  4096 Apr 11 01:53 src
+-rwxrwxrwx 1    63 Apr  4 01:44 build-css.bat
+drwxrwxrwx 1  4096 Feb 10 01:52 dist
+-rwxrwxrwx 1   384 Oct 23  2021 README.md
+-rwxrwxrwx 1    28 Oct 23  2021 requirements.txt</code></pre>
+
+        <h3 class="my-2" id="1.6-inline-code-using-code">1.6 Inline code using code</h3>
+        This is an example of inline code <code>[ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo *Click*</code> which you
+        should not run.
+
+        <h3 class="my-2" id="1.7-table">1.7 Table</h3>
+        <p><strong>Note:</strong> Tables are always responsive when wrapped within a <code>figure</code>-Tag.</p>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <h3 class="my-2" id="1.8-a-quote">1.8 A quote...</h3>
+        <figure>
+            <blockquote>
+                <p>"Quotes are always true, everybode knows that."</p>
+                <figcaption>Albert Einstein, <cite title="Not really though...">Ideas and Opinions</cite></figcaption>
+            </blockquote>
+        </figure>
+
+        <h3 class="my-2" id="1.9-image">1.9 Image</h3>
+        <p>Images are responsive by default.</p>
+        <img src="img/cat.jpg" alt="A black cat">
+
+
+        <h2 class="mt-3 mb-2" id="2.0-examples-with-class">2.0 Examples with Class</h2>
+
+        <h3 class="my-2" id="2.1-colors">2.1 Colors</h3>
+        <p>Colors can be changed and accessed via CSS-Variables.</p>
+        <p>To use colors as text color, just add the color name as class. To use it as background color, prefix it with <code>bg-</code>.</p>
+        <div class="bg-red white p-1">Red <code class="white ml-1">[class="bg-red white p-1"]</code></div>
+        <div class="bg-green white p-1">Green <code class="white ml-1">[class="bg-green white p-1"]</code></div>
+        <div class="bg-blue white p-1">Blue <code class="white ml-1">[class="bg-blue white p-1"]</code></div>
+        <div class="bg-yellow white p-1">Yellow <code class="white ml-1">[class="bg-yellow white p-1"]</code></div>
+        <div class="bg-white black p-1">White <code class="black ml-1">[class="bg-white black p-1"]</code></div>            
+        <div class="bg-gray white p-1">Gray <code class="white ml-1">[class="bg-gray white p-1"]</code></div>
+        <div class="bg-black white p-1">Black <code class="white ml-1">[class="bg-black white p-1"]</code></div>
+
+        <h3 class="my-2" id="2.2-text">2.2 Text</h3>
+        <div class="text-left">Text Left <code class="ml-1">[class="text-left"]</code></div>
+        <div class="text-right">Text Right <code class="ml-1">[class="text-right"]</code></div>
+        <div class="text-center">Text Center <code class="ml-1">[class="text-center"]</code></div>
+        <div><span class="uppercase">Text Uppercase</span> <code class="ml-1">[class="uppercase"]</code></div>
+
+        <p><strong>Note:</strong> Fonts can be changed via CSS-Variables.</p>
+        <div class="font-sans">Font Sans <code class="ml-1">[class="font-sans"]</code></div>
+        <div class="font-serif">Font Serif <code class="ml-1">[class="font-serif"]</code></div>
+        <div class="font-mono">Font Mono <code class="ml-1">[class="font-mono"]</code></div>
+
+        <br>
+        <a href="#" class="button">Link-Button <code class="ml-1 white">[class="button"]</code></a>
+        
+        <h3 class="my-2" id="2.3-border">2.3 Border</h3>
+        <div>
+            <div class="border p-1 my-1">Border <code class="ml-1">[class="border p-1 my-1"]</code></div>
+            <div class="border-top p-1 my-1">Border Top <code class="ml-1">[class="border-top p-1 my-1"]</code></div>
+            <div class="border-right p-1 my-1">Border Right <code class="ml-1">[class="border-right p-1 my-1"]</code></div>
+            <div class="border-bottom p-1 my-1">Border Bottom <code class="ml-1">[class="border-bottom p-1 my-1"]</code></div>
+            <div class="border-left p-1 my-1">Border Left <code class="ml-1">[class="border-left p-1 my-1"]</code></div>
+            <div class="border rounded p-1 my-1">Rounded Border <code class="ml-1">[class="border rounded p-1 my-1"]</code></div>
+            <div class="border unrounded p-1 my-1">Unrounded Border <code class="ml-1">[class="border unrounded p-1 my-1"]</code></div>
+            <div class="border border-red p-1 my-1">Colored Border (Supports all colors from above) <code class="ml-1">[class="border border-red p-1 my-1"]</code></div>
+        </div>
+
+        <h3 class="my-2" id="2.4-unstyled-lists">2.4 Unstyled Lists</h3>
+        <p>Adding the <code>unstyled</code> class removes the default styling of any list.</p>
+        <ul class="unstyled">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+        </ul>
+
+        <h3 class="my-2" id="2.5-shadow">2.5 Shadow</h3>
+        <div class="shadow p-1">
+            <code>[class="shadow p-1"]</code>
+        </div>
+
+        <h3 class="my-2" id="2.6-container">2.6 Container</h3>
+        <div class="container">
+            <p>Containers <code class="mx-1">[class="container"]</code> center and add a max-width to the div as well as some base padding on the left and right side. The max-width is based on the viewport. You can find the values <a href="https://github.com/ColdIV/vdlcss/blob/master/src/variables.scss" target="_blank" title="variables.scss on GitHub">here</a>.</p>
+        </div>
+
+        <h3 class="my-2" id="2.7-grid">2.7 Grid</h3>
+        <p>The grid system is a 12-column System. We can have a <code>grid</code> that wraps multiple cells. Cells can have a size from 1 to 12.</p>
+        <div class="grid">
+            <div class="cell-12 md:cell-4 border p-1">
+                <code>[class="cell-12 md:cell-4 border p-1"]</code>
+            </div>
+            <div class="cell-12 md:cell-8 border p-1">
+                <code>[class="cell-12 md:cell-8 border p-1"]</code>
+            </div>
+            <div class="cell-12 border p-1">
+                <code>[class="cell-12 border p-1"]</code>
+            </div>
+        </div>
+
+        <p><strong>Note:</strong> Grid cells support <a href="#2.14-viewport-prefixes">viewport-prefixes</a>.</p>
+
+        <h3 class="my-2" id="2.8-rows-and-columns">2.8 Rows and Columns</h3>
+        <p>Rows and columns are used to position elements using flex without too much typing.</p>
+        <p>Classes like left, right, top, bottom and center work for columns and rows.</p>
+        
+        <div class="row left my-1 border">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row left my-1 border"]</code></div>
+        </div>
+        <div class="row right my-1 border">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row right my-1 border"]</code></div>
+        </div>
+        <div class="row center-horizontal my-1 border">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row center-horizontal my-1 border"]</code></div>
+        </div>
+        <div class="row center-vertical my-1 border" style="height: 200px;">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row center-vertical my-1 border" style="height: 200px;"]</code></div>
+        </div>
+        <div class="row center my-1 border" style="height: 200px;">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row center my-1 border" style="height: 200px;"]</code></div>
+        </div>
+        <div class="row top my-1 border" style="height: 200px;">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row top my-1 border" style="height: 200px;"]</code></div>
+        </div>
+        <div class="row bottom my-1 border" style="height: 200px;">
+            <div class="bg-black white p-1"><code class="white">Wrapper has [class="row bottom my-1 border" style="height: 200px;"]</code></div>
+        </div>
+
+        <p>The difference between row and column is, within a row, content will be placed underneath each other. Whereas within a column, content will be placed side-to-side.</p>
+
+        <div class="row left my-1 border">
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Wrapper has [class="row left my-1 border"]</code>
+            </div>
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Elements have [class="bg-black white p-1 mx-05"]</code>
+            </div>
+        </div>
+        
+        <div class="column left my-1 border">
+            <div class="bg-black white p-1 my-05">
+                <code class="white">Wrapper has [class="column left my-1 border"]</code>
+            </div>
+            <div class="bg-black white p-1 my-05">
+                <code class="white">Elements have [class="bg-black white p-1 my-05"]</code>
+            </div>
+        </div>
+
+        <p>Content can easily be positioned with <code>between</code>, <code>evenly</code> and <code>around</code>. They work on both, row and column.</p>
+
+        <div class="row between my-1 border">
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Wrapper has [class="row between my-1 border"]</code>
+            </div>
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Elements have [class="bg-black white p-1 mx-05"]</code>
+            </div>
+        </div>
+        
+        <div class="row evenly my-1 border">
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Wrapper has [class="row evenly my-1 border"]</code>
+            </div>
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Elements have [class="bg-black white p-1 mx-05"]</code>
+            </div>
+        </div>
+        
+        <div class="row around my-1 border">
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Wrapper has [class="row around my-1 border"]</code>
+            </div>
+            <div class="bg-black white p-1 mx-05">
+                <code class="white">Elements have [class="bg-black white p-1 mx-05"]</code>
+            </div>
+        </div>
+
+        <p><strong>Note:</strong> Row and column support <a href="#2.14-viewport-prefixes">viewport-prefixes</a>.</p>
+        
+        <h3 class="my-2" id="2.9-positioning">2.9 Positioning</h3>
+
+        <div class="relative border p-1 my-1" style="height: 200px;">
+            <p>This container has a <code>relative</code> position.</p>
+            <p>You can use the classes <code>relative</code>, <code>absolute</code>, <code>sticky</code> and <code>fixed</code>. For positioning, there are also the classes <code>top-X</code>, <code>right-X</code>, <code>bottom-X</code> and <code>left-X</code>, where X ranges from 0 to 5.</p>
+            <div class="absolute right-0 bottom-1 border border-red">This container has an <code>absolute</code> position.</div>
+        </div>
+
+        <div class="relative shadow p-1">
+            <p>You can use the <code>stretch</code>-class to stretch a link over the whole container.</p>
+            <a href="#stretch-example" class="stretch" title="Stretched Link" target="_blank">Stretched Link <span class="font-mono">[class="stretch"]</span></a>
+        </div>
+
+        <h3 class="my-2" id="2.10-display">2.10 Display</h3>
+        <p>You can change the display type of a container with <code>block</code>, <code>inline-block</code> and <code>inline</code>.</p>
+
+        <h3 class="my-2" id="2.11-scroll">2.11 Scroll</h3>
+        <p>You can allow scrolling with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code> and <code>scroll-y-snap</code>. If you do not want any overflow, then <code>overflow-hidden</code> is what you are looking for.</p>
+        
+        <div class="scroll-x p-1">
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+            <div class="w-100 h-100 relative inline-block border p-1"><code>[class="scroll-snap p-1"]</code></div>
+        </div>
+
+        <h3 class="my-2" id="2.12-padding-and-margin">2.12 Padding and Margin</h3>
+        <p>There are many classes for padding and margin. They all follow the same pattern, a prefix followed by a value. The values always range from 0 to 5 with two extra values being 025 and 05.</p>
+        <p>The valid prefixes are: <code>p</code>, <code>m</code>, <code>pt</code>, <code>pr</code>, <code>pb</code>, <code>pl</code>, <code>mt</code>, <code>mr</code>, <code>mb</code>, <code>ml</code>, <code>px</code>, <code>py</code>, <code>mx</code>, <code>my</code>.</p>
+        <p>p always means padding, m always margin. t, r, b and l are short for top, right, bottom and left. And x and y are short for x- and y-axis.</p>
+        <p>Additionaly there are the classes ml-, mx- and mr-auto, which sets the margin for the given direction to auto.</p>
+        
+        <p><strong>Note:</strong> Padding and margin support <a href="#2.14-viewport-prefixes">viewport-prefixes</a>.</p>
+
+        <h3 class="my-2" id="2.13-width-and-height">2.13 Width and height</h3>
+        <p>You can set width and height to either auto or 100% with <code>w-auto</code> and <code>w-100</code>.</p>
+
+        <p><strong>Note:</strong> Width and height support <a href="#2.14-viewport-prefixes">viewport-prefixes</a>.</p>
+
+        <h3 class="my-2" id="2.14-viewport-prefixes">2.14 Viewport-Prefixes</h3>
+        <p>Viewport-prefixes can be used for some specific classes. If you add a viewport-prefix to them, they will only work from that viewport upwards.</p>
+
+        <div class="grid">
+            <div class="cell-12 md:cell-6 border p-1">
+                <p>A simple example is this grid, where the cells have the following classes</p>
+            </div>
+            <div class="cell-12 md:cell-6 border p-1">
+                <p><code>cell-12 md:cell-6 border</code></p>
+            </div>
+        </div>
+
+        <p>On small devices, the cells will fill the whole width. On bigger devices, they only fill half of it. You can find the breakpoints and the prefix names <a href="https://github.com/ColdIV/vdlcss/blob/master/src/variables.scss" target="_blank" title="variables.scss on GitHub">here</a>.</p>
+    </div>
+    
+    <footer class="py-2 text-center">
+        <div>by <strong>ColdIV</strong> - <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a></div>
+    </footer>
+</body>
+
+</html>

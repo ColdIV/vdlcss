@@ -1,0 +1,231 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    @each $label, $breakpoint in $breakpoints {
+        @media (min-width: #{$breakpoint}) {
+            max-width: map-get($container-max-widths, $label);
+        }
+    }
+}
+
+// Grid
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+@include addBreakpointPrefixes ('cell') {
+    grid-column: auto;
+}
+
+@each $label, $breakpoint in $breakpoints {
+    @for $i from 1 through 12 {
+        $tmpClass: cell-#{$i};
+        @if $label != xs { $tmpClass: '#{$label}\\:cell-#{$i}'; }
+
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpClass} {
+                grid-column: span $i;
+            }
+        }
+    }
+}
+
+// Flex
+@include addBreakpointPrefixes ('row') {
+    display: flex;
+    flex-flow: row;
+
+    &.left { justify-content: flex-start; }
+
+    &.right { justify-content: flex-end; }
+
+    &.top { align-items: flex-start; }
+
+    &.bottom { align-items: flex-end; }
+
+    &.center-horizontal { justify-content: center; }
+
+    &.center-vertical { align-items: center; }
+
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@include addBreakpointPrefixes ('column') {
+    display: flex;
+    flex-flow: column;
+
+    &.left { align-items: flex-start; }
+
+    &.right { align-items: flex-end; }
+
+    &.top { justify-content: flex-start; }
+
+    &.bottom { justify-content: flex-end; }
+
+    &.center-horizontal { align-items: center; }
+
+    &.center-vertical { justify-content: center; }
+    
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.around { justify-content: space-around; }
+.between { justify-content: space-between; }
+.evenly { justify-content: space-evenly; }
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+@for $i from 0 through 5 {
+    .top-#{$i} { top: #{$i}rem; }
+    .right-#{$i} { right: #{$i}rem; }
+    .bottom-#{$i} { bottom: #{$i}rem; }
+    .left-#{$i} { left: #{$i}rem; }
+}
+
+.stretch:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.scroll-x {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.scroll-x-snap {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-y-snap {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+// Padding / Margin
+$classes: (
+    p: padding,
+    m: margin,
+    pt: padding-top,
+    pr: padding-right,
+    pb: padding-bottom,
+    pl: padding-left,
+    mt: margin-top,
+    mr: margin-right,
+    mb: margin-bottom,
+    ml: margin-left,
+    px: padding,
+    py: padding,
+    mx: margin,
+    my: margin
+);
+
+@each $class, $rule in $classes {
+    @each $label, $breakpoint in $breakpoints {
+        $tmpSmallClass: '#{$class}-025';
+        .#{$tmpSmallClass} { 
+            @if $class == px or $class == mx {
+                #{$rule}-left: .25rem !important;
+                #{$rule}-right: .25rem !important;
+            } @else if $class == py or $class == my {
+                #{$rule}-top: .25rem !important;
+                #{$rule}-bottom: .25rem !important;
+            } @else {
+                #{$rule}: .25rem !important;
+            }
+        }
+        $tmpSmallClass: '#{$class}-05';
+        .#{$tmpSmallClass} {
+            @if $class == px or $class == mx {
+                #{$rule}-left: .5rem !important;
+                #{$rule}-right: .5rem !important;
+            } @else if $class == py or $class == my {
+                #{$rule}-top: .5rem !important;
+                #{$rule}-bottom: .5rem !important;
+            } @else {
+                #{$rule}: .5rem !important;
+            }
+        }
+
+        @for $i from 0 through 5 {
+            $tmpClass: '#{$class}-#{$i}';
+            @if $label != xs { $tmpClass: '#{$label}\\:#{$class}-#{$i}'; }
+
+            @media (min-width: #{$breakpoint}) {
+                .#{$tmpClass} {
+                    @if $class == px or $class == mx {
+                        #{$rule}-left: #{$i}rem !important;
+                        #{$rule}-right: #{$i}rem !important;
+                    } @else if $class == py or $class == my {
+                        #{$rule}-top: #{$i}rem !important;
+                        #{$rule}-bottom: #{$i}rem !important;
+                    } @else {
+                        #{$rule}: #{$i}rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+
+@include addBreakpointPrefixes ('w-auto') { width: auto; }
+@include addBreakpointPrefixes ('w-100') { width: 100%; }
+@include addBreakpointPrefixes ('h-auto') { height: auto; }
+@include addBreakpointPrefixes ('h-100') { height: 100%; }

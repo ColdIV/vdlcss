@@ -1,0 +1,60 @@
+// Text
+.text-left { text-align: left; }
+
+.text-right { text-align: right; }
+
+.text-center { text-align: center; }
+
+.uppercase { text-transform: uppercase; }
+
+@each $label, $color in $colors {
+    .#{$label} {
+        color: $color !important;
+    }
+}
+
+.font-sans { font-family: $font-sans; }
+
+.font-serif { font-family: $font-serif; }
+
+.font-mono { font-family: $font-mono; }
+
+// Border
+.border { border: 1px solid $black; }
+
+.border-top { border-top: 1px solid $black; }
+
+.border-right { border-right: 1px solid $black; }
+
+.border-bottom { border-bottom: 1px solid $black; }
+
+.border-left { border-left: 1px solid $black; }
+
+.rounded { border-radius: 4px; }
+
+.unrounded { border-radius: 0; }
+
+@each $label, $color in $colors {
+    .border-#{$label} {
+        border-color: $color;
+    }
+}
+
+// Background
+@each $label, $color in $colors {
+    .bg-#{$label} {
+        background-color: $color !important;
+    }
+}
+
+// Lists
+ul, ol {
+    &.unstyled {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// Shadow
+.shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
