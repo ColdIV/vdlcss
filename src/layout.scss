@@ -11,7 +11,7 @@
 }
 
 // Grid
-@include addBreakpointPrefixes ('grid') {
+.grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
@@ -129,6 +129,7 @@
 
 .scroll-x {
     overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .scroll-y {
@@ -137,6 +138,7 @@
 
 .scroll-x-snap {
     overflow-x: scroll;
+    white-space: nowrap;
     scroll-snap-type: x mandatory;
 }
 
@@ -169,8 +171,31 @@ $classes: (
 
 @each $class, $rule in $classes {
     @each $label, $breakpoint in $breakpoints {
-        $tmpSmallClass: '#{$class}-small';
-        .#{$tmpSmallClass} { #{$rule}: .25rem !important; }
+        $tmpSmallClass: '#{$class}-025';
+        .#{$tmpSmallClass} { 
+            @if $class == px or $class == mx {
+                #{$rule}-left: .25rem !important;
+                #{$rule}-right: .25rem !important;
+            } @else if $class == py or $class == my {
+                #{$rule}-top: .25rem !important;
+                #{$rule}-bottom: .25rem !important;
+            } @else {
+                #{$rule}: .25rem !important;
+            }
+        }
+        $tmpSmallClass: '#{$class}-05';
+        .#{$tmpSmallClass} {
+            @if $class == px or $class == mx {
+                #{$rule}-left: .5rem !important;
+                #{$rule}-right: .5rem !important;
+            } @else if $class == py or $class == my {
+                #{$rule}-top: .5rem !important;
+                #{$rule}-bottom: .5rem !important;
+            } @else {
+                #{$rule}: .5rem !important;
+            }
+        }
+
         @for $i from 0 through 5 {
             $tmpClass: '#{$class}-#{$i}';
             @if $label != xs { $tmpClass: '#{$label}\\:#{$class}-#{$i}'; }
