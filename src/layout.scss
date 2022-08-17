@@ -140,11 +140,17 @@
     overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
+    & > * {
+        scroll-snap-align: start;
+    }
 }
 
 .scroll-y-snap {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    & > * {
+        scroll-snap-align: start;
+    }
 }
 
 .overflow-hidden {
