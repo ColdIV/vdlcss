@@ -231,7 +231,7 @@ $classes: (
 .mr-auto { margin-right: auto; }
 
 
-@include addBreakpointPrefixes ('w-auto') { width: auto; }
 @include addBreakpointPrefixes ('w-100') { width: 100%; }
-@include addBreakpointPrefixes ('h-auto') { height: auto; }
 @include addBreakpointPrefixes ('h-100') { height: 100%; }
+@include addBreakpointPrefixes ('w-auto') { width: auto; }
+@include addBreakpointPrefixes ('h-auto') { height: auto; }
