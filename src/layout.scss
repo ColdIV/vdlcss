@@ -178,27 +178,33 @@ $classes: (
 @each $class, $rule in $classes {
     @each $label, $breakpoint in $breakpoints {
         $tmpSmallClass: '#{$class}-025';
-        .#{$tmpSmallClass} { 
-            @if $class == px or $class == mx {
-                #{$rule}-left: .25rem !important;
-                #{$rule}-right: .25rem !important;
-            } @else if $class == py or $class == my {
-                #{$rule}-top: .25rem !important;
-                #{$rule}-bottom: .25rem !important;
-            } @else {
-                #{$rule}: .25rem !important;
+        @if $label != xs { $tmpSmallClass: '#{$label}\\:#{$tmpSmallClass}'; }
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpSmallClass} { 
+                @if $class == px or $class == mx {
+                    #{$rule}-left: .25rem !important;
+                    #{$rule}-right: .25rem !important;
+                } @else if $class == py or $class == my {
+                    #{$rule}-top: .25rem !important;
+                    #{$rule}-bottom: .25rem !important;
+                } @else {
+                    #{$rule}: .25rem !important;
+                }
             }
         }
         $tmpSmallClass: '#{$class}-05';
-        .#{$tmpSmallClass} {
-            @if $class == px or $class == mx {
-                #{$rule}-left: .5rem !important;
-                #{$rule}-right: .5rem !important;
-            } @else if $class == py or $class == my {
-                #{$rule}-top: .5rem !important;
-                #{$rule}-bottom: .5rem !important;
-            } @else {
-                #{$rule}: .5rem !important;
+        @if $label != xs { $tmpSmallClass: '#{$label}\\:#{$tmpSmallClass}'; }
+        @media (min-width: #{$breakpoint}) {
+            .#{$tmpSmallClass} {
+                @if $class == px or $class == mx {
+                    #{$rule}-left: .5rem !important;
+                    #{$rule}-right: .5rem !important;
+                } @else if $class == py or $class == my {
+                    #{$rule}-top: .5rem !important;
+                    #{$rule}-bottom: .5rem !important;
+                } @else {
+                    #{$rule}: .5rem !important;
+                }
             }
         }
 
