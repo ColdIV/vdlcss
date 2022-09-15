@@ -12,3 +12,4 @@ echo  */ >> vdlcss-min.css
 
 type vdlcss-min.css.tmp >> vdlcss-min.css
 del vdlcss-min.css.tmp
+cd ..

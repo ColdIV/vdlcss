@@ -58,3 +58,28 @@ ul, ol {
 
 // Shadow
 .shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+// Custom Scrollbar
+.custom-scrollbar {
+    // Firefox
+    scrollbar-color: #{'var(--primary)'} #F5F5F5;
+    scrollbar-width: thin;
+
+    // Other
+    &::-webkit-scrollbar-track {
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar {
+        width: 9px;
+        height: 9px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #{'var(--primary)'};
+        &:hover {
+            background-color: #{'var(--primary-dark)'};
+        }
+    }
+}
