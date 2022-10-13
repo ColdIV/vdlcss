@@ -35,6 +35,10 @@ a {
 ::placeholder { color: $black; }
 
 // Input
+input {
+    accent-color: $primary;
+}
+
 input:not([type="checkbox"], [type="radio"], [type="range"]),
 select,
 textarea,
