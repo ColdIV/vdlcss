@@ -57,7 +57,9 @@ ul, ol {
 }
 
 // Shadow
+.hover-shadow:hover,
 .shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+.hover-shadow, .hover-shadow:hover { transition: box-shadow .25s; }
 
 // Custom Scrollbar
 .custom-scrollbar {
