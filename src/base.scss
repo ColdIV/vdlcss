@@ -206,3 +206,42 @@ img {
     height: auto;
     max-width: 100%;
 }
+
+dialog {
+    position: fixed;
+    top: 30%;
+    z-index: 999;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 1rem;
+
+    // Darken background; Replace with ::backdrop later
+    // See: https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop
+    background: transparent;
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &:after {
+        content: '';
+        background: white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    &:before {
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+}

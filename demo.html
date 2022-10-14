@@ -58,6 +58,7 @@
                     <li><a href="#2.12-padding-and-margin">2.12 Padding and Margin</a></li>
                     <li><a href="#2.13-width-and-height">2.13 Width and Height</a></li>
                     <li><a href="#2.14-viewport-prefixes">2.14 Viewport-Prefixes</a></li>
+                    <li><a href="#2.15-dialogs">2.15 Dialogs</a></li>
                 </ul>
             </li>
         </ul>
@@ -441,6 +442,35 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
         </div>
 
         <p>On small devices, the cells will fill the whole width. On bigger devices, they only fill half of it. You can find the breakpoints and the prefix names <a href="https://github.com/ColdIV/vdlcss/blob/master/src/variables.scss" target="_blank" title="variables.scss on GitHub">here</a>.</p>
+
+        <h3 class="my-2" id="2.15-dialogs">2.15 Dialogs</h3>
+        <p>Dialogs require javascript to be rendered. A simple example would look like this:</p>
+        <pre><code>&lt;dialog>
+    &lt;p>Example dialog&lt;/p>
+    &lt;form method="dialog">
+        &lt;button class="m-0">Close&lt;/button>
+    &lt;/form>
+&lt;/dialog>
+
+&lt;script>
+    function openExampleDialog() {
+        document.querySelector('#example-dialog').open = true;
+    }
+&lt;/script>
+
+&lt;button class="mt-1" onclick="openExampleDialog()">Show Dialog&lt;/button></code></pre>
+        <dialog id="example-dialog">
+            <p>Example dialog</p>
+            <form method="dialog">
+                <button class="m-0">Close</button>
+            </form>
+        </dialog>
+        <script>
+            function openExampleDialog() {
+                document.querySelector('#example-dialog').open = true;
+            }
+        </script>
+        <button class="mt-1" onclick="openExampleDialog()">Show Dialog</button>
     </div>
     
     <footer class="py-2 text-center">
