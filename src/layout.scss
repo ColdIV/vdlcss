@@ -97,19 +97,19 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
 .evenly { justify-content: space-evenly; }
 
 .relative {
-    position: relative;
+    position: relative !important;
 }
 
 .absolute {
-    position: absolute;
+    position: absolute !important;
 }
 
 .fixed {
-    position: fixed;
+    position: fixed !important;
 }
 
 .sticky {
-    position: sticky;
+    position: sticky !important;
 }
 
 @for $i from 0 through 5 {
@@ -129,15 +129,15 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
 }
 
 .block {
-    display: block;
+    display: block !important;
 }
 
 .inline-block {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .inline {
-    display: inline;
+    display: inline !important;
 }
 
 .scroll-x {
@@ -167,7 +167,7 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
 }
 
 .overflow-hidden {
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 // Padding / Margin
@@ -243,13 +243,13 @@ $classes: (
 }
 
 .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
-.ml-auto { margin-left: auto; }
-.mr-auto { margin-right: auto; }
+.ml-auto { margin-left: auto !important; }
+.mr-auto { margin-right: auto !important; }
 
-@include addBreakpointPrefixes ('w-100') { width: 100%; }
-@include addBreakpointPrefixes ('h-100') { height: 100%; }
-@include addBreakpointPrefixes ('w-auto') { width: auto; }
-@include addBreakpointPrefixes ('h-auto') { height: auto; }
+@include addBreakpointPrefixes ('w-100') { width: 100% !important; }
+@include addBreakpointPrefixes ('h-100') { height: 100% !important; }
+@include addBreakpointPrefixes ('w-auto') { width: auto !important; }
+@include addBreakpointPrefixes ('h-auto') { height: auto !important; }
