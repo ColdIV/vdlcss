@@ -232,7 +232,7 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
 
 &lt;script>
     function openExampleDialog() {
-        document.querySelector('#example-dialog').open = true;
+        document.querySelector('#example-dialog').showModal();
     }
 &lt;/script>
 
@@ -245,7 +245,7 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
         </dialog>
         <script>
             function openExampleDialog() {
-                document.querySelector('#example-dialog').open = true;
+                document.querySelector('#example-dialog').showModal();
             }
         </script>
         <button class="mt-1" onclick="openExampleDialog()">Show Dialog</button>
