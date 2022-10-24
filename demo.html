@@ -61,6 +61,7 @@
                     <li><a href="#2.12-padding-and-margin">2.12 Padding and Margin</a></li>
                     <li><a href="#2.13-width-and-height">2.13 Width and Height</a></li>
                     <li><a href="#2.14-viewport-prefixes">2.14 Viewport-Prefixes</a></li>
+                    <li><a href="#2.15-hover-effects">2.15 Hover Effects</a></li>
                 </ul>
             </li>
         </ul>
@@ -285,7 +286,8 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
             <div class="border-left p-1 my-1">Border Left <code class="ml-1">[class="border-left p-1 my-1"]</code></div>
             <div class="border rounded p-1 my-1">Rounded Border <code class="ml-1">[class="border rounded p-1 my-1"]</code></div>
             <div class="border unrounded p-1 my-1">Unrounded Border <code class="ml-1">[class="border unrounded p-1 my-1"]</code></div>
-            <div class="border border-red p-1 my-1">Colored Border (Supports all colors from above) <code class="ml-1">[class="border border-red p-1 my-1"]</code></div>
+            <div class="border border-red p-1 my-1">Colored Border (Supports all <a href="#2.1-colors">colors from above</a>) <code class="ml-1">[class="border border-red p-1 my-1"]</code></div>
+            <div class="hover-border p-1 my-1">Hover Border (Supports colored borders)<code class="ml-1">[class="hover-border p-1 my-1"]</code></div>
         </div>
 
         <h3 class="my-2" id="2.4-unstyled-lists">2.4 Unstyled Lists</h3>
@@ -472,6 +474,35 @@ drwxrwxrwx 1  4096 Feb 10 01:52 dist
         </div>
 
         <p>On small devices, the cells will fill the whole width. On bigger devices, they only fill half of it. You can find the breakpoints and the prefix names <a href="https://github.com/ColdIV/vdlcss/blob/master/src/variables.scss" target="_blank" title="variables.scss on GitHub">here</a>.</p>
+
+        <h3 class="my-2" id="2.15-hover-effects">2.15 Hover Effects</h3>
+        <p>There are several classes that add effects on hover.</p>
+        <ul>
+            <li><a href="#2.3-border">hover-border</a></li>
+            <li><a href="#2.4-unstyled-lists">hover-shadow</a></li>
+        </ul>
+        <div class="grid">
+            <div class="cell-12 md:cell-6">
+                <p>To add a zoom effect use <code>hover-zoom</code> on the parent container:</p>
+                <div class="grid">
+                    <div class="cell-12 md:cell-6">
+                        <div class="hover-zoom">
+                            <img src="img/cat2.jpg" alt="A cat showing the zoom effect">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-12 md:cell-6">
+                <p>With <code>hover-lift</code> you can lift elements up.</p>
+                <div class="grid">
+                    <div class="cell-12 md:cell-6">
+                        <div class="hover-lift">
+                            <img src="img/cat2.jpg" alt="A cat showing the zoom effect">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <a href="#to-top" class="button fixed right-3 bottom-3 m-0 d-flex center shadow" style="width: 40px; height: 40px; font-size: 18px;">↑</a>
