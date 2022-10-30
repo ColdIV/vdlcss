@@ -182,60 +182,45 @@ $classes: (
     mr: margin-right,
     mb: margin-bottom,
     ml: margin-left,
-    px: padding,
-    py: padding,
-    mx: margin,
-    my: margin
 );
+
+$values: .25, .5, 1, 2, 3, 4, 5;
 
 @each $class, $rule in $classes {
     @each $label, $breakpoint in $breakpoints {
-        $tmpSmallClass: '#{$class}-025';
-        @if $label != xs { $tmpSmallClass: '#{$label}\\:#{$tmpSmallClass}'; }
-        @media (min-width: #{$breakpoint}) {
-            .#{$tmpSmallClass} { 
-                @if $class == px or $class == mx {
-                    #{$rule}-left: .25rem !important;
-                    #{$rule}-right: .25rem !important;
-                } @else if $class == py or $class == my {
-                    #{$rule}-top: .25rem !important;
-                    #{$rule}-bottom: .25rem !important;
-                } @else {
-                    #{$rule}: .25rem !important;
-                }
+        @each $value in $values {
+            $vlabel: $value;
+            @if $vlabel == .25 {
+                $vlabel: '025';
+            } @else if $vlabel == .5 {
+                $vlabel: '05';
             }
-        }
-        $tmpSmallClass: '#{$class}-05';
-        @if $label != xs { $tmpSmallClass: '#{$label}\\:#{$tmpSmallClass}'; }
-        @media (min-width: #{$breakpoint}) {
-            .#{$tmpSmallClass} {
-                @if $class == px or $class == mx {
-                    #{$rule}-left: .5rem !important;
-                    #{$rule}-right: .5rem !important;
-                } @else if $class == py or $class == my {
-                    #{$rule}-top: .5rem !important;
-                    #{$rule}-bottom: .5rem !important;
-                } @else {
-                    #{$rule}: .5rem !important;
-                }
+            $tmpClass: '#{$class}-#{$vlabel}';
+            @if $label != xs {
+                $tmpClass: '#{$label}\\:#{$class}-#{$vlabel}';
             }
-        }
 
-        @for $i from 0 through 5 {
-            $tmpClass: '#{$class}-#{$i}';
-            @if $label != xs { $tmpClass: '#{$label}\\:#{$class}-#{$i}'; }
+            $extraClass: 'none';
+            @if $class == pl or $class == pr {
+                $extraClass: 'px';
+            } @else if $class == pt or $class == pb {
+                $extraClass: 'py';
+            } @else if $class == ml or $class == mr {
+                $extraClass: 'mx';
+            } @else if $class == mt or $class == mb {
+                $extraClass: 'my';
+            }
+            @if $extraClass != 'none' {
+                @if $label == xs {
+                    $tmpClass: '#{$tmpClass},.#{$extraClass}-#{$vlabel}';
+                } @else {
+                    $tmpClass: '#{$tmpClass},.#{$label}\\:#{$extraClass}-#{$vlabel}';
+                }
+            }
 
             @media (min-width: #{$breakpoint}) {
                 .#{$tmpClass} {
-                    @if $class == px or $class == mx {
-                        #{$rule}-left: #{$i}rem !important;
-                        #{$rule}-right: #{$i}rem !important;
-                    } @else if $class == py or $class == my {
-                        #{$rule}-top: #{$i}rem !important;
-                        #{$rule}-bottom: #{$i}rem !important;
-                    } @else {
-                        #{$rule}: #{$i}rem !important;
-                    }
+                    #{$rule}: #{$value}rem !important;
                 }
             }
         }
