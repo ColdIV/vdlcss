@@ -184,7 +184,7 @@ $classes: (
     ml: margin-left,
 );
 
-$values: .25, .5, 1, 2, 3, 4, 5;
+$values: .25, .5, 0, 1, 2, 3, 4, 5;
 
 @each $class, $rule in $classes {
     @each $label, $breakpoint in $breakpoints {
