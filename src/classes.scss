@@ -103,9 +103,9 @@ ul, ol {
 .hover-zoom {
     overflow: hidden;
     > * {
-        transition: transform .5s ease;
+        transition: transform .25s ease;
         &:hover {
-            transform: scale(1.5);
+            transform: scale(1.25);
         }
     }
 }
