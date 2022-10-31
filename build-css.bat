@@ -1,5 +1,4 @@
 @echo off
-set choice=%1
 
 echo vdlcss
 echo This script minifies the CSS and adds a comment at the beginning of the file.
@@ -10,7 +9,7 @@ echo .
 python -m scss < src/styles.scss -o dist/vdlcss-min.css -I src/
 
 ::We don't make an API call for development
-if NOT %choice% == tag goto :end
+if NOT "%~1" == "tag" goto :end
 
 ::Properly minify CSS
 python minify-css.py
@@ -19,8 +18,6 @@ python minify-css.py
 FOR /F "tokens=*" %%g IN ('git describe --tags --match "v*" --abbrev^=0') do (SET current_tag=%%g)
 echo Current tag: %current_tag%
 set /p new_tag= "New tag: "
-echo Creating tag: %new_tag%
-git tag %new_tag%
 
 ::Add comment on top of minified CSS
 cd dist/
@@ -38,9 +35,16 @@ type vdlcss-min.css.tmp >> vdlcss-min.css
 del vdlcss-min.css.tmp
 cd ..
 
-::Add changes and show git status plus a reminder to commit and push.
+::Committing changes
+set /p changes= "What has changed: "
+echo Committing changes:
 git add .
-git status
-echo Remember to commit and push your changes as well as the tag!
+git commit -m "%changes%"
+echo Creating tag: %new_tag%
+git tag %new_tag%
+git push
+git push --tags
+
 echo The new version is: %new_tag%
+echo All changes have been committed and pushed.
 :end
