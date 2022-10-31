@@ -22,8 +22,8 @@ Here you can find a demo and some instructions: [cldv.org/vdlcss/](http://www.cl
 - Install requirements `pip install -r requirements.txt`
 
 #### Build CSS
-- Run `build-css.bat`
-- Or run `build-css.bat tag` to add a new tag to be released
+- Run `build-css.bat` or `build-css.bat css` to minify properly.
+- You can run `build-css.bat tag` to add a new tag to be released.
 
 ## License
 [MIT](https://github.com/ColdIV/vdlcss/blob/master/LICENSE)
