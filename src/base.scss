@@ -80,7 +80,7 @@ a.button {
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    border: none;
+    border: 1px solid $primary;
     box-shadow: none;
     color: $white;
     background-color: $primary;
@@ -88,7 +88,7 @@ a.button {
 
     &:hover {
         color: $white;
-        border: none;
+        border: 1px solid $primary-dark;
         box-shadow: none;
         background-color: $primary-dark;
         transition: background-color .25s;
@@ -96,10 +96,24 @@ a.button {
 
     &:active {
         color: $white;
-        border: none;
+        border: 1px solid $primary-light;
         box-shadow: none;
         background-color: $primary-light;
         transition: background-color .25s;
+    }
+
+    &.outline {
+        background-color: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+
+        &:active,
+        &:hover {
+            border: 1px solid $primary;
+            color: $white;
+            background-color: $primary;
+            transition: border .25s, color .25s, background-color .25s;
+        }
     }
 }
 
