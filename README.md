@@ -1,5 +1,5 @@
 # vdlcss
-This is supposed to compile to a small base CSS file which can be used for small website projects without having to touch the CSS too much.
+A small css file which can be used for small website projects without having to touch the styles too much.
 
 # Usage
 Just include `vdlcss-min.css` in your HTML, and you are good to go!
