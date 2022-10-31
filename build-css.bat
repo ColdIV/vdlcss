@@ -27,7 +27,7 @@ echo /* >> vdlcss-min.css
 echo  * vdlcss >> vdlcss-min.css
 echo  * Version: %new_tag% >> vdlcss-min.css
 echo  * License: MIT >> vdlcss-min.css
-echo  * Source: http://www.cldv.org/vdlcss/ >> vdlcss-min.css
+echo  * Source: https://www.cldv.org/vdlcss/ >> vdlcss-min.css
 echo  * by ColdIV >> vdlcss-min.css
 echo  */ >> vdlcss-min.css
 
