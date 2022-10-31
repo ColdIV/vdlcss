@@ -3,13 +3,14 @@
 echo vdlcss
 echo This script minifies the CSS and adds a comment at the beginning of the file.
 echo To publish a new version, please pass the `tag` parameter to this script. E.g. `build-css.bat tag`
-echo .
+echo If you just want to minify properly, use `css` as parameter.
+echo.
 
 ::Merges all SCSS files to one, not very optimal when it comes to minimising.
 python -m scss < src/styles.scss -o dist/vdlcss-min.css -I src/
 
 ::We don't make an API call for development
-if NOT "%~1" == "tag" goto :end
+if "%~1" == "" goto :end
 
 ::Properly minify CSS
 python minify-css.py
@@ -17,7 +18,13 @@ python minify-css.py
 ::Get current tag and store in variable
 FOR /F "tokens=*" %%g IN ('git describe --tags --match "v*" --abbrev^=0') do (SET current_tag=%%g)
 echo Current tag: %current_tag%
+::Skip git-related lines when called with `css` as argument
+if "%~1" == "css" goto :skipnewtag
 set /p new_tag= "New tag: "
+goto :skipoldtag
+:skipnewtag
+set new_tag=%current_tag%
+:skipoldtag
 
 ::Add comment on top of minified CSS
 cd dist/
@@ -35,6 +42,8 @@ type vdlcss-min.css.tmp >> vdlcss-min.css
 del vdlcss-min.css.tmp
 cd ..
 
+::Skip git-related lines when called with `css` as argument
+if "%~1" == "css" goto :end
 ::Committing changes
 set /p changes= "What has changed: "
 echo Committing changes:

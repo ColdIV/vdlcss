@@ -4,8 +4,12 @@
     padding-left: 15px;
     padding-right: 15px;
     @each $label, $breakpoint in $breakpoints {
-        @media (min-width: #{$breakpoint}) {
+        @if $label == xs {
             max-width: map-get($container-max-widths, $label);
+        } @else {
+            @media (min-width: #{$breakpoint}) {
+                max-width: map-get($container-max-widths, $label);
+            }
         }
     }
 }
@@ -28,9 +32,14 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
     // cell-* classes
     @for $i from 1 through 12 {
         $tmpClass: cell-#{$i};
-        @if $label != xs { $tmpClass: '#{$label}\\:cell-#{$i}'; }
-
-        @media (min-width: #{$breakpoint}) {
+        @if $label != xs {
+            $tmpClass: '#{$label}\\:cell-#{$i}';
+            @media (min-width: #{$breakpoint}) {
+                .#{$tmpClass} {
+                    grid-column: span $i;
+                }
+            }
+        } @else {
             .#{$tmpClass} {
                 grid-column: span $i;
             }
@@ -41,9 +50,14 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
     @for $i from 1 through 13 {
         @each $className, $classRule in $gridClasses {
             $tmpClass: '#{$className}-#{$i}';
-            @if $label != xs { $tmpClass: '#{$label}\\:#{$className}-#{$i}'; }
-
-            @media (min-width: #{$breakpoint}) {
+            @if $label != xs {
+                $tmpClass: '#{$label}\\:#{$className}-#{$i}';
+                @media (min-width: #{$breakpoint}) {
+                    .#{$tmpClass} {
+                        #{$classRule}: $i;
+                    }
+                }
+            } @else {
                 .#{$tmpClass} {
                     #{$classRule}: $i;
                 }
@@ -218,9 +232,15 @@ $values: .25, .5, 0, 1, 2, 3, 4, 5;
                 }
             }
 
-            @media (min-width: #{$breakpoint}) {
+            @if $label == xs {
                 .#{$tmpClass} {
                     #{$rule}: #{$value}rem !important;
+                }
+            } @else {
+                @media (min-width: #{$breakpoint}) {
+                    .#{$tmpClass} {
+                        #{$rule}: #{$value}rem !important;
+                    }
                 }
             }
         }
