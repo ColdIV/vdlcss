@@ -23,3 +23,4 @@ Here you can find a demo and some instructions: [cldv.org/vdlcss/](http://www.cl
 
 ### Build CSS
 - Run `build-css.bat`
+- Or run `build-css.bat tag` to add a new tag to be released
