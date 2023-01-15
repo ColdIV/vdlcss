@@ -10,7 +10,7 @@ To support responsive styles, you should include the following line as well:
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Here you can find a demo and some instructions: [cldv.org/vdlcss/](http://www.cldv.org/vdlcss/)
+Here you can find a demo and some instructions: [vdlcss.cldv.org](https://vdlcss.cldv.org/)
 
 ## Build
 ### Requirements
