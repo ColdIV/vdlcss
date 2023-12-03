@@ -56,23 +56,12 @@
                     <a href="/dist/vdlcss-min.css" class="button mb-0" target="_blank" download>Download</a>
                 </section>
 
-                <section class="hover-border border-white md:p-1 rounded">
-                    <h2 id="recommendation" class="mt-1 md:mt-0"><a href="#recommendation" class="no-decoration" aria-label="Anchor">#</a> Recommendation</h2>
-                    <figure class="black mt-1">
-                        <blockquote>
-                            <p>"vdlcss was made for small projects, I wouldn't necessarily recommend this for bigger projects."</p>
-                            <figcaption>ColdIV, 2023</figcaption>
-                        </blockquote>
-                    </figure>
-                </section>
-
                 <section>
                     <h2 id="features" class="mt-1 md:mt-0 md:px-1 md:pt-1"><a href="#features" class="no-decoration" aria-label="Anchor">#</a> Features</h2>
                     <section class="hover-border border-blue md:p-1 rounded">
-                        <h3 id="table-of-contents" class="mt-1 md:mt-0"><a href="#table-of-contents" class="no-decoration" aria-label="Anchor">#</a> Table of contents</h3>
+                        <h3 id="list-of-features" class="mt-1 md:mt-0"><a href="#list-of-features" class="no-decoration" aria-label="Anchor">#</a> List of features</h3>
                         <ul>
                             <li><a href="#viewports">Viewports</a></li>
-                            <li><a href="#dialogs">Dialogs</a></li>
                             <li><a href="#colors">Colors</a></li>
                             <li><a href="#text">Text</a></li>
                             <li><a href="#border">Border</a></li>
@@ -85,6 +74,9 @@
                             <li><a href="#display">Display</a></li>
                             <li><a href="#scroll-and-scrollbar">Scroll and Scrollbar</a></li>
                             <li><a href="#padding-and-margin">Padding and Margin</a></li>
+                            <li><a href="#width-and-height">Width and height</a></li>
+                            <li><a href="#hover-effects">Hover effects</a></li>
+                            <li><a href="#dialogs">Dialogs</a></li>
                             <li><a href="#css-variables">CSS variables</a></li>
                         </ul>
                     </section>
@@ -122,62 +114,6 @@
                                 </tbody>
                             </table>
                         </figure>
-                    </section>
-
-                    <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="Dialogs" class="mt-1 md:mt-0"><a href="#Dialogs" class="no-decoration" aria-label="Anchor">#</a> Dialogs</h3>
-                        <div class="grid">
-                            <div class="cell-12 md:cell-6">
-                                <p>Dialogs are used to display information to the user. <strong>vdlcss</strong> only adds basic styles. You will still need to add a small script to implement it.</p>
-                                <dialog id="example-dialog">
-                                    <h3>Example dialog</h3>
-                                    <form method="dialog">
-                                        <button class="m-0">Close</button>
-                                    </form>
-                                </dialog>
-                                
-                                <script>
-                                function openExampleDialog() {
-                                    document.querySelector('#example-dialog').showModal();
-                                }
-                                </script>
-                                
-                                <button
-                                    class="mt-1 outline"
-                                    style="--button-background-color: var(--white);
-                                        --button-border-color: var(--white);
-                                        --button-hover-background: var(--white);
-                                        --button-hover-color: var(--black);"
-                                    onclick="openExampleDialog()">
-                                    Show Dialog
-                                </button>
-                            </div>
-                            <div class="cell-12 md:cell-6">
-                                <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;dialog id="example-dialog"&gt;
-    &lt;h3&gt;Example dialog&lt;/h3&gt;
-    &lt;form method="dialog"&gt;
-        &lt;button class="m-0"&gt;Close&lt;/button&gt;
-    &lt;/form&gt;
-&lt;/dialog&gt;
-
-&lt;script&gt;
-function openExampleDialog() {
-    document.querySelector('#example-dialog').showModal();
-}
-&lt;/script&gt;
-
-&lt;button
-    class="mt-1 outline"
-    style="--button-background-color: var(--white);
-           --button-border-color: var(--white);
-           --button-hover-background: var(--white);
-           --button-hover-color: var(--black);"
-    onclick="openExampleDialog()">
-    Show Dialog
-&lt;/button&gt;</code></pre>
-                            </div>
-                            
-                        </div>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
@@ -630,9 +566,11 @@ function openExampleDialog() {
                                 </div>
                             </div>
                         </section>
+
+                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> Some classes support the <a class="white" href="#viewports">viewport</a> prefixes: <code class="white">row</code>, <code class="white">column</code>, <code class="white">cell-X</code>, <code class="white">justify-X</code> and <code class="white">align-X</code>.</p>
                     </section>
 
-                    <section class="hover-border border-white md:p-1">
+                    <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="positioning" class="mt-1 md:mt-0"><a href="#positioning" class="no-decoration" aria-label="Anchor">#</a> Positioning</h3>
                         <p>For positioning the following classes are available: <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>. You can position an absolute or fixed element within a relative container with <code>top-X</code>, <code>bottom-X</code>, <code>left-X</code>, <code>right-X</code>. <code>X</code> ranges from <code>0</code> to <code>5</code></p>
                         
@@ -642,12 +580,12 @@ function openExampleDialog() {
                         </div>
                     </section>
 
-                    <section class="hover-border border-white md:p-1">
+                    <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="display" class="mt-1 md:mt-0"><a href="#display" class="no-decoration" aria-label="Anchor">#</a> Display</h3>
                         <p>You can change the display type of an element with <code>block</code>, <code>inline-block</code> and <code>inline</code>.</p>
                     </section>
 
-                    <section class="hover-border border-white md:p-1">
+                    <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
                         <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
                         <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
@@ -662,7 +600,7 @@ function openExampleDialog() {
                         </div>
                     </section>
 
-                    <section class="hover-border border-white md:p-1">
+                    <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="padding-and-margin" class="mt-1 md:mt-0"><a href="#padding-and-margin" class="no-decoration" aria-label="Anchor">#</a> Padding and margin</h3>
                         <p>There are quite a few classes for padding and margin. They all follow the same pattern, a prefix followed by a value.</p>
                         <p>The values always range from <code>0</code> to <code>5</code>, with two extra values being <code>025</code> and <code>05</code>.</p>
@@ -697,6 +635,90 @@ function openExampleDialog() {
                             <div class="p-1 bg-white black rounded mx-auto text-center" style="max-width: 150px;">mx-auto</div>
                         </div>
                         <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes, except for margin auto.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="width-and-height" class="mt-1 md:mt-0"><a href="#width-and-height" class="no-decoration" aria-label="Anchor">#</a> Width and height</h3>
+                        <p>You can set width and height with the <code>w-100</code>, <code>h-100</code>, <code>w-auto</code> and <code>h-auto</code> classes.</p>
+                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="hover-effects" class="mt-1 md:mt-0"><a href="#hover-effects" class="no-decoration" aria-label="Anchor">#</a> Hover effects</h3>
+                        <p>There are a few options to add effects when hovering over an element.</p>
+                        <ul>
+                            <li><a href="#border">hover-border</a></li>
+                            <li><a href="#shadow">hover-shadow</a></li>
+                        </ul>
+                        <p>You can also add small animations by adding <code>hover-zoom</code> or <code>hover-lift</code> to the wrapper:</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6 rounded overflow-hidden">
+                                <div class="hover-zoom">
+                                    <div class="p-1 rounded black bg-white text-center">hover-zoom</div>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <div class="hover-lift">
+                                    <div class="p-1 rounded black bg-white text-center">hover-lift</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="dialogs" class="mt-1 md:mt-0"><a href="#dialogs" class="no-decoration" aria-label="Anchor">#</a> Dialogs</h3>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6">
+                                <p>Dialogs are used to display information to the user. <strong>vdlcss</strong> only adds basic styles. You will still need to add a small script to implement it.</p>
+                                <dialog id="example-dialog">
+                                    <h3>Example dialog</h3>
+                                    <form method="dialog">
+                                        <button class="m-0">Close</button>
+                                    </form>
+                                </dialog>
+                                
+                                <script>
+                                function openExampleDialog() {
+                                    document.querySelector('#example-dialog').showModal();
+                                }
+                                </script>
+                                
+                                <button
+                                    class="mt-1 outline"
+                                    style="--button-background-color: var(--white);
+                                        --button-border-color: var(--white);
+                                        --button-hover-background: var(--white);
+                                        --button-hover-color: var(--black);"
+                                    onclick="openExampleDialog()">
+                                    Show Dialog
+                                </button>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;dialog id="example-dialog"&gt;
+    &lt;h3&gt;Example dialog&lt;/h3&gt;
+    &lt;form method="dialog"&gt;
+        &lt;button class="m-0"&gt;Close&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/dialog&gt;
+
+&lt;script&gt;
+function openExampleDialog() {
+    document.querySelector('#example-dialog').showModal();
+}
+&lt;/script&gt;
+
+&lt;button
+    class="mt-1 outline"
+    style="--button-background-color: var(--white);
+           --button-border-color: var(--white);
+           --button-hover-background: var(--white);
+           --button-hover-color: var(--black);"
+    onclick="openExampleDialog()">
+    Show Dialog
+&lt;/button&gt;</code></pre>
+                            </div>
+                            
+                        </div>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
