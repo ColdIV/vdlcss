@@ -1,52 +1,88 @@
 // Text
-.text-left { text-align: left; }
+.text-left {
+    text-align: left;
+}
 
-.text-right { text-align: right; }
+.text-right {
+    text-align: right;
+}
 
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
 
-.uppercase { text-transform: uppercase; }
+.uppercase {
+    text-transform: uppercase;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
 
 @each $label, $color in $colors {
-    .#{$label} {
+    .#{"" + $label} {
         color: $color !important;
     }
 }
 
-.font-sans { font-family: $font-sans; }
+.font-sans {
+    font-family: $font-sans;
+}
 
-.font-serif { font-family: $font-serif; }
+.font-serif {
+    font-family: $font-serif;
+}
 
-.font-mono { font-family: $font-mono; }
+.font-mono {
+    font-family: $font-mono;
+}
 
 // Border
-.border { border: 1px solid $black; }
+.border {
+    border: 1px solid $black;
+}
 
-.border-top { border-top: 1px solid $black; }
+.border-top {
+    border-top: 1px solid $black;
+}
 
-.border-right { border-right: 1px solid $black; }
+.border-right {
+    border-right: 1px solid $black;
+}
 
-.border-bottom { border-bottom: 1px solid $black; }
+.border-bottom {
+    border-bottom: 1px solid $black;
+}
 
-.border-left { border-left: 1px solid $black; }
+.border-left {
+    border-left: 1px solid $black;
+}
 
-.rounded { border-radius: 4px; }
+.rounded {
+    border-radius: 4px;
+}
 
-.unrounded { border-radius: 0; }
+.unrounded {
+    border-radius: 0;
+}
 
-.hover-border {
-    border: 1px solid transparent;
-    transition: border .5s ease;
-    &:hover {
-        border: 1px solid $black;
+@media (min-width: map-get($breakpoints, md)) {
+    .hover-border {
+        border: 1px solid transparent;
+        transition: border .5s ease;
+
+        &:hover {
+            border: 1px solid $black;
+        }
     }
 }
 
 @each $label, $color in $colors {
-    .border-#{$label} {
+    .border-#{"" + $label} {
         &:not(.hover-border) {
             border-color: $color;
         }
+
         &.hover-border:hover {
             border-color: $color;
         }
@@ -55,13 +91,14 @@
 
 // Background
 @each $label, $color in $colors {
-    .bg-#{$label} {
+    .bg-#{"" + $label} {
         background-color: $color !important;
     }
 }
 
 // Lists
-ul, ol {
+ul,
+ol {
     &.unstyled {
         list-style: none;
         margin: 0;
@@ -70,9 +107,20 @@ ul, ol {
 }
 
 // Shadow
-.hover-shadow:hover,
-.shadow { box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important; }
-.hover-shadow, .hover-shadow:hover { transition: box-shadow .25s; }
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+
+@media (min-width: map-get($breakpoints, md)) {
+    .hover-shadow:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    }
+}
+
+.hover-shadow,
+.hover-shadow:hover {
+    transition: box-shadow .25s;
+}
 
 // Custom Scrollbar
 .custom-scrollbar {
@@ -93,6 +141,7 @@ ul, ol {
 
     &::-webkit-scrollbar-thumb {
         background-color: #{'var(--primary)'};
+
         &:hover {
             background-color: #{'var(--primary-dark)'};
         }
@@ -102,8 +151,10 @@ ul, ol {
 // Additional Hover Effects
 .hover-zoom {
     overflow: hidden;
-    > * {
+
+    >* {
         transition: transform .25s ease;
+
         &:hover {
             transform: scale(1.25);
         }
@@ -112,6 +163,7 @@ ul, ol {
 
 .hover-lift {
     transition: transform .5s ease;
+
     &:hover {
         transform: translateY(-10px);
     }

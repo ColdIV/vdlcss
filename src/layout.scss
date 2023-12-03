@@ -3,10 +3,13 @@
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+
     @each $label, $breakpoint in $breakpoints {
-        @if $label == xs {
+        @if $label ==sm {
             max-width: map-get($container-max-widths, $label);
-        } @else {
+        }
+
+        @else {
             @media (min-width: #{$breakpoint}) {
                 max-width: map-get($container-max-widths, $label);
             }
@@ -27,19 +30,30 @@
     grid-column: auto;
 }
 
-$gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column-start": "grid-column-start", "column-end": "grid-column-end");
+$gridClasses: (
+    "row-start": "grid-row-start",
+    "row-end": "grid-row-end",
+    "column-start": "grid-column-start",
+    "column-end": "grid-column-end"
+);
+
 @each $label, $breakpoint in $breakpoints {
+
     // cell-* classes
     @for $i from 1 through 12 {
         $tmpClass: cell-#{$i};
-        @if $label != xs {
+
+        @if $label !=sm {
             $tmpClass: '#{$label}\\:cell-#{$i}';
+
             @media (min-width: #{$breakpoint}) {
                 .#{$tmpClass} {
                     grid-column: span $i;
                 }
             }
-        } @else {
+        }
+
+        @else {
             .#{$tmpClass} {
                 grid-column: span $i;
             }
@@ -50,14 +64,18 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
     @for $i from 1 through 13 {
         @each $className, $classRule in $gridClasses {
             $tmpClass: '#{$className}-#{$i}';
-            @if $label != xs {
+
+            @if $label !=sm {
                 $tmpClass: '#{$label}\\:#{$className}-#{$i}';
+
                 @media (min-width: #{$breakpoint}) {
                     .#{$tmpClass} {
                         #{$classRule}: $i;
                     }
                 }
-            } @else {
+            }
+
+            @else {
                 .#{$tmpClass} {
                     #{$classRule}: $i;
                 }
@@ -72,43 +90,51 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
     flex-flow: row;
 }
 
-@include addBreakpointPrefixes ('row.left') { justify-content: flex-start; }
+@include addBreakpointPrefixes ('justify-left') {
+    justify-content: flex-start;
+}
 
-@include addBreakpointPrefixes ('row.right') { justify-content: flex-end; }
+@include addBreakpointPrefixes ('justify-right') {
+    justify-content: flex-end;
+}
 
-@include addBreakpointPrefixes ('row.top') { align-items: flex-start; }
+@include addBreakpointPrefixes ('align-top') {
+    align-items: flex-start;
+}
 
-@include addBreakpointPrefixes ('row.bottom') { align-items: flex-end; }
+@include addBreakpointPrefixes ('align-bottom') {
+    align-items: flex-end;
+}
 
-@include addBreakpointPrefixes ('row.center-horizontal') { justify-content: center; }
+@include addBreakpointPrefixes ('justify-center') {
+    justify-content: center;
+}
 
-@include addBreakpointPrefixes ('row.center-vertical') { align-items: center; }
+@include addBreakpointPrefixes ('align-center') {
+    align-items: center;
+}
 
 @include addBreakpointPrefixes ('column') {
     display: flex;
     flex-flow: column;
 }
 
-@include addBreakpointPrefixes ('column.left') { align-items: flex-start; }
-
-@include addBreakpointPrefixes ('column.right') { align-items: flex-end; }
-
-@include addBreakpointPrefixes ('column.top') { justify-content: flex-start; }
-
-@include addBreakpointPrefixes ('column.bottom') { justify-content: flex-end; }
-
-@include addBreakpointPrefixes ('column.center-horizontal') { align-items: center; }
-
-@include addBreakpointPrefixes ('column.center-vertical') { justify-content: center; }
-
 .center {
     align-items: center;
     justify-content: center;
 }
 
-.around { justify-content: space-around; }
-.between { justify-content: space-between; }
-.evenly { justify-content: space-evenly; }
+.around {
+    justify-content: space-around;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.evenly {
+    justify-content: space-evenly;
+}
 
 .relative {
     position: relative !important;
@@ -127,10 +153,21 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
 }
 
 @for $i from 0 through 5 {
-    .top-#{$i} { top: #{$i}rem; }
-    .right-#{$i} { right: #{$i}rem; }
-    .bottom-#{$i} { bottom: #{$i}rem; }
-    .left-#{$i} { left: #{$i}rem; }
+    .top-#{$i} {
+        top: #{$i}rem;
+    }
+
+    .right-#{$i} {
+        right: #{$i}rem;
+    }
+
+    .bottom-#{$i} {
+        bottom: #{$i}rem;
+    }
+
+    .left-#{$i} {
+        left: #{$i}rem;
+    }
 }
 
 .stretch:after {
@@ -167,7 +204,8 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
     overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
-    & > * {
+
+    &>* {
         scroll-snap-align: start;
     }
 }
@@ -175,7 +213,8 @@ $gridClasses: ("row-start": "grid-row-start", "row-end": "grid-row-end", "column
 .scroll-y-snap {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    & > * {
+
+    &>* {
         scroll-snap-align: start;
     }
 }
@@ -204,39 +243,56 @@ $values: .25, .5, 0, 1, 2, 3, 4, 5;
     @each $label, $breakpoint in $breakpoints {
         @each $value in $values {
             $vlabel: $value;
-            @if $vlabel == .25 {
+
+            @if $vlabel ==.25 {
                 $vlabel: '025';
-            } @else if $vlabel == .5 {
+            }
+
+            @else if $vlabel ==.5 {
                 $vlabel: '05';
             }
+
             $tmpClass: '#{$class}-#{$vlabel}';
-            @if $label != xs {
+
+            @if $label !=sm {
                 $tmpClass: '#{$label}\\:#{$class}-#{$vlabel}';
             }
 
             $extraClass: 'none';
-            @if $class == pl or $class == pr {
+
+            @if $class ==pl or $class ==pr {
                 $extraClass: 'px';
-            } @else if $class == pt or $class == pb {
+            }
+
+            @else if $class ==pt or $class ==pb {
                 $extraClass: 'py';
-            } @else if $class == ml or $class == mr {
+            }
+
+            @else if $class ==ml or $class ==mr {
                 $extraClass: 'mx';
-            } @else if $class == mt or $class == mb {
+            }
+
+            @else if $class ==mt or $class ==mb {
                 $extraClass: 'my';
             }
-            @if $extraClass != 'none' {
-                @if $label == xs {
+
+            @if $extraClass !='none' {
+                @if $label ==sm {
                     $tmpClass: '#{$tmpClass},.#{$extraClass}-#{$vlabel}';
-                } @else {
+                }
+
+                @else {
                     $tmpClass: '#{$tmpClass},.#{$label}\\:#{$extraClass}-#{$vlabel}';
                 }
             }
 
-            @if $label == xs {
+            @if $label ==sm {
                 .#{$tmpClass} {
                     #{$rule}: #{$value}rem !important;
                 }
-            } @else {
+            }
+
+            @else {
                 @media (min-width: #{$breakpoint}) {
                     .#{$tmpClass} {
                         #{$rule}: #{$value}rem !important;
@@ -251,10 +307,27 @@ $values: .25, .5, 0, 1, 2, 3, 4, 5;
     margin-left: auto !important;
     margin-right: auto !important;
 }
-.ml-auto { margin-left: auto !important; }
-.mr-auto { margin-right: auto !important; }
 
-@include addBreakpointPrefixes ('w-100') { width: 100% !important; }
-@include addBreakpointPrefixes ('h-100') { height: 100% !important; }
-@include addBreakpointPrefixes ('w-auto') { width: auto !important; }
-@include addBreakpointPrefixes ('h-auto') { height: auto !important; }
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+@include addBreakpointPrefixes ('w-100') {
+    width: 100% !important;
+}
+
+@include addBreakpointPrefixes ('h-100') {
+    height: 100% !important;
+}
+
+@include addBreakpointPrefixes ('w-auto') {
+    width: auto !important;
+}
+
+@include addBreakpointPrefixes ('h-auto') {
+    height: auto !important;
+}

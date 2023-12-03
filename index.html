@@ -15,39 +15,140 @@
     <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
     <!-- ------ -->
 </head>
-<body>
-    <div class="container pt-4">
-        <div class="text-center">
-            <h1 class="mb-0 blue">vdlcss</h1>
-            <p>A minimal css framework.</p>
-            <a href="https://github.com/ColdIV/vdlcss" target="_blank" class="button">Source</a>
-            <a href="demo.html" class="button">Demo</a>
+<body class="bg-black white">
+    <header>
+        <div class="container">
+            <div class="column md:row between p-1">
+                <div class="row align-center">
+                    <strong class="blue" style="font-size: 1.5rem;">vdlcss</strong>
+                    <span class="rounded bg-blue ml-1 py-025 px-05 relative" style="display: none;" id="version">
+                        <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="stretch white no-decoration"></a>
+                    </span>
+                </div>
+                <nav class="pt-1 md:pt-0 w-100 row md:justify-right align-center">
+                    <ul class="unstyled row justify-right align-center">
+                        <li>
+                            <a href="demo.html">Demo</a>
+                        </li>
+                        <li class="ml-1">
+                            <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
+                        </li>
+                        <li class="ml-1">
+                            <div>    
+                                <a href="https://github.com/ColdIV/vdlcss/tags" class="button mb-0" target="_blank">Download</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-
-        <div class="md:column center-horizontal">
-                <div class="shadow p-1 mt-2">
-                    <h2 class="mt-0">Getting started</h2>
+    </header>
+    <main class="mt-0">
+        <div class="container">
+            <div class="p-1">
+                <h1>A minimal css framework.</h1>
+                <section class="hover-border border-white md:p-1 rounded">
+                    <h2 id="getting-started" class="mt-0"><a href="#getting-started" class="no-decoration" aria-label="Anchor">#</a> Getting started</h2>
                     <p>
-                        To add <code>vdlcss</code> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
+                        To add <strong>vdlcss</strong> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
                         Don't forget to add the meta tag to allow responsive styling.
                     </p>
 
-                    <pre class="h-100 mb-1"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link rel="stylesheet" type="text/css" href="vdlcss-min.css"&gt;</code></pre>
-
                     <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="button mb-0 text-right">Download</a>
+                </section>
+
+                <section class="hover-border border-white md:p-1 rounded">
+                    <h2 id="recommendation" class="mt-1 md:mt-0"><a href="#recommendation" class="no-decoration" aria-label="Anchor">#</a> Recommendation</h2>
+                    <figure class="black mt-1">
+                        <blockquote>
+                            <p>"vdlcss was made for small projects, I wouldn't necessarily recommend this for bigger projects."</p>
+                            <figcaption>ColdIV, 2023</figcaption>
+                        </blockquote>
+                    </figure>
+                </section>
+
+                <section class="hover-border border-white md:p-1 rounded">
+                    <h2 id="viewports" class="mt-1 md:mt-0"><a href="#viewports" class="no-decoration" aria-label="Anchor">#</a> Viewports</h2>
+                    <p>
+                        As part of the vision to keep this framework as minimal as possible, we decided to use only the following viewports:
+                    </p>
+                    <figure>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Breakpoint</th>
+                                    <th>Class prefix</th>
+                                    <th>min-width</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Small</td>
+                                    <td><i>default</i></td>
+                                    <td>0px</td>
+                                </tr>
+                                <tr>
+                                    <td>Medium</td>
+                                    <td>.md:</td>
+                                    <td>768px</td>
+                                </tr>
+                                <tr>
+                                    <td>Large</td>
+                                    <td>.lg:</td>
+                                    <td>1280px</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="p-1">
+                <div class="pt-1 column md:row align-center between w-100 border-top border-white">
+                    <div class="column md:row pt-1 md:pt-0 pb-1 md:pb-0 align-center">
+                        <strong class="blue md:mr-05 pb-05 md:pb-0" style="font-size: 1.5rem;">vdlcss</strong>
+                        <span> by <strong>ColdIV</strong></span>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row center mt-2">
-            <a href="demo.html" class="button">Learn More</a>
-        </div>
-
-    </div>
-    
-    <footer class="py-2 text-center">
-        <div>by <strong>ColdIV</strong> - <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a></div>
     </footer>
+
+    <script>
+        const cssFile = '/dist/vdlcss-min.css'
+        const versionBadge = document.querySelector('#version')
+
+        function getCurrentVersion(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n')
+                    let version = null
+                    for (let line of lines) {
+                        if (line.includes(' * Version:')) {
+                            version = line.split(': ')[1].trim()
+                        }
+                    }
+
+                    if (version && versionBadge) {
+                        versionBadge.querySelector('a').innerHTML = version
+                        versionBadge.style.display = 'inline-block'
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading external file:', error)
+                })
+        }
+        
+        getCurrentVersion(cssFile)
+    </script>
 </body>
 </html>
