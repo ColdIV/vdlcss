@@ -81,6 +81,10 @@
                             <li><a href="#container">Container</a></li>
                             <li><a href="#grid">Grid</a></li>
                             <li><a href="#rows-and-columns">Rows and Columns</a></li>
+                            <li><a href="#positioning">Positioning</a></li>
+                            <li><a href="#display">Display</a></li>
+                            <li><a href="#scroll-and-scrollbar">Scroll and Scrollbar</a></li>
+                            <li><a href="#padding-and-margin">Padding and Margin</a></li>
                             <li><a href="#css-variables">CSS variables</a></li>
                         </ul>
                     </section>
@@ -626,6 +630,73 @@ function openExampleDialog() {
                                 </div>
                             </div>
                         </section>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1">
+                        <h3 id="positioning" class="mt-1 md:mt-0"><a href="#positioning" class="no-decoration" aria-label="Anchor">#</a> Positioning</h3>
+                        <p>For positioning the following classes are available: <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>. You can position an absolute or fixed element within a relative container with <code>top-X</code>, <code>bottom-X</code>, <code>left-X</code>, <code>right-X</code>. <code>X</code> ranges from <code>0</code> to <code>5</code></p>
+                        
+                        <div class="p-1 border border-white relative rounded" style="min-height: 12rem;">
+                            relative
+                            <div class="p-05 bg-white rounded black absolute bottom-1 right-1">absolute bottom-1 right-1</div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1">
+                        <h3 id="display" class="mt-1 md:mt-0"><a href="#display" class="no-decoration" aria-label="Anchor">#</a> Display</h3>
+                        <p>You can change the display type of an element with <code>block</code>, <code>inline-block</code> and <code>inline</code>.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1">
+                        <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
+                        <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
+                        <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
+                        <div class="scroll-x-snap custom-scrollbar p-1">
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1">
+                        <h3 id="padding-and-margin" class="mt-1 md:mt-0"><a href="#padding-and-margin" class="no-decoration" aria-label="Anchor">#</a> Padding and margin</h3>
+                        <p>There are quite a few classes for padding and margin. They all follow the same pattern, a prefix followed by a value.</p>
+                        <p>The values always range from <code>0</code> to <code>5</code>, with two extra values being <code>025</code> and <code>05</code>.</p>
+                        <div class="p-1 border border-white rounded column md:row between">
+                            <div class="my-05">
+                                <div class="p-025 bg-white black rounded">p-025</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-05 bg-white black rounded">p-05</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-1 bg-white black rounded">p-1</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-2 bg-white black rounded">p-2</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-3 bg-white black rounded">p-3</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-4 bg-white black rounded">p-4</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-5 bg-white black rounded">p-5</div>
+                            </div>
+                        </div>
+                        <p>Valid prefixes are <code>p</code>, <code>m</code>, <code>pt</code>, <code>pr</code>, <code>pb</code>, <code>pl</code>, <code>mt</code>, <code>mr</code>, <code>mb</code> and <code>ml</code>.</p>
+                        <p><code>p</code> always means padding and <code>m</code> means margin. <code>t</code> means top, <code>r</code> means right, <code>b</code> means bottom and <code>l</code> means left.</p>
+                        <p>You can also use <code>px</code> and <code>py</code> for horizontal and vertical padding and <code>mx</code> and <code>my</code> for horizontal and vertical margin.</p>
+                        <p>For margin there are also the extra classes <code>ml-auto</code>, <code>mr-auto</code> and <code>mx-auto</code> to set the margin to <code>auto</code>.</p>
+                        <div class="p-1 border border-white rounded">
+                            <div class="p-1 bg-white black rounded mx-auto text-center" style="max-width: 150px;">mx-auto</div>
+                        </div>
+                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes, except for margin auto.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
