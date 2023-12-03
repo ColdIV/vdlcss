@@ -3,6 +3,7 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
+    font-size: 18px;
 }
 
 html * {
@@ -11,7 +12,12 @@ html * {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2
 }
 
 h1,
@@ -101,43 +107,56 @@ input[type="range"] {
 button,
 input[type="submit"],
 a.button {
+    --button-color: #{$white};
+    --button-background: #{$primary};
+    --button-border-color: #{$primary};
+    --button-border-radius: 3px;
+
+    --button-hover-color: #{$white};
+    --button-hover-background: #{$primary-dark};
+    --button-hover-border-color: #{$primary-dark};
+
+    --button-active-color: #{$white};
+    --button-active-background: #{$primary-light};
+    --button-active-border-color: #{$primary-light};
     display: inline-block;
     width: auto;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    border: 1px solid $primary;
+    color: var(--button-color);
+    background-color: var(--button-background);
+    border: 1px solid var(--button-border-color);
+    border-radius: var(--button-border-radius);
     box-shadow: none;
-    color: $white;
-    background-color: $primary;
     transition: background-color .25s;
 
     &:hover {
-        color: $white;
-        border: 1px solid $primary-dark;
+        color: var(--button-hover-color);
+        background-color: var(--button-hover-background);
+        border: 1px solid var(--button-hover-border-color);
         box-shadow: none;
-        background-color: $primary-dark;
         transition: background-color .25s;
     }
 
     &:active {
-        color: $white;
-        border: 1px solid $primary-light;
+        color: var(--button-active-color);
+        background-color: var(--button-active-background);
+        border: 1px solid var(--button-active-border-color);
         box-shadow: none;
-        background-color: $primary-light;
         transition: background-color .25s;
     }
 
     &.outline {
         background-color: transparent;
-        border: 1px solid $primary;
-        color: $primary;
+        border: 1px solid var(--button-border-color);
+        color: var(--button-color);
 
         &:active,
         &:hover {
-            border: 1px solid $primary;
-            color: $white;
-            background-color: $primary;
+            border: 1px solid var(--button-hover-border-color);
+            color: var(--button-hover-color);
+            background-color: var(--button-hover-background);
             transition: border .25s, color .25s, background-color .25s;
         }
     }
