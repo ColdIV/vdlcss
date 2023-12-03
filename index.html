@@ -25,9 +25,9 @@
                         <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="stretch white no-decoration"></a>
                     </span>
                 </div>
-                <nav class="pt-1 md:pt-0 w-100 row md:justify-right align-center">
-                    <ul class="unstyled row justify-right align-center">
-                        <li class="ml-1">
+                <nav class="pt-1 md:pt-0 w-100 row md:justify-end align-center">
+                    <ul class="unstyled row justify-end align-center">
+                        <li class="md:ml-1">
                             <a class="white" href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
                         </li>
                         <li class="ml-1">
@@ -78,6 +78,9 @@
                             <li><a href="#border">Border</a></li>
                             <li><a href="#lists">Lists</a></li>
                             <li><a href="#shadow">Shadow</a></li>
+                            <li><a href="#container">Container</a></li>
+                            <li><a href="#grid">Grid</a></li>
+                            <li><a href="#rows-and-columns">Rows and Columns</a></li>
                             <li><a href="#css-variables">CSS variables</a></li>
                         </ul>
                     </section>
@@ -343,6 +346,287 @@ function openExampleDialog() {
                         </div>
                     </section>
 
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="container" class="mt-1 md:mt-0"><a href="#container" class="no-decoration" aria-label="Anchor">#</a> Container</h3>
+                        <p>The <code>container</code> class is used to center an element and restrict its width according to the current viewport. It also adds padding to the sides.</p>
+                        <figure>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Breakpoint</th>
+                                        <th>Container max-width</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile</td>
+                                        <td>100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tablet</td>
+                                        <td>720px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desktop</td>
+                                        <td>1140px</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> For more information, take a look at the <a class="white" href="#viewports">viewports</a>.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="grid" class="mt-1 md:mt-0"><a href="#grid" class="no-decoration" aria-label="Anchor">#</a> Grid</h3>
+                        <p>The <code>grid</code> class is used to arrange elements in a grid. It is a 12-column system, which you can easily utilize with the following classes.</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-6</code>
+                            </div>
+                            <div class="cell-6 md:cell-3 bg-white rounded p-1">
+                                <code class="black">cell-6 md:cell-3</code>
+                            </div>
+                            <div class="cell-6 md:cell-3 bg-white rounded p-1">
+                                <code class="black">cell-6 md:cell-3</code>
+                            </div>
+                            <div class="cell-12 md:cell-4 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-4</code>
+                            </div>
+                            <div class="cell-12 md:cell-8 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-8</code>
+                            </div>
+                        </div>
+                        <p>You can also use <code>column-start-x</code> and <code>column-end-x</code>, <code>row-start-x</code> and <code>row-end-x</code>. <code>x</code> ranges from <code>1</code> to <code>13</code>.</p>
+                        <div class="grid">
+                            <div class="column-start-1 column-end-5 bg-white rounded p-1">
+                                <code class="black">column-start-1 column-end-5</code>
+                            </div>
+                            <div class="column-start-7 column-end-13 bg-white rounded p-1">
+                                <code class="black">column-start-7 column-end-13</code>
+                            </div>
+                            <div class="column-start-3 column-end-7 bg-white rounded p-1">
+                                <code class="black">column-start-3 column-end-7</code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="rows-and-columns" class="mt-1 md:mt-0"><a href="#rows-and-columns" class="no-decoration" aria-label="Anchor">#</a> Rows and columns</h3>
+                        <p>Rows and columns are used to position elements using flex without too much typing.</p>
+                        <p>Classes like justify-start, justify-end, align-start, align-end and center can be used to arrange your elements within columns and rows.</p>
+                        
+                        <section>
+                            <h4 class="mb-05">Rows</h4>
+                            <div class="grid">
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-start</h5>
+                                        <div class="row border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-end</h5>
+                                        <div class="row justify-end border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - between</h5>
+                                        <div class="row between border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - evenly</h5>
+                                        <div class="row evenly border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - around</h5>
+                                        <div class="row around border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-center</h5>
+                                        <div class="row justify-center border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - center</h5>
+                                        <div class="row center border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-start</h5>
+                                        <div class="row align-start border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-end</h5>
+                                        <div class="row align-end border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-center</h5>
+                                        <div class="row align-center border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 class="mb-05">Columns</h4>
+                            <div class="grid">
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-start</h5>
+                                        <div class="column border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-end</h5>
+                                        <div class="column justify-end border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - between</h5>
+                                        <div class="column between border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - evenly</h5>
+                                        <div class="column evenly border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - around</h5>
+                                        <div class="column around border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-center</h5>
+                                        <div class="column justify-center border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - center</h5>
+                                        <div class="column center border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-start</h5>
+                                        <div class="column align-start border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-end</h5>
+                                        <div class="column align-end border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-center</h5>
+                                        <div class="column align-center border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="css-variables" class="mt-1 md:mt-0"><a href="#css-variables" class="no-decoration" aria-label="Anchor">#</a> CSS variables</h3>

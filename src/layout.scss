@@ -90,19 +90,19 @@ $gridClasses: (
     flex-flow: row;
 }
 
-@include addBreakpointPrefixes ('justify-left') {
+@include addBreakpointPrefixes ('justify-start') {
     justify-content: flex-start;
 }
 
-@include addBreakpointPrefixes ('justify-right') {
+@include addBreakpointPrefixes ('justify-end') {
     justify-content: flex-end;
 }
 
-@include addBreakpointPrefixes ('align-top') {
+@include addBreakpointPrefixes ('align-start') {
     align-items: flex-start;
 }
 
-@include addBreakpointPrefixes ('align-bottom') {
+@include addBreakpointPrefixes ('align-end') {
     align-items: flex-end;
 }
 
