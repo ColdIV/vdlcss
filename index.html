@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
     <!-- ------ -->
 </head>
-<body class="bg-black white">
+<body id="top" class="bg-black white">
     <header>
         <div class="container">
             <div class="column md:row between p-1">
@@ -338,14 +338,14 @@
                         </div>
                         <p>You can also use <code>column-start-x</code> and <code>column-end-x</code>, <code>row-start-x</code> and <code>row-end-x</code>. <code>x</code> ranges from <code>1</code> to <code>13</code>.</p>
                         <div class="grid">
-                            <div class="column-start-1 column-end-5 bg-white rounded p-1">
-                                <code class="black">column-start-1 column-end-5</code>
+                            <div class="column-start-1 column-end-8 bg-white rounded p-1">
+                                <code class="black">column-start-1 column-end-8</code>
+                            </div>
+                            <div class="column-start-1 column-end-6 bg-white rounded p-1">
+                                <code class="black">column-start-5 column-end-13</code>
                             </div>
                             <div class="column-start-7 column-end-13 bg-white rounded p-1">
                                 <code class="black">column-start-7 column-end-13</code>
-                            </div>
-                            <div class="column-start-3 column-end-7 bg-white rounded p-1">
-                                <code class="black">column-start-3 column-end-7</code>
                             </div>
                         </div>
                     </section>
@@ -589,6 +589,7 @@
                         <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
                         <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
                         <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
+                        <p>To allow smooth scroll, add <code>scroll-smooth</code> to the wrapper element. For smooth scroll on the whole site, you will need to add it on the <code>html</code> tag.</p>
                         <div class="scroll-x-snap custom-scrollbar p-1">
                             <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
                             <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
@@ -734,12 +735,100 @@ function openExampleDialog() {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>--test</td>
-                                        <td>abc123</td>
+                                        <td>--font-sans</td>
+                                        <td>Arial, Helvetica, sans-serif</td>
                                     </tr>
                                     <tr>
-                                        <td>--example</td>
-                                        <td>TODO</td>
+                                        <td>--font-serif</td>
+                                        <td>Georgia, 'Times New Roman', Times, serif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--font-mono</td>
+                                        <td>'Courier New', Courier, monospace</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--red</td>
+                                        <td>#c54047</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--green</td>
+                                        <td>#79c037</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--blue</td>
+                                        <td>#3e7dc0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--yellow</td>
+                                        <td>#c0b73e</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--gray</td>
+                                        <td>#898989</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--black</td>
+                                        <td>#242424</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--white</td>
+                                        <td>#f1f1f1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary</td>
+                                        <td>var(--blue)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary-dark</td>
+                                        <td>#2b5786</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary-light</td>
+                                        <td>#77a4d3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--secondary</td>
+                                        <td>var(--gray)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-background</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-border-color</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-border-radius</td>
+                                        <td>3px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-background</td>
+                                        <td>var(--primary-dark)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-border-color</td>
+                                        <td>var(--primary-dark)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-background</td>
+                                        <td>var(--primary-light)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-border-color</td>
+                                        <td>var(--primary-light)</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -749,7 +838,7 @@ function openExampleDialog() {
             </div>
         </div>
     </main>
-    <footer class="py-4 text-center">
+    <footer class="pb-3 pt-2 text-center">
         <div class="container">
             <div class="p-1">
                 <div class="pt-1 column md:row align-center between w-100 border-top border-white">
@@ -758,7 +847,7 @@ function openExampleDialog() {
                         <span> by <strong>ColdIV</strong></span>
                     </div>
                     <div>
-                        <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
+                        <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a> - <a href="#top" class="white" style="font-size: 18px;">Back to top</a>
                     </div>
                 </div>
             </div>
