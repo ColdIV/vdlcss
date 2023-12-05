@@ -1,3 +1,6 @@
 example-html-tags.html
 .env
 todo
+env
+.vscode
+*.map

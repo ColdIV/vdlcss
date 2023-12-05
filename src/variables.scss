@@ -6,7 +6,7 @@
     --green: #79c037;
     --blue: #3e7dc0;
     --yellow: #c0b73e;
-    --gray: #575757;
+    --gray: #898989;
     --black: #242424;
     --white: #f1f1f1;
 
@@ -42,25 +42,26 @@ $secondary: #{'var(--secondary)'};
 
 // Breakpoints
 $breakpoints: (
-    xs: 0,
-    sm: 576px,
+    sm: 0,
     md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
+    lg: 1280px,
 );
 
 @mixin addBreakpointPrefixes ($className) {
     @each $label, $breakpoint in $breakpoints {
         $tmpClass: $className;
-        @if $label != xs {
+
+        @if $label !=sm {
             $tmpClass: '#{$label}\\:#{$className}';
+
             @media (min-width: #{$breakpoint}) {
                 .#{$tmpClass} {
                     @content;
                 }
             }
-        } @else {
+        }
+
+        @else {
             .#{$tmpClass} {
                 @content;
             }
@@ -70,12 +71,9 @@ $breakpoints: (
 
 // Container max-widths
 $container-max-widths: (
-    xs: 100%,
-    sm: 540px,
+    sm: 100%,
     md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1320px
+    lg: 1140px,
 );
 
 // Fonts

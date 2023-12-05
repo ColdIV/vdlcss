@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,40 +14,903 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
     <!-- ------ -->
+    <style>
+        a {
+            color: var(--primary-light);
+        }
+        a.anchor {
+            color: var(--primary);
+        }
+        code {
+            color: var(--white);
+        }
+        table {
+            --primary: var(--primary-dark);
+        }
+    </style>
 </head>
-<body>
-    <div class="container pt-4">
-        <div class="text-center">
-            <h1 class="mb-0 blue">vdlcss</h1>
-            <p>A minimal css framework.</p>
-            <a href="https://github.com/ColdIV/vdlcss" target="_blank" class="button">Source</a>
-            <a href="demo.html" class="button">Demo</a>
+<body id="top" class="bg-black white">
+    <header>
+        <div class="container">
+            <div class="column md:row between p-1">
+                <div class="row align-center">
+                    <strong class="blue" style="font-size: 2rem;">vdlcss</strong>
+                    <span class="rounded bg-white ml-1 py-025 px-05 relative" style="display: none;" id="version">
+                        <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="stretch black no-decoration"></a>
+                    </span>
+                </div>
+                <nav class="pt-1 md:pt-0 w-100 row md:justify-end align-center">
+                    <ul class="unstyled row justify-end align-center">
+                        <li class="md:ml-1">
+                            <a class="white" href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
+                        </li>
+                        <li class="ml-1">
+                            <div>    
+                                <a href="/dist/vdlcss-min.css" class="button mb-0"
+                                   style="
+                                     --button-background: var(--primary-dark);
+                                     --button-border-color: var(--primary-dark);
+                                     --button-hover-background: var(--primary);
+                                     --button-hover-border-color: var(--primary);"
+                                   target="_blank" download>
+                                    Download
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-
-        <div class="md:column center-horizontal">
-                <div class="shadow p-1 mt-2">
-                    <h2 class="mt-0">Getting started</h2>
+    </header>
+    <main class="mt-0">
+        <div class="container">
+            <div class="p-1">
+                <h1>A minimal css framework.</h1>
+                <section class="hover-border border-white md:p-1 rounded">
+                    <h2 id="getting-started" class="mt-0"><a href="#getting-started" class="no-decoration anchor" aria-label="Anchor">#</a> Getting started</h2>
                     <p>
-                        To add <code>vdlcss</code> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
+                        To add <strong>vdlcss</strong> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
                         Don't forget to add the meta tag to allow responsive styling.
                     </p>
 
-                    <pre class="h-100 mb-1"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link rel="stylesheet" type="text/css" href="vdlcss-min.css"&gt;</code></pre>
+                    <a href="/dist/vdlcss-min.css" class="button mb-0"
+                       style="
+                           --button-background: var(--primary-dark);
+                           --button-border-color: var(--primary-dark);
+                           --button-hover-background: var(--primary);
+                           --button-hover-border-color: var(--primary);"
+                       target="_blank" download>
+                    Download
+                    </a>
+                </section>
 
-                    <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="button mb-0 text-right">Download</a>
+                <section>
+                    <h2 id="features" class="mt-1 md:mt-0 md:px-1 md:pt-1"><a href="#features" class="no-decoration anchor" aria-label="Anchor">#</a> Features</h2>
+                    <section class="hover-border border-blue md:p-1 rounded">
+                        <h3 id="list-of-features" class="mt-1 md:mt-0"><a href="#list-of-features" class="no-decoration anchor" aria-label="Anchor">#</a> List of features</h3>
+                        <ul>
+                            <li><a href="#viewports">Viewports</a></li>
+                            <li><a href="#colors">Colors</a></li>
+                            <li><a href="#text">Text</a></li>
+                            <li><a href="#border">Border</a></li>
+                            <li><a href="#lists">Lists</a></li>
+                            <li><a href="#shadow">Shadow</a></li>
+                            <li><a href="#container">Container</a></li>
+                            <li><a href="#grid">Grid</a></li>
+                            <li><a href="#rows-and-columns">Rows and Columns</a></li>
+                            <li><a href="#positioning">Positioning</a></li>
+                            <li><a href="#display">Display</a></li>
+                            <li><a href="#scroll-and-scrollbar">Scroll and Scrollbar</a></li>
+                            <li><a href="#padding-and-margin">Padding and Margin</a></li>
+                            <li><a href="#width-and-height">Width and height</a></li>
+                            <li><a href="#hover-effects">Hover effects</a></li>
+                            <li><a href="#dialogs">Dialogs</a></li>
+                            <li><a href="#css-variables">CSS variables</a></li>
+                        </ul>
+                    </section>
+                
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="viewports" class="mt-1 md:mt-0"><a href="#viewports" class="no-decoration anchor" aria-label="Anchor">#</a> Viewports</h3>
+                        <p>
+                            As part of the vision to keep this framework as minimal as possible, we decided to use only the following viewports:
+                        </p>
+                        <figure>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Breakpoint</th>
+                                        <th>Class prefix</th>
+                                        <th>min-width</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Small</td>
+                                        <td><i>default</i></td>
+                                        <td>0px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Medium</td>
+                                        <td>.md:</td>
+                                        <td>768px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Large</td>
+                                        <td>.lg:</td>
+                                        <td>1280px</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="colors" class="mt-1 md:mt-0"><a href="#colors" class="no-decoration anchor" aria-label="Anchor">#</a> Colors</h3>
+                        <p>The following colors are used in <strong>vdlcss</strong>. All colors can be edited via <a href="#css-variables anchor" aria-label="Anchor">CSS variables</a>.</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-red white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-red white</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-green white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-green white</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-blue white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-blue white</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-yellow white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-yellow white</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-white black p-1 rounded row center"><code class="bg-black white rounded p-05">bg-white black</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-gray white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-gray white</code></div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="w-100 h-100 bg-black white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-black white</code></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="text" class="mt-1 md:mt-0"><a href="#text" class="no-decoration anchor" aria-label="Anchor">#</a> Text</h3>
+                        <p>There are only a handful of classes to style text.</p>
+                        <div class="grid">
+                            <div class="cell-12 lg:cell-6">
+                                <div class="p-1 rounded bg-white h-100">
+                                    <div class="text-left"><code class="black">text-left</code></div>
+                                    <div class="text-right"><code class="black">text-right</code></div>
+                                    <div class="text-center"><code class="black">text-center</code></div>
+                                    <div class="uppercase"><code class="black">uppercase</code></div>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-4 lg:cell-2">
+                                <div class="p-1 rounded bg-white h-100 row center">
+                                    <div class="text-center font-sans"><span class="black">font-sans</span></div>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-4 lg:cell-2">
+                                <div class="p-1 rounded bg-white h-100 row center">
+                                    <div class="text-center font-serif"><span class="black">font-serif</span></div>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-4 lg:cell-2">
+                                <div class="p-1 rounded bg-white h-100 row center">
+                                    <div class="text-center font-mono"><span class="black">font-mono</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="border" class="mt-1 md:mt-0"><a href="#border" class="no-decoration anchor" aria-label="Anchor">#</a> Border</h3>
+                        <p>To add borders and color them, use the following classes.</p>
+                        <div class="grid bg-white p-1 rounded">
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border h-100">
+                                    <code class="black">border</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border-top h-100">
+                                    <code class="black">border-top</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border-right h-100">
+                                    <code class="black">border-right</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border-bottom h-100">
+                                    <code class="black">border-bottom</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border-left h-100">
+                                    <code class="black">border-left</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border rounded h-100">
+                                    <code class="black">border rounded</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border unrounded h-100">
+                                    <code class="black">border unrounded</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 border border-red h-100">
+                                    <code class="black">border border-red</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6 lg:cell-3">
+                                <div class="p-1 hover-border h-100">
+                                    <code class="black">hover-border</code>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All <a class="white" href="#colors">colors</a> are supported.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="lists" class="mt-1 md:mt-0"><a href="#lists" class="no-decoration anchor" aria-label="Anchor">#</a> Lists</h3>
+                        <p>Adding the <code>unstyled</code> class to an <code>ul</code> or <code>ol</code> will remove the default list styling.</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6">
+                                <ul class="h-100 p-1 bg-white rounded black unstyled">
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                    <li>List item 3</li>
+                                    <li>List item 4</li>
+                                </ul>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;ul class="p-1 bg-white rounded black unstyled"&gt;
+    &lt;li&gt;List item 1&lt;/li&gt;
+    &lt;li&gt;List item 2&lt;/li&gt;
+    &lt;li&gt;List item 3&lt;/li&gt;
+    &lt;li&gt;List item 4&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            </div>
+                        </div>
+                        <p>This makes it easy to create a horizontal list for a navigation by adding the <code>row</code> class as well.</p>
+                        <div class="grid">
+                            <div class="cell-12">
+                                <ul class="p-1 bg-white rounded black unstyled row">
+                                    <li class="mr-1">Item 1</li>
+                                    <li class="mr-1">Item 2</li>
+                                    <li class="mr-1">Item 3</li>
+                                    <li class="mr-1">Item 4</li>
+                                </ul>
+                            </div>
+                            <div class="cell-12">
+                                <pre class="mb-1" style="--black: #191919;"><code>&lt;ul class="p-1 bg-white rounded black unstyled row"&gt;
+    &lt;li class="mr-1">Item 1&lt;/li&gt;
+    &lt;li class="mr-1">Item 2&lt;/li&gt;
+    &lt;li class="mr-1">Item 3&lt;/li&gt;
+    &lt;li class="mr-1">Item 4&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="shadow" class="mt-1 md:mt-0"><a href="#shadow" class="no-decoration anchor" aria-label="Anchor">#</a> Shadow</h3>
+                        <p>Adding the <code>shadow</code> class to an element will add a shadow to the element.</p>
+                        <div class="grid p-1 bg-white rounded">
+                            <div class="cell-12 md:cell-6">
+                                <div class="p-1 bg-white rounded shadow">
+                                    <code class="black">shadow</code>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <div class="p-1 bg-white rounded hover-shadow">
+                                    <code class="black">hover-shadow</code>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="container" class="mt-1 md:mt-0"><a href="#container" class="no-decoration anchor" aria-label="Anchor">#</a> Container</h3>
+                        <p>The <code>container</code> class is used to center an element and restrict its width according to the current viewport. It also adds padding to the sides.</p>
+                        <figure>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Breakpoint</th>
+                                        <th>Container max-width</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile</td>
+                                        <td>100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tablet</td>
+                                        <td>720px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desktop</td>
+                                        <td>1140px</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> For more information, take a look at the <a class="white" href="#viewports">viewports</a>.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="grid" class="mt-1 md:mt-0"><a href="#grid" class="no-decoration anchor" aria-label="Anchor">#</a> Grid</h3>
+                        <p>The <code>grid</code> class is used to arrange elements in a grid. It is a 12-column system, which you can easily utilize with the following classes.</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-6</code>
+                            </div>
+                            <div class="cell-6 md:cell-3 bg-white rounded p-1">
+                                <code class="black">cell-6 md:cell-3</code>
+                            </div>
+                            <div class="cell-6 md:cell-3 bg-white rounded p-1">
+                                <code class="black">cell-6 md:cell-3</code>
+                            </div>
+                            <div class="cell-12 md:cell-4 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-4</code>
+                            </div>
+                            <div class="cell-12 md:cell-8 bg-white rounded p-1">
+                                <code class="black">cell-12 md:cell-8</code>
+                            </div>
+                        </div>
+                        <p>You can also use <code>column-start-x</code> and <code>column-end-x</code>, <code>row-start-x</code> and <code>row-end-x</code>. <code>x</code> ranges from <code>1</code> to <code>13</code>.</p>
+                        <div class="grid">
+                            <div class="column-start-1 column-end-8 bg-white rounded p-1">
+                                <code class="black">column-start-1 column-end-8</code>
+                            </div>
+                            <div class="column-start-1 column-end-6 bg-white rounded p-1">
+                                <code class="black">column-start-5 column-end-13</code>
+                            </div>
+                            <div class="column-start-7 column-end-13 bg-white rounded p-1">
+                                <code class="black">column-start-7 column-end-13</code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="rows-and-columns" class="mt-1 md:mt-0"><a href="#rows-and-columns" class="no-decoration anchor" aria-label="Anchor">#</a> Rows and columns</h3>
+                        <p>Rows and columns are used to position elements using flex without too much typing.</p>
+                        <p>Classes like justify-start, justify-end, align-start, align-end and center can be used to arrange your elements within columns and rows.</p>
+                        
+                        <section>
+                            <h4 class="mb-05">Rows</h4>
+                            <div class="grid">
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-start</h5>
+                                        <div class="row border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-end</h5>
+                                        <div class="row justify-end border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - between</h5>
+                                        <div class="row between border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - evenly</h5>
+                                        <div class="row evenly border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - around</h5>
+                                        <div class="row around border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - justify-center</h5>
+                                        <div class="row justify-center border border-white p-1">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - center</h5>
+                                        <div class="row center border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-start</h5>
+                                        <div class="row align-start border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-end</h5>
+                                        <div class="row align-end border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Row - align-center</h5>
+                                        <div class="row align-center border border-white p-1" style="min-height: 6rem;">
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                            <div class="bg-white rounded p-1 mr-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 class="mb-05">Columns</h4>
+                            <div class="grid">
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-start</h5>
+                                        <div class="column border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-end</h5>
+                                        <div class="column justify-end border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - between</h5>
+                                        <div class="column between border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - evenly</h5>
+                                        <div class="column evenly border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - around</h5>
+                                        <div class="column around border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-4">
+                                    <section>
+                                        <h5 class="my-05">Column - justify-center</h5>
+                                        <div class="column justify-center border border-white p-1" style="min-height: 12rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - center</h5>
+                                        <div class="column center border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-start</h5>
+                                        <div class="column align-start border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-end</h5>
+                                        <div class="column align-end border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="cell-12 md:cell-6">
+                                    <section>
+                                        <h5 class="my-05">Column - align-center</h5>
+                                        <div class="column align-center border border-white p-1" style="min-height: 10rem;">
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                            <div class="bg-white rounded p-1 mb-1"></div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> Some classes support the <a class="white" href="#viewports">viewport</a> prefixes: <code class="white">row</code>, <code class="white">column</code>, <code class="white">cell-X</code>, <code class="white">justify-X</code> and <code class="white">align-X</code>.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="positioning" class="mt-1 md:mt-0"><a href="#positioning" class="no-decoration anchor" aria-label="Anchor">#</a> Positioning</h3>
+                        <p>For positioning the following classes are available: <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>. You can position an absolute or fixed element within a relative container with <code>top-X</code>, <code>bottom-X</code>, <code>left-X</code>, <code>right-X</code>. <code>X</code> ranges from <code>0</code> to <code>5</code></p>
+                        
+                        <div class="p-1 border border-white relative rounded" style="min-height: 12rem;">
+                            relative
+                            <div class="p-05 bg-white rounded black absolute bottom-1 right-1">absolute bottom-1 right-1</div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="display" class="mt-1 md:mt-0"><a href="#display" class="no-decoration anchor" aria-label="Anchor">#</a> Display</h3>
+                        <p>You can change the display type of an element with <code>block</code>, <code>inline-block</code> and <code>inline</code>.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration anchor" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
+                        <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
+                        <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
+                        <p>To allow smooth scroll, add <code>scroll-smooth</code> to the wrapper element. For smooth scroll on the whole site, you will need to add it on the <code>html</code> tag.</p>
+                        <div class="scroll-x-snap custom-scrollbar p-1" tabindex="0">
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="padding-and-margin" class="mt-1 md:mt-0"><a href="#padding-and-margin" class="no-decoration anchor" aria-label="Anchor">#</a> Padding and margin</h3>
+                        <p>There are quite a few classes for padding and margin. They all follow the same pattern, a prefix followed by a value.</p>
+                        <p>The values always range from <code>0</code> to <code>5</code>, with two extra values being <code>025</code> and <code>05</code>.</p>
+                        <div class="p-1 border border-white rounded column md:row between">
+                            <div class="my-05">
+                                <div class="p-025 bg-white black rounded">p-025</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-05 bg-white black rounded">p-05</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-1 bg-white black rounded">p-1</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-2 bg-white black rounded">p-2</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-3 bg-white black rounded">p-3</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-4 bg-white black rounded">p-4</div>
+                            </div>
+                            <div class="my-05">
+                                <div class="p-5 bg-white black rounded">p-5</div>
+                            </div>
+                        </div>
+                        <p>Valid prefixes are <code>p</code>, <code>m</code>, <code>pt</code>, <code>pr</code>, <code>pb</code>, <code>pl</code>, <code>mt</code>, <code>mr</code>, <code>mb</code> and <code>ml</code>.</p>
+                        <p><code>p</code> always means padding and <code>m</code> means margin. <code>t</code> means top, <code>r</code> means right, <code>b</code> means bottom and <code>l</code> means left.</p>
+                        <p>You can also use <code>px</code> and <code>py</code> for horizontal and vertical padding and <code>mx</code> and <code>my</code> for horizontal and vertical margin.</p>
+                        <p>For margin there are also the extra classes <code>ml-auto</code>, <code>mr-auto</code> and <code>mx-auto</code> to set the margin to <code>auto</code>.</p>
+                        <div class="p-1 border border-white rounded">
+                            <div class="p-1 bg-white black rounded mx-auto text-center" style="max-width: 150px;">mx-auto</div>
+                        </div>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes, except for margin auto.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="width-and-height" class="mt-1 md:mt-0"><a href="#width-and-height" class="no-decoration anchor" aria-label="Anchor">#</a> Width and height</h3>
+                        <p>You can set width and height with the <code>w-100</code>, <code>h-100</code>, <code>w-auto</code> and <code>h-auto</code> classes.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes.</p>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="hover-effects" class="mt-1 md:mt-0"><a href="#hover-effects" class="no-decoration anchor" aria-label="Anchor">#</a> Hover effects</h3>
+                        <p>There are a few options to add effects when hovering over an element.</p>
+                        <ul>
+                            <li><a href="#border">hover-border</a></li>
+                            <li><a href="#shadow">hover-shadow</a></li>
+                        </ul>
+                        <p>You can also add small animations by adding <code>hover-zoom</code> or <code>hover-lift</code> to the wrapper:</p>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6 rounded overflow-hidden">
+                                <div class="hover-zoom">
+                                    <div class="p-1 rounded black bg-white text-center">hover-zoom</div>
+                                </div>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <div class="hover-lift">
+                                    <div class="p-1 rounded black bg-white text-center">hover-lift</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="dialogs" class="mt-1 md:mt-0"><a href="#dialogs" class="no-decoration anchor" aria-label="Anchor">#</a> Dialogs</h3>
+                        <div class="grid">
+                            <div class="cell-12 md:cell-6">
+                                <p>Dialogs are used to display information to the user. <strong>vdlcss</strong> only adds basic styles. You will still need to add a small script to implement it.</p>
+                                <dialog id="example-dialog">
+                                    <h3>Example dialog</h3>
+                                    <form method="dialog">
+                                        <button class="m-0">Close</button>
+                                    </form>
+                                </dialog>
+                                
+                                <script>
+                                function openExampleDialog() {
+                                    document.querySelector('#example-dialog').showModal();
+                                }
+                                </script>
+                                
+                                <button
+                                    class="mt-1 outline"
+                                    style="--button-background-color: var(--white);
+                                        --button-border-color: var(--white);
+                                        --button-hover-background: var(--white);
+                                        --button-hover-color: var(--black);"
+                                    onclick="openExampleDialog()">
+                                    Show Dialog
+                                </button>
+                            </div>
+                            <div class="cell-12 md:cell-6">
+                                <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;dialog id="example-dialog"&gt;
+    &lt;h3&gt;Example dialog&lt;/h3&gt;
+    &lt;form method="dialog"&gt;
+        &lt;button class="m-0"&gt;Close&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/dialog&gt;
+
+&lt;script&gt;
+function openExampleDialog() {
+    document.querySelector('#example-dialog').showModal();
+}
+&lt;/script&gt;
+
+&lt;button
+    class="mt-1 outline"
+    style="--button-background-color: var(--white);
+           --button-border-color: var(--white);
+           --button-hover-background: var(--white);
+           --button-hover-color: var(--black);"
+    onclick="openExampleDialog()">
+    Show Dialog
+&lt;/button&gt;</code></pre>
+                            </div>
+                            
+                        </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="css-variables" class="mt-1 md:mt-0"><a href="#css-variables" class="no-decoration anchor" aria-label="Anchor">#</a> CSS variables</h3>
+                        <p>Below you can find a complete list of all integrated CSS variables.</p>
+                        <figure>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable name</th>
+                                        <th>Default value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>--font-sans</td>
+                                        <td>Arial, Helvetica, sans-serif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--font-serif</td>
+                                        <td>Georgia, 'Times New Roman', Times, serif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--font-mono</td>
+                                        <td>'Courier New', Courier, monospace</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--red</td>
+                                        <td>#c54047</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--green</td>
+                                        <td>#79c037</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--blue</td>
+                                        <td>#3e7dc0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--yellow</td>
+                                        <td>#c0b73e</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--gray</td>
+                                        <td>#898989</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--black</td>
+                                        <td>#242424</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--white</td>
+                                        <td>#f1f1f1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary</td>
+                                        <td>var(--blue)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary-dark</td>
+                                        <td>#2b5786</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--primary-light</td>
+                                        <td>#77a4d3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--secondary</td>
+                                        <td>var(--gray)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-background</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-border-color</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-border-radius</td>
+                                        <td>3px</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-background</td>
+                                        <td>var(--primary-dark)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-hover-border-color</td>
+                                        <td>var(--primary-dark)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-background</td>
+                                        <td>var(--primary-light)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--button-active-border-color</td>
+                                        <td>var(--primary-light)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="pb-3 pt-2 text-center">
+        <div class="container">
+            <div class="p-1">
+                <div class="pt-1 column md:row align-center between w-100 border-top border-white">
+                    <div class="column md:row pt-1 md:pt-0 pb-1 md:pb-0 align-center">
+                        <strong class="blue md:mr-05 pb-05 md:pb-0" style="font-size: 1.5rem;">vdlcss</strong>
+                        <span> by <strong>ColdIV</strong></span>
+                    </div>
+                    <div>
+                        <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a> - <a href="#top" class="white" style="font-size: 18px;">Back to top</a>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row center mt-2">
-            <a href="demo.html" class="button">Learn More</a>
-        </div>
-
-    </div>
-    
-    <footer class="py-2 text-center">
-        <div>by <strong>ColdIV</strong> - <a href="https://github.com/ColdIV/vdlcss/blob/master/LICENSE" target="_blank">MIT License</a> - <a href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a></div>
     </footer>
+
+    <script>
+        const cssFile = '/dist/vdlcss-min.css'
+        const versionBadge = document.querySelector('#version')
+
+        function getCurrentVersion(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n')
+                    let version = null
+                    for (let line of lines) {
+                        if (line.includes(' * Version:')) {
+                            version = line.split(': ')[1].trim()
+                        }
+                    }
+
+                    if (version && versionBadge) {
+                        versionBadge.querySelector('a').innerHTML = version
+                        versionBadge.style.display = 'inline-block'
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading external file:', error)
+                })
+        }
+        
+        getCurrentVersion(cssFile)
+    </script>
 </body>
 </html>

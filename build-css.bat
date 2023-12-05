@@ -7,7 +7,10 @@ echo If you just want to minify properly, use `css` as parameter.
 echo.
 
 ::Merges all SCSS files to one, not very optimal when it comes to minimising.
-python -m scss < src/styles.scss -o dist/vdlcss-min.css -I src/
+:: Unfortunately the library pyscss is not working for python > 3.10
+::python -m scss < src/styles.scss -o dist/vdlcss-min.css -I src/
+:: For the following you need npm. Install with: npm install -g sass less
+call sass src/styles.scss dist/vdlcss-min.css
 
 ::We don't make an API call for development
 if "%~1" == "" goto :end
@@ -34,7 +37,7 @@ echo /* >> vdlcss-min.css
 echo  * vdlcss >> vdlcss-min.css
 echo  * Version: %new_tag% >> vdlcss-min.css
 echo  * License: MIT >> vdlcss-min.css
-echo  * Source: https://www.cldv.org/vdlcss/ >> vdlcss-min.css
+echo  * Source: https://vdlcss.cldv.org >> vdlcss-min.css
 echo  * by ColdIV >> vdlcss-min.css
 echo  */ >> vdlcss-min.css
 
