@@ -14,6 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dist/vdlcss-min.css">
     <!-- ------ -->
+    <style>
+        a {
+            color: var(--primary-light);
+        }
+        a.anchor {
+            color: var(--primary);
+        }
+        code {
+            color: var(--white);
+        }
+        table {
+            --primary: var(--primary-dark);
+        }
+    </style>
 </head>
 <body id="top" class="bg-black white">
     <header>
@@ -21,8 +35,8 @@
             <div class="column md:row between p-1">
                 <div class="row align-center">
                     <strong class="blue" style="font-size: 2rem;">vdlcss</strong>
-                    <span class="rounded bg-blue ml-1 py-025 px-05 relative" style="display: none;" id="version">
-                        <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="stretch white no-decoration"></a>
+                    <span class="rounded bg-white ml-1 py-025 px-05 relative" style="display: none;" id="version">
+                        <a href="https://github.com/ColdIV/vdlcss/tags" target="_blank" class="stretch black no-decoration"></a>
                     </span>
                 </div>
                 <nav class="pt-1 md:pt-0 w-100 row md:justify-end align-center">
@@ -32,7 +46,15 @@
                         </li>
                         <li class="ml-1">
                             <div>    
-                                <a href="/dist/vdlcss-min.css" class="button mb-0" target="_blank" download>Download</a>
+                                <a href="/dist/vdlcss-min.css" class="button mb-0"
+                                   style="
+                                     --button-background: var(--primary-dark);
+                                     --button-border-color: var(--primary-dark);
+                                     --button-hover-background: var(--primary);
+                                     --button-hover-border-color: var(--primary);"
+                                   target="_blank" download>
+                                    Download
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -45,7 +67,7 @@
             <div class="p-1">
                 <h1>A minimal css framework.</h1>
                 <section class="hover-border border-white md:p-1 rounded">
-                    <h2 id="getting-started" class="mt-0"><a href="#getting-started" class="no-decoration" aria-label="Anchor">#</a> Getting started</h2>
+                    <h2 id="getting-started" class="mt-0"><a href="#getting-started" class="no-decoration anchor" aria-label="Anchor">#</a> Getting started</h2>
                     <p>
                         To add <strong>vdlcss</strong> to your site, download it and include it in your <code>&lt;head&gt;</code>.<br>
                         Don't forget to add the meta tag to allow responsive styling.
@@ -53,13 +75,21 @@
 
                     <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link rel="stylesheet" type="text/css" href="vdlcss-min.css"&gt;</code></pre>
-                    <a href="/dist/vdlcss-min.css" class="button mb-0" target="_blank" download>Download</a>
+                    <a href="/dist/vdlcss-min.css" class="button mb-0"
+                       style="
+                           --button-background: var(--primary-dark);
+                           --button-border-color: var(--primary-dark);
+                           --button-hover-background: var(--primary);
+                           --button-hover-border-color: var(--primary);"
+                       target="_blank" download>
+                    Download
+                    </a>
                 </section>
 
                 <section>
-                    <h2 id="features" class="mt-1 md:mt-0 md:px-1 md:pt-1"><a href="#features" class="no-decoration" aria-label="Anchor">#</a> Features</h2>
+                    <h2 id="features" class="mt-1 md:mt-0 md:px-1 md:pt-1"><a href="#features" class="no-decoration anchor" aria-label="Anchor">#</a> Features</h2>
                     <section class="hover-border border-blue md:p-1 rounded">
-                        <h3 id="list-of-features" class="mt-1 md:mt-0"><a href="#list-of-features" class="no-decoration" aria-label="Anchor">#</a> List of features</h3>
+                        <h3 id="list-of-features" class="mt-1 md:mt-0"><a href="#list-of-features" class="no-decoration anchor" aria-label="Anchor">#</a> List of features</h3>
                         <ul>
                             <li><a href="#viewports">Viewports</a></li>
                             <li><a href="#colors">Colors</a></li>
@@ -82,7 +112,7 @@
                     </section>
                 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="viewports" class="mt-1 md:mt-0"><a href="#viewports" class="no-decoration" aria-label="Anchor">#</a> Viewports</h3>
+                        <h3 id="viewports" class="mt-1 md:mt-0"><a href="#viewports" class="no-decoration anchor" aria-label="Anchor">#</a> Viewports</h3>
                         <p>
                             As part of the vision to keep this framework as minimal as possible, we decided to use only the following viewports:
                         </p>
@@ -117,35 +147,35 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="colors" class="mt-1 md:mt-0"><a href="#colors" class="no-decoration" aria-label="Anchor">#</a> Colors</h3>
-                        <p>The following colors are used in <strong>vdlcss</strong>. All colors can be edited via <a href="#css-variables" aria-label="Anchor">CSS variables</a>.</p>
+                        <h3 id="colors" class="mt-1 md:mt-0"><a href="#colors" class="no-decoration anchor" aria-label="Anchor">#</a> Colors</h3>
+                        <p>The following colors are used in <strong>vdlcss</strong>. All colors can be edited via <a href="#css-variables anchor" aria-label="Anchor">CSS variables</a>.</p>
                         <div class="grid">
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-red white p-1 rounded"><code class="white">bg-red white</code></div>
+                                <div class="w-100 h-100 bg-red white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-red white</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-green white p-1 rounded"><code class="white">bg-green white</code></div>
+                                <div class="w-100 h-100 bg-green white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-green white</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-blue white p-1 rounded"><code class="white">bg-blue white</code></div>
+                                <div class="w-100 h-100 bg-blue white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-blue white</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-yellow white p-1 rounded"><code class="white">bg-yellow white</code></div>
+                                <div class="w-100 h-100 bg-yellow white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-yellow white</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-white black p-1 rounded"><code class="black">bg-white black</code></div>
+                                <div class="w-100 h-100 bg-white black p-1 rounded row center"><code class="bg-black white rounded p-05">bg-white black</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-gray white p-1 rounded"><code class="white">bg-gray white</code></div>
+                                <div class="w-100 h-100 bg-gray white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-gray white</code></div>
                             </div>
                             <div class="cell-12 md:cell-6 lg:cell-3">
-                                <div class="w-100 h-100 bg-black white p-1 rounded"><code class="white">bg-black white</code></div>
+                                <div class="w-100 h-100 bg-black white p-1 rounded row center"><code class="bg-black white rounded p-05">bg-black white</code></div>
                             </div>
                         </div>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="text" class="mt-1 md:mt-0"><a href="#text" class="no-decoration" aria-label="Anchor">#</a> Text</h3>
+                        <h3 id="text" class="mt-1 md:mt-0"><a href="#text" class="no-decoration anchor" aria-label="Anchor">#</a> Text</h3>
                         <p>There are only a handful of classes to style text.</p>
                         <div class="grid">
                             <div class="cell-12 lg:cell-6">
@@ -175,7 +205,7 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="border" class="mt-1 md:mt-0"><a href="#border" class="no-decoration" aria-label="Anchor">#</a> Border</h3>
+                        <h3 id="border" class="mt-1 md:mt-0"><a href="#border" class="no-decoration anchor" aria-label="Anchor">#</a> Border</h3>
                         <p>To add borders and color them, use the following classes.</p>
                         <div class="grid bg-white p-1 rounded">
                             <div class="cell-12 md:cell-6 lg:cell-3">
@@ -224,11 +254,11 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All <a class="white" href="#colors">colors</a> are supported.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All <a class="white" href="#colors">colors</a> are supported.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="lists" class="mt-1 md:mt-0"><a href="#lists" class="no-decoration" aria-label="Anchor">#</a> Lists</h3>
+                        <h3 id="lists" class="mt-1 md:mt-0"><a href="#lists" class="no-decoration anchor" aria-label="Anchor">#</a> Lists</h3>
                         <p>Adding the <code>unstyled</code> class to an <code>ul</code> or <code>ol</code> will remove the default list styling.</p>
                         <div class="grid">
                             <div class="cell-12 md:cell-6">
@@ -270,7 +300,7 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="shadow" class="mt-1 md:mt-0"><a href="#shadow" class="no-decoration" aria-label="Anchor">#</a> Shadow</h3>
+                        <h3 id="shadow" class="mt-1 md:mt-0"><a href="#shadow" class="no-decoration anchor" aria-label="Anchor">#</a> Shadow</h3>
                         <p>Adding the <code>shadow</code> class to an element will add a shadow to the element.</p>
                         <div class="grid p-1 bg-white rounded">
                             <div class="cell-12 md:cell-6">
@@ -287,7 +317,7 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="container" class="mt-1 md:mt-0"><a href="#container" class="no-decoration" aria-label="Anchor">#</a> Container</h3>
+                        <h3 id="container" class="mt-1 md:mt-0"><a href="#container" class="no-decoration anchor" aria-label="Anchor">#</a> Container</h3>
                         <p>The <code>container</code> class is used to center an element and restrict its width according to the current viewport. It also adds padding to the sides.</p>
                         <figure>
                             <table>
@@ -313,11 +343,11 @@
                                 </tbody>
                             </table>
                         </figure>
-                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> For more information, take a look at the <a class="white" href="#viewports">viewports</a>.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> For more information, take a look at the <a class="white" href="#viewports">viewports</a>.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="grid" class="mt-1 md:mt-0"><a href="#grid" class="no-decoration" aria-label="Anchor">#</a> Grid</h3>
+                        <h3 id="grid" class="mt-1 md:mt-0"><a href="#grid" class="no-decoration anchor" aria-label="Anchor">#</a> Grid</h3>
                         <p>The <code>grid</code> class is used to arrange elements in a grid. It is a 12-column system, which you can easily utilize with the following classes.</p>
                         <div class="grid">
                             <div class="cell-12 md:cell-6 bg-white rounded p-1">
@@ -351,7 +381,7 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="rows-and-columns" class="mt-1 md:mt-0"><a href="#rows-and-columns" class="no-decoration" aria-label="Anchor">#</a> Rows and columns</h3>
+                        <h3 id="rows-and-columns" class="mt-1 md:mt-0"><a href="#rows-and-columns" class="no-decoration anchor" aria-label="Anchor">#</a> Rows and columns</h3>
                         <p>Rows and columns are used to position elements using flex without too much typing.</p>
                         <p>Classes like justify-start, justify-end, align-start, align-end and center can be used to arrange your elements within columns and rows.</p>
                         
@@ -567,11 +597,11 @@
                             </div>
                         </section>
 
-                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> Some classes support the <a class="white" href="#viewports">viewport</a> prefixes: <code class="white">row</code>, <code class="white">column</code>, <code class="white">cell-X</code>, <code class="white">justify-X</code> and <code class="white">align-X</code>.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> Some classes support the <a class="white" href="#viewports">viewport</a> prefixes: <code class="white">row</code>, <code class="white">column</code>, <code class="white">cell-X</code>, <code class="white">justify-X</code> and <code class="white">align-X</code>.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="positioning" class="mt-1 md:mt-0"><a href="#positioning" class="no-decoration" aria-label="Anchor">#</a> Positioning</h3>
+                        <h3 id="positioning" class="mt-1 md:mt-0"><a href="#positioning" class="no-decoration anchor" aria-label="Anchor">#</a> Positioning</h3>
                         <p>For positioning the following classes are available: <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>. You can position an absolute or fixed element within a relative container with <code>top-X</code>, <code>bottom-X</code>, <code>left-X</code>, <code>right-X</code>. <code>X</code> ranges from <code>0</code> to <code>5</code></p>
                         
                         <div class="p-1 border border-white relative rounded" style="min-height: 12rem;">
@@ -581,28 +611,28 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="display" class="mt-1 md:mt-0"><a href="#display" class="no-decoration" aria-label="Anchor">#</a> Display</h3>
+                        <h3 id="display" class="mt-1 md:mt-0"><a href="#display" class="no-decoration anchor" aria-label="Anchor">#</a> Display</h3>
                         <p>You can change the display type of an element with <code>block</code>, <code>inline-block</code> and <code>inline</code>.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
+                        <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration anchor" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
                         <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
                         <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
                         <p>To allow smooth scroll, add <code>scroll-smooth</code> to the wrapper element. For smooth scroll on the whole site, you will need to add it on the <code>html</code> tag.</p>
-                        <div class="scroll-x-snap custom-scrollbar p-1">
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
-                            <div style="width: 200px;" class="h-100 relative inline-block bg-blue rounded py-2 px-1 mx-05 text-center">element</div>
+                        <div class="scroll-x-snap custom-scrollbar p-1" tabindex="0">
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
+                            <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
                         </div>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="padding-and-margin" class="mt-1 md:mt-0"><a href="#padding-and-margin" class="no-decoration" aria-label="Anchor">#</a> Padding and margin</h3>
+                        <h3 id="padding-and-margin" class="mt-1 md:mt-0"><a href="#padding-and-margin" class="no-decoration anchor" aria-label="Anchor">#</a> Padding and margin</h3>
                         <p>There are quite a few classes for padding and margin. They all follow the same pattern, a prefix followed by a value.</p>
                         <p>The values always range from <code>0</code> to <code>5</code>, with two extra values being <code>025</code> and <code>05</code>.</p>
                         <div class="p-1 border border-white rounded column md:row between">
@@ -635,17 +665,17 @@
                         <div class="p-1 border border-white rounded">
                             <div class="p-1 bg-white black rounded mx-auto text-center" style="max-width: 150px;">mx-auto</div>
                         </div>
-                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes, except for margin auto.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes, except for margin auto.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="width-and-height" class="mt-1 md:mt-0"><a href="#width-and-height" class="no-decoration" aria-label="Anchor">#</a> Width and height</h3>
+                        <h3 id="width-and-height" class="mt-1 md:mt-0"><a href="#width-and-height" class="no-decoration anchor" aria-label="Anchor">#</a> Width and height</h3>
                         <p>You can set width and height with the <code>w-100</code>, <code>h-100</code>, <code>w-auto</code> and <code>h-auto</code> classes.</p>
-                        <p class="px-1 py-05 bg-blue white rounded"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes.</p>
+                        <p class="px-1 py-05 white rounded" style="background-color: var(--primary-dark);"><strong>Note: </strong> All of the classes support the <a class="white" href="#viewports">viewport</a> prefixes.</p>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="hover-effects" class="mt-1 md:mt-0"><a href="#hover-effects" class="no-decoration" aria-label="Anchor">#</a> Hover effects</h3>
+                        <h3 id="hover-effects" class="mt-1 md:mt-0"><a href="#hover-effects" class="no-decoration anchor" aria-label="Anchor">#</a> Hover effects</h3>
                         <p>There are a few options to add effects when hovering over an element.</p>
                         <ul>
                             <li><a href="#border">hover-border</a></li>
@@ -667,7 +697,7 @@
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="dialogs" class="mt-1 md:mt-0"><a href="#dialogs" class="no-decoration" aria-label="Anchor">#</a> Dialogs</h3>
+                        <h3 id="dialogs" class="mt-1 md:mt-0"><a href="#dialogs" class="no-decoration anchor" aria-label="Anchor">#</a> Dialogs</h3>
                         <div class="grid">
                             <div class="cell-12 md:cell-6">
                                 <p>Dialogs are used to display information to the user. <strong>vdlcss</strong> only adds basic styles. You will still need to add a small script to implement it.</p>
@@ -723,7 +753,7 @@ function openExampleDialog() {
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
-                        <h3 id="css-variables" class="mt-1 md:mt-0"><a href="#css-variables" class="no-decoration" aria-label="Anchor">#</a> CSS variables</h3>
+                        <h3 id="css-variables" class="mt-1 md:mt-0"><a href="#css-variables" class="no-decoration anchor" aria-label="Anchor">#</a> CSS variables</h3>
                         <p>Below you can find a complete list of all integrated CSS variables.</p>
                         <figure>
                             <table>
