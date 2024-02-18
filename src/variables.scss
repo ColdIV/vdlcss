@@ -16,7 +16,28 @@
     --primary: #{'var(--blue)'};
     --primary-dark: #2b5786;
     --primary-light: #77a4d3;
-    --secondary: #{'var(--gray)'};
+
+    // Links
+    --link-color: var(--primary-light);
+    --link-hover-color: var(--primary);
+
+    // Buttons
+    --button-color: var(--black);
+    --button-background: var(--white);
+    --button-border-color: var(--white);
+    --button-border-radius: 3px;
+
+    --button-hover-color: var(--black);
+    --button-hover-background: var(--white);
+    --button-hover-border-color: var(--black);
+
+    // Scrollbar
+    --scrollbar-fg: var(--primary);
+    --scrollbar-bg: #F5F5F5;
+
+    // Dialog
+    --dialog-color: var(--white);
+    --dialog-background-color: var(--black);
 
     // Shadow
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -44,7 +65,6 @@ $colors: (
 $primary: #{'var(--primary)'};
 $primary-dark: #{'var(--primary-dark)'};
 $primary-light: #{'var(--primary-light)'};
-$secondary: #{'var(--secondary)'};
 
 // Breakpoints
 $breakpoints: (

@@ -17,17 +17,11 @@
     <!-- Plausible Tracking -->
     <script defer data-domain="vdlcss.cldv.org" src="https://plausible.cldv.org/js/script.js"></script>
     <style>
-        a {
-            color: var(--primary-light);
-        }
         a.anchor {
             color: var(--primary);
         }
         code {
             color: var(--white);
-        }
-        table {
-            --primary: var(--primary-dark);
         }
     </style>
 </head>
@@ -44,17 +38,11 @@
                 <nav class="pt-1 md:pt-0 w-100 row md:justify-end align-center">
                     <ul class="unstyled row justify-end align-center">
                         <li class="md:ml-1">
-                            <a class="white" href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
+                            <a style="--link-color: var(--white); --link-hover-color: var(--primary-light);" href="https://github.com/ColdIV/vdlcss" target="_blank">Source</a>
                         </li>
                         <li class="ml-1">
                             <div>    
-                                <a href="/dist/vdlcss-min.css" class="button mb-0"
-                                   style="
-                                     --button-background: var(--primary-dark);
-                                     --button-border-color: var(--primary-dark);
-                                     --button-hover-background: var(--primary);
-                                     --button-hover-border-color: var(--primary);"
-                                   target="_blank" download>
+                                <a href="/dist/vdlcss-min.css" class="button action mb-0" target="_blank" download>
                                     Download
                                 </a>
                             </div>
@@ -77,14 +65,8 @@
 
                     <pre class="h-100 mb-1" style="--black: #191919;"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link rel="stylesheet" type="text/css" href="vdlcss-min.css"&gt;</code></pre>
-                    <a href="/dist/vdlcss-min.css" class="button mb-0"
-                       style="
-                           --button-background: var(--primary-dark);
-                           --button-border-color: var(--primary-dark);
-                           --button-hover-background: var(--primary);
-                           --button-hover-border-color: var(--primary);"
-                       target="_blank" download>
-                    Download
+                    <a href="/dist/vdlcss-min.css" class="button action mb-0" target="_blank" download>
+                        Download
                     </a>
                 </section>
 
@@ -98,6 +80,7 @@
                             <li><a href="#text">Text</a></li>
                             <li><a href="#border">Border</a></li>
                             <li><a href="#lists">Lists</a></li>
+                            <li><a href="#form-and-buttons">Form and Buttons</a></li>
                             <li><a href="#shadow">Shadow</a></li>
                             <li><a href="#container">Container</a></li>
                             <li><a href="#grid">Grid</a></li>
@@ -309,6 +292,52 @@
 &lt;/ul&gt;</code></pre>
                             </div>
                         </div>
+                    </section>
+
+                    <section class="hover-border border-white md:p-1 rounded">
+                        <h3 id="form-and-buttons" class="mt-1 md:mt-0"><a href="#form-and-buttons" class="no-decoration anchor" aria-label="Anchor">#</a> Form and Buttons</h3>
+                        
+                        <form>
+                            <fieldset>
+                                <legend>Fieldset Legend</legend>
+                                <div>
+                                    <label for="text-example">Input</label>
+                                    <input name="text-example" type="text">
+                                </div>
+                                <div>
+                                    <label for="select-example">Dropdown</label>
+                                    <select name="select-example">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <p>Radio Buttons</p>
+                                    <label><input name="radio-example" type="radio"> Label 1</label>
+                                    <label><input name="radio-example" type="radio"> Label 2</label>
+                                    <label><input name="radio-example" type="radio"> Label 3</label>
+                                </div>
+                                <div>
+                                    <label for="range-example">Range</label>
+                                    <input type="range" name="range-example" min="0" max="100" value="40" step="10" />
+                                </div>
+                                <div>
+                                    <label>Text area</label>
+                                    <textarea cols="30" rows="10"></textarea>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox"> This is a checkbox.</label>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <button>Button</button>
+                        <button class="outline"><code>.outline</code> Button</button>
+                        <button class="action"><code>.action</code> Button</button>
                     </section>
 
                     <section class="hover-border border-white md:p-1 rounded">
@@ -640,9 +669,9 @@
                     <section class="hover-border border-white md:p-1 rounded">
                         <h3 id="scroll-and-scrollbar" class="mt-1 md:mt-0"><a href="#scroll-and-scrollbar" class="no-decoration anchor" aria-label="Anchor">#</a> Scroll and scrollbar</h3>
                         <p>Scrolling can be allowed with either <code>scroll-x</code>, <code>scroll-y</code> or with snap, <code>scroll-x-snap</code>, <code>scroll-y-snap</code>. If you do not want any overflow, then use <code>overflow-hidden</code>.</p>
-                        <p>A styled scrollbar can be added with <code>custom-scrollbar</code>.</p>
+                        <p>Scrollbars are styled by default. To change the colors, take a look at the <a href="#css-variables">CSS variables</a>.</p>
                         <p>To allow smooth scroll, add <code>scroll-smooth</code> to the wrapper element. For smooth scroll on the whole site, you will need to add it on the <code>html</code> tag.</p>
-                        <div class="scroll-x-snap custom-scrollbar p-1" tabindex="0">
+                        <div class="scroll-x-snap p-1" tabindex="0">
                             <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
                             <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
                             <div style="width: 200px; background-color: var(--primary-dark);" class="h-100 relative inline-block rounded py-2 px-1 mx-05 text-center">element</div>
@@ -849,8 +878,28 @@ function openExampleDialog() {
                                         <td>#77a4d3</td>
                                     </tr>
                                     <tr>
-                                        <td>--secondary</td>
-                                        <td>var(--gray)</td>
+                                        <td>--link-color</td>
+                                        <td>var(--primary-light)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--link-hover-color</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--scrollbar-fg</td>
+                                        <td>var(--primary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--scrollbar-bg</td>
+                                        <td>#F5F5F5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--dialog-color</td>
+                                        <td>var(--white)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>--dialog-background-color</td>
+                                        <td>var(--black)</td>
                                     </tr>
                                     <tr>
                                         <td>--button-color</td>
@@ -881,16 +930,8 @@ function openExampleDialog() {
                                         <td>var(--primary-dark)</td>
                                     </tr>
                                     <tr>
-                                        <td>--button-active-color</td>
-                                        <td>var(--white)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>--button-active-background</td>
-                                        <td>var(--primary-light)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>--button-active-border-color</td>
-                                        <td>var(--primary-light)</td>
+                                        <td>--shadow</td>
+                                        <td>rgba(0, 0, 0, 0.24) 0px 3px 8px</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -130,32 +130,6 @@ ol {
     transition: box-shadow .25s;
 }
 
-// Custom Scrollbar
-.custom-scrollbar {
-    // Firefox
-    scrollbar-color: #{'var(--primary)'} #F5F5F5;
-    scrollbar-width: thin;
-
-    // Other
-    &::-webkit-scrollbar-track {
-        background-color: #F5F5F5;
-    }
-
-    &::-webkit-scrollbar {
-        width: 9px;
-        height: 9px;
-        background-color: #F5F5F5;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: #{'var(--primary)'};
-
-        &:hover {
-            background-color: #{'var(--primary-dark)'};
-        }
-    }
-}
-
 // Additional Hover Effects
 .hover-zoom {
     overflow: hidden;
