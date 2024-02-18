@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-scheme: var(--white);
+        --color-scheme-contrast: var(--black);
+    }
+
+    body {
+        color: var(--black);
+        background-color: var(--white);
+    }
+}

@@ -16,28 +16,33 @@
     --primary: #{'var(--blue)'};
     --primary-dark: #2b5786;
     --primary-light: #77a4d3;
+    --color-scheme: var(--black);
+    --color-scheme-contrast: var(--white);
 
     // Links
     --link-color: var(--primary-light);
     --link-hover-color: var(--primary);
 
     // Buttons
-    --button-color: var(--black);
-    --button-background: var(--white);
-    --button-border-color: var(--white);
+    --button-color: var(--color-scheme);
+    --button-background: var(--color-scheme-contrast);
+    --button-border-color: var(--color-scheme-contrast);
     --button-border-radius: 3px;
 
-    --button-hover-color: var(--black);
-    --button-hover-background: var(--white);
-    --button-hover-border-color: var(--black);
+    --button-hover-color: var(--color-scheme);
+    --button-hover-background: var(--color-scheme-contrast);
+    --button-hover-border-color: var(--color-scheme);
+
+    // Border
+    --border-color: var(--color-scheme);
 
     // Scrollbar
-    --scrollbar-fg: var(--primary);
-    --scrollbar-bg: #F5F5F5;
+    --scrollbar-fg: var(--color-scheme);
+    --scrollbar-bg: var(--color-scheme-contrast);
 
     // Dialog
-    --dialog-color: var(--white);
-    --dialog-background-color: var(--black);
+    --dialog-color: var(--color-scheme-contrast);
+    --dialog-background-color: var(--color-scheme);
 
     // Shadow
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -51,6 +56,8 @@ $yellow: #{'var(--yellow)'};
 $gray: #{'var(--gray)'};
 $black: #{'var(--black)'};
 $white: #{'var(--white)'};
+$color-scheme: #{'var(--color-scheme)'};
+$color-scheme-contrast: #{'var(--color-scheme-contrast)'};
 
 $colors: (
     red: $red,
@@ -59,7 +66,9 @@ $colors: (
     yellow: $yellow,
     gray: $gray,
     black: $black,
-    white: $white
+    white: $white,
+    color-scheme: $color-scheme,
+    color-scheme-contrast: $color-scheme-contrast
 );
 
 $primary: #{'var(--primary)'};
