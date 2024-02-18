@@ -1,6 +1,8 @@
 # vdlcss
 A small css file which can be used for small website projects without having to touch the styles too much.
 
+__Note__: This is mainly (only?) used by me, so I usually add things when I need them. Thus there may be many changes between versions. I do not recommend blindly updating. You can always check the [website](https://vdlcss.cldv.org) to see how the current version looks like.
+
 ## Usage
 Just include `vdlcss-min.css` in your HTML, and you are good to go!
 
