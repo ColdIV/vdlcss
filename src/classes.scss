@@ -66,6 +66,10 @@
     border-radius: 0;
 }
 
+.border-2 {
+    border-width: 2px !important;
+}
+
 @media (min-width: map-get($breakpoints, md)) {
     .hover-border {
         border: 1px solid transparent;
@@ -108,12 +112,16 @@ ol {
 
 // Shadow
 .shadow {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.shadow-strong {
+    --shadow: rgba(0,0,0,.24) 0 6px 10px 6px
 }
 
 @media (min-width: map-get($breakpoints, md)) {
     .hover-shadow:hover {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+        box-shadow: var(--shadow) !important;
     }
 }
 
@@ -167,4 +175,14 @@ ol {
     &:hover {
         transform: translateY(-10px);
     }
+}
+
+.transition-25,
+.transition-25:hover {
+    transition: all .25s ease !important;
+}
+
+.transition-5,
+.transition-5:hover {
+    transition: all .5s ease !important;
 }

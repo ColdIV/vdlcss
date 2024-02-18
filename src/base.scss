@@ -89,11 +89,13 @@ a.button {
     outline: none;
 }
 
-input:not([type="submit"]),
+input,
 select,
-textarea {
+textarea,
+a,
+button {
     &:focus {
-        border: 1px solid;
+        border: 2px solid $white;
     }
 }
 

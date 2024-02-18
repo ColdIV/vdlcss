@@ -1,7 +1,10 @@
 :root {
+    // Fonts
     --font-sans: Arial, Helvetica, sans-serif;
     --font-serif: Georgia, 'Times New Roman', Times, serif;
     --font-mono: 'Courier New', Courier, monospace;
+
+    // Colors
     --red: #c54047;
     --green: #79c037;
     --blue: #3e7dc0;
@@ -14,6 +17,9 @@
     --primary-dark: #2b5786;
     --primary-light: #77a4d3;
     --secondary: #{'var(--gray)'};
+
+    // Shadow
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 // Colors
