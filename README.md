@@ -26,6 +26,13 @@ Here you can find a demo and some instructions: [vdlcss.cldv.org](https://vdlcss
 #### Build CSS
 - Run `build-css.bat` or `build-css.bat css` to minify properly.
 - You can run `build-css.bat tag` to add a new tag to be released.
+  
+Unfortunately the library `pyscss` is not working for python > `3.10`
+So I am now using `sass` from npm to minify the scss.
+
+Install with: `npm install -g sass less`
+
+Run with `sass src/styles.scss dist/vdlcss-min.css`
 
 ## License
 [MIT](https://github.com/ColdIV/vdlcss/blob/master/LICENSE)
