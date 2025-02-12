@@ -16,23 +16,19 @@ Here you can find a demo and some instructions: [vdlcss.cldv.org](https://vdlcss
 
 ## Build
 ### Requirements
-- Python 3.8.1
+- npm
+    - sass, css-minify
 
-### Windows
-- Create venv `python -m venv .env`
-- Activate venv `.env\Scripts\activate`
-- Install requirements `pip install -r requirements.txt`
+Install with: `npm install -g sass less css-minify`
 
 #### Build CSS
-- Run `build-css.bat` or `build-css.bat css` to minify properly.
-- You can run `build-css.bat tag` to add a new tag to be released.
-  
-Unfortunately the library `pyscss` is not working for python > `3.10`
-So I am now using `sass` from npm to minify the scss.
+I am using `sass` from npm to merge the scss files to one css file.
 
-Install with: `npm install -g sass less`
+Run with `sass src/styles.scss dist/vdlcss.css`
 
-Run with `sass src/styles.scss dist/vdlcss-min.css`
+And then I use `css-minify` to minify the css file.
+
+`css-minify -f dist/vdlcss.css -o dist/vdlcss-min.css`
 
 ## License
 [MIT](https://github.com/ColdIV/vdlcss/blob/master/LICENSE)
