@@ -30,5 +30,7 @@ And then I use `css-minify` to minify the css file.
 
 `css-minify -f dist/vdlcss.css -o dist/vdlcss-min.css`
 
+The shell script `build-css.sh` builds the css, adds the version info and commits the current changes.
+
 ## License
 [MIT](https://github.com/ColdIV/vdlcss/blob/master/LICENSE)

@@ -5,6 +5,9 @@ echo This script minifies the CSS and adds a comment at the beginning of the fil
 echo To publish a new version, please pass the 'tag' parameter to this script. E.g. './build-css.sh tag'
 echo
 
+rm dist/vdlcss-min.css
+rm dist/vdlcss.css.map
+
 bun run sass src/styles.scss dist/vdlcss.css
 bun run css-minify -f dist/vdlcss.css -o dist/
 rm dist/vdlcss.css
