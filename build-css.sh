@@ -14,15 +14,15 @@ if [ "$1" == "tag" ]; then
     echo Current version: $current_tag
     read -p "Enter a new tag: " new_tag
 
-    echo /* >> dist/vdlcss-min.css
-    echo  * vdlcss >> dist/vdlcss-min.css
-    echo  * Version: $new_tag >> dist/vdlcss-min.css
-    echo  * License: MIT >> dist/vdlcss-min.css
-    echo  * Source: https://vdlcss.cldv.org >> dist/vdlcss-min.css
-    echo  * by ColdIV >> dist/vdlcss-min.css
-    echo  */ >> dist/vdlcss-min.css
+    echo "/*" >> dist/vdlcss-min.css
+    echo " * vdlcss" >> dist/vdlcss-min.css
+    echo " * Version: $new_tag" >> dist/vdlcss-min.css
+    echo " * License: MIT" >> dist/vdlcss-min.css
+    echo " * Source: https://vdlcss.cldv.org" >> dist/vdlcss-min.css
+    echo " * by ColdIV" >> dist/vdlcss-min.css
+    echo " */" >> dist/vdlcss-min.css
 
-    cat dist/vdlcss.min.css >> vdlcss-min.css
+    cat dist/vdlcss.min.css >> dist/vdlcss-min.css
     rm dist/vdlcss.min.css
 
     read -p "What has changed: " changes
